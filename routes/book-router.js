@@ -31,6 +31,15 @@ router.get("/books/:id", async (req, res) => {
   }
 });
 
+router.get("/reviews/:id", async (req, res) => {
+  const reviews = await Book.getReviewById(req.params.id);
+  try {
+   res.status(200).json(reviews)
+  } catch (error) {
+    res.status(500).json({ errorMessage: `request could'nt process` });
+  }
+});
+
 router.post("/books", async (req, res) => {
 
   const arrayOfId = await Text.createNewBook(req.body);
