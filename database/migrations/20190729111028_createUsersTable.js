@@ -13,6 +13,7 @@ exports.up = function (knex) {
       books.text('title', 50).notNullable();
       books.text('author', 50).notNullable();
       books.text('publisher', 50).notNullable();
+      books.text('photo', 50);
       books.text('description', 1000);
     })
     .createTable('reviews', reviews => {
