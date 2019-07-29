@@ -1,14 +1,20 @@
-const db = require('../database/db.js');
+const db = require('../database/dbConfig.js');
 
 
 const getAllBooks = () => {
-  return db('books');
+  return db('books')
+  .innerJoin('reviews', 'books.id', 'reviews.book_id');
 };
 
 const getBookById = (id) => {
   return db('books')
   .where({ id });
 };
+
+const getReviewById = (book_id) => {
+  return db('reviews')
+  .where({ book_id });
+}
 
 const createNewBook = (book) => {
   return db('books')
@@ -32,5 +38,6 @@ module.exports = {
   getBookById,
   createNewBook,
   updateBookById,
-  deleteBookById
+  deleteBookById,
+  getReviewById
 };

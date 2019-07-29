@@ -6,7 +6,8 @@ router.get('/books', async (req, res) => {
   
   try {
     const books = await Book.getAllBooks();
-    res.status(200).json(books);
+    
+  res.status(200).json(books);
   } catch (error) {
     res.status(500).json({ error: 'Cannot retrieve the books' });
   }
@@ -14,11 +15,15 @@ router.get('/books', async (req, res) => {
 
 router.get("/books/:id", async (req, res) => {
   const getBook = await Book.getBookById(req.params.id);
-
+  const reviews = await Book.getReviewById(req.params.id);
   try {
-    if (getBook) {
+    if(getBook && reviews) {
+      getBook.map(book => {
+        res.status(200).json({ book, reviews: reviews});
+      });
+     } else if(getBook) {
       res.status(200).json(getBook);
-    } else {
+     } else {
       res.status(400).json({ message: 'invalid Id ' });
     }
   } catch (error) {
