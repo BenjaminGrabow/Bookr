@@ -14,4 +14,8 @@ server.use(cors());
 server.use('/', authRoute);
 server.use('/', bookRoute);
 
+server.get('/', (req, res) => {
+  console.log("We are live !!!")
+});
+
 module.exports = server;
