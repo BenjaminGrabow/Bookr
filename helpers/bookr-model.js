@@ -13,7 +13,7 @@ const getBookById = (id) => {
 const getReviewById = (book_id) => {
   return db('reviews')
   .where({ book_id });
-}
+};
 
 const createNewBook = (book) => {
   return db('books')
@@ -38,5 +38,5 @@ module.exports = {
   createNewBook,
   updateBookById,
   deleteBookById,
-  getReviewById
+  getReviewById,
 };

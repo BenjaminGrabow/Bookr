@@ -7,6 +7,8 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCH_BOOK = 'FETCH_BOOK';
+// export const SAVE_ID = 'SAVE_ID';
+
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
@@ -52,13 +54,18 @@ export const fetchBooks = () => dispatch => {
 };
 
 export const fetchBook = (id) => dispatch => {
-
+debugger
   axiosWithAuth().get(`${adress}${id}`)
     .then(res => {
-
+debugger
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
   .catch(err => {
-
+debugger
   });
 };
+
+// export const saveId  = (id) => {
+//   debugger
+// return { type: SAVE_ID, id: id }
+// };
