@@ -25,6 +25,10 @@ const reducer = (state = initialState, action) => {
 
       return { ...state, books: action.fetchedBooks };
 
+      case types.FETCH_BOOK:
+
+        return { ...state, book: action.fetchedBook };
+
     default: return state;
   }
 };

@@ -56,7 +56,7 @@ export const fetchBook = (id) => dispatch => {
   axiosWithAuth().get(`${adress}${id}`)
     .then(res => {
 
-      dispatch({ type: FETCH_BOOK, fetchedBooks: res.data });
+      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
   .catch(err => {
 
