@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const Book = require('../helpers/bookr-model.js');
 
-router.get('/books', async (req, res) => {
+router.get('/', async (req, res) => {
   
   try {
     const books = await Book.getAllBooks();
@@ -13,7 +13,7 @@ router.get('/books', async (req, res) => {
   }
 });
 
-router.get("/books/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   const getBook = await Book.getBookById(req.params.id);
   const reviews = await Book.getReviewById(req.params.id);
   try {
@@ -57,7 +57,7 @@ router.post("/books", async (req, res) => {
   }
 });
 
-router.put("/books/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   const { title, author, publisher, description } = req.body;
 
   const result = await Book.updateBookById({ title, author, publisher, description }, req.params.id);
@@ -73,7 +73,7 @@ router.put("/books/:id", async (req, res) => {
   }
 });
 
-router.delete('/books/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const deleteBook = await Book.deleteBookById(req.params.id);
 
   try {

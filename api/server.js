@@ -11,7 +11,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-server.use('/', authRoute);
+server.use('/auth', authRoute);
 server.use('/', bookRoute);
 
 module.exports = server;
