@@ -4,7 +4,8 @@ const initialState = {
   loading: false,
   error: null,
   loggingIn: false,
-  books: []
+  books: [],
+  book: [],
 }
 
 const reducer = (state = initialState, action) => {

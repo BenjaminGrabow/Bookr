@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks } from '../../../Store/actions';
+import { fetchBooks, fetchBook } from '../../../Store/actions';
 
 class AllBooks extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ componentDidMount = () => {
   render() { 
     return ( 
       <div>
-{this.props.books ? (this.props.books.map(book => <p>{book.title}</p>)) : null}
+{this.props.books ? (this.props.books.map(book => <p onClick={this.props.fetchBook(book.id)}>{book.title}</p>)) : null}
       </div>
      );
   }
@@ -27,4 +27,4 @@ const mapStateToProps = state => {
   };
 };
  
-export default connect(mapStateToProps, { fetchBooks } )(AllBooks);
+export default connect(mapStateToProps, { fetchBooks, fetchBook } )(AllBooks);
