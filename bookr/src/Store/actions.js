@@ -7,10 +7,10 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 
-const adress = 'http://localhost:3300/books';
+const adress = 'https://bookr-build-week.herokuapp.com/';
 
 export const register = creds => dispatch => {
-  return axios.post('http://localhost:3500/register', creds)
+  return axios.post(`${adress}auth/register`, creds)
     .then(res => {
       debugger
       dispatch({ type: REGISTER });
@@ -23,7 +23,7 @@ export const register = creds => dispatch => {
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
 
-  return axios.post('http://localhost:3500/login', creds)
+  return axios.post(`${adress}auth/login`, creds)
     .then(res => {
 
       localStorage.setItem('token', res.data.token);
@@ -39,9 +39,8 @@ export const login = creds => dispatch => {
 
 
 export const fetchBooks = () => dispatch => {
-  const userID = localStorage.getItem('id');
-  debugger
-  axiosWithAuth().get(`${adress}/user/${userID}`)
+
+  axiosWithAuth().get(adress)
     .then(res => {
 debugger
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
