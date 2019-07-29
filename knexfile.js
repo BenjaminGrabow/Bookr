@@ -5,6 +5,7 @@ module.exports = {
     connection: {
       filename: './database/bookr.db3'
     },
+    useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
     },
