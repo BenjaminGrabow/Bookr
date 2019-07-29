@@ -9,13 +9,13 @@ class AllBooks extends React.Component {
   }
 
 componentDidMount = () => {
-
+ this.props.fetchBooks();
 };
 
   render() { 
     return ( 
       <div>
-
+{this.props.books ? (this.props.books.map(book => <p>{book.title}</p>)) : null}
       </div>
      );
   }
