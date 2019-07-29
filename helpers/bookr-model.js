@@ -2,8 +2,7 @@ const db = require('../database/dbConfig.js');
 
 
 const getAllBooks = () => {
-  return db('books')
-  .innerJoin('reviews', 'books.id', 'reviews.book_id');
+  return db('books');
 };
 
 const getBookById = (id) => {
