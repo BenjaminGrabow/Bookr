@@ -25,7 +25,9 @@ exports.up = function (knex) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("books");
+        .inTable("books")
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     });
 };
 
