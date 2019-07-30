@@ -8,7 +8,6 @@ export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const CLOSE_BOOK = 'CLOSE_BOOK';
-export const ADD_REVIEW = 'ADD_REVIEW';
 
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
@@ -58,7 +57,7 @@ export const fetchBooks = () => dispatch => {
 
 export const fetchBook = (id) => dispatch => {
 
-  axiosWithAuth().get(`${adress}${id}`)
+  axiosWithAuth().get(`http://localhost:3400/${id}`)
     .then(res => {
 
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
@@ -81,10 +80,16 @@ const objectReview = {
   book_id: book_id,
   photo: 'add functionality later with localstorage when user saves picture'
 }
-
+debugger
   axios.post(`http://localhost:3400/review`, objectReview )
     .then(res => {
-      dispatch({ type: ADD_REVIEW, fetchedBook: res.data });
+       return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
+    .then(res => {
+      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+    })
+  })
+  .catch(err => {
+      
     })
   .catch(err => {
 debugger
