@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBooks, fetchBook } from '../../../Store/actions';
-import StripeCheckout from "react-stripe-checkout";
-import axios from "axios";
-import { toast } from "react-toastify";
 
 class AllBooks extends React.Component {
   constructor(props) {
@@ -19,7 +16,7 @@ componentDidMount = () => {
     if(this.props.book){
       return (
         <div>
-        <p>{this.props.book.book.title}</p>
+        <a href="/payment"><p>{this.props.book.book.title}</p></a>
         <p>{this.props.book.book.author}</p>
         <p>{this.props.book.book.publisher}</p>
         <p>{this.props.book.book.description}</p>
@@ -51,44 +48,3 @@ const mapStateToProps = state => {
 };
  
 export default connect(mapStateToProps, { fetchBooks, fetchBook } )(AllBooks);
-
-toast.configure();
-
-function App() {
-  const [product] = React.useState({
-    name: "Tesla Roadster",
-    price: 64998.67,
-    description: "Cool car"
-  });
-
-  async function handleToken(token, addresses) {
-    const response = await axios.post(
-      "https://localhost:3300/payment",
-      { token, product }
-    );
-    const { status } = response.data;
-    console.log("Response:", response.data);
-    if (status === "success") {
-      toast("Success! Check email for details", { type: "success" });
-    } else {
-      toast("Something went wrong", { type: "error" });
-    }
-  }
-
-  return (
-    <div className="container">
-      <div className="product">
-        <h1>{product.name}</h1>
-        <h3>On Sale · ${product.price}</h3>
-      </div>
-      <StripeCheckout
-        stripeKey="pk_test_4TbuO6qAW2XPuce1Q6ywrGP200NrDZ2233"
-        token={handleToken}
-        amount={product.price * 100}
-        name="Tesla Roadster"
-        billingAddress
-        shippingAddress
-      />
-    </div>
-  );
-}
