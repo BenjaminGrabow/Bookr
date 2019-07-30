@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { safeUser } from '../../../store/actions';
+import { safeUserPreferences } from '../../../store/actions';
 // import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
@@ -209,7 +209,7 @@ class User extends React.Component {
 	};
 
 	sendUserData = (user) => {
-		this.props.safeUser(user);
+		this.props.safeUserPreferences(user);
 	};
 
 	render() {
@@ -218,7 +218,7 @@ class User extends React.Component {
 				return <div
 					key={index}>
 					<NavLink
-						to="/protected"
+						to="/bookr"
 						className="navLink">
 						<p>Home</p>
 					</NavLink>
@@ -303,7 +303,7 @@ class User extends React.Component {
 		return (
 			<div>
 				<NavLink
-					to="/protected"
+					to="/bookr"
 					className="navLink">
 					<p>Home</p>
 				</NavLink>
@@ -373,4 +373,4 @@ const mapStateToProps = state => {
 	}
 };
 
-export default connect(mapStateToProps, { safeUser })(User);
+export default connect(mapStateToProps, { safeUserPreferences })(User);

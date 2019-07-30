@@ -7,6 +7,7 @@ const initialState = {
   books: [],
   copyOfBooks: [],
   book: '',
+  userData: null,
 }
 
 const reducer = (state = initialState, action) => {
@@ -43,6 +44,9 @@ const reducer = (state = initialState, action) => {
 
         return { ...state, books: state.copyOfBooks };
 
+        case types.SAFE_USER_PREFERENCES:
+
+          return { ...state, userData: action.user_preferences };
     default: return state;
   }
 };
