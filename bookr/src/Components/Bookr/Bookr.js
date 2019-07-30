@@ -51,7 +51,7 @@ class Bookr extends React.Component {
           <p>Author {this.props.book.book.author}</p>
           <p>Publisher{this.props.book.book.publisher}</p>
           <p>{this.props.book.book.description}</p>
-          <p>{this.props.book.book.price}</p>
+          <p>{this.props.book.book.price} $</p>
           <StripeCheckout
             stripeKey="pk_test_Grqfk8uqKNCJYpAQS2t89UB700wHJklrMa"
             token={(token) =>
@@ -68,9 +68,13 @@ class Bookr extends React.Component {
             return <div
             className="review"
               key={index}>
+                <div className="pic-name">
                 <img scr={review.photo} alt="user"/>
               <p>{review.reviewer}</p>
+                </div>
+                <div className="review-text">
               <p>{review.review}</p>
+              </div>
             </div>
           })}
           </div>
