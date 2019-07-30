@@ -45,7 +45,7 @@ export const login = creds => dispatch => {
 
 export const fetchBooks = () => dispatch => {
 
-  axiosWithAuth().get(adress)
+  axiosWithAuth().get('http://localhost:3400/')
     .then(res => {
 
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
