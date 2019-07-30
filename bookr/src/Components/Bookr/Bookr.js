@@ -48,8 +48,8 @@ class Bookr extends React.Component {
             onClick={this.props.closeBook} />
             </div>
           <p>{this.props.book.book.title}</p>
-          <p>{this.props.book.book.author}</p>
-          <p>{this.props.book.book.publisher}</p>
+          <p>Author {this.props.book.book.author}</p>
+          <p>Publisher{this.props.book.book.publisher}</p>
           <p>{this.props.book.book.description}</p>
           <p>{this.props.book.book.price}</p>
           <StripeCheckout
@@ -63,13 +63,16 @@ class Bookr extends React.Component {
             billingAddress
             shippingAddress
           />
+          <div className="reviews">
           {this.props.book.reviews.map((review, index) => {
             return <div
+            className="review"
               key={index}>
               <p>{review.reviewer}</p>
               <p>{review.review}</p>
             </div>
           })}
+          </div>
         </div>
       )
     }
