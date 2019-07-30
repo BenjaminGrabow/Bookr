@@ -3,7 +3,6 @@ const db = require("../database/dbConfig.js");
 module.exports = {
   addUserPreference,
   findUserPreferences,
-  findBy,
   findById,
   updateUserPreferenceById,
 };
@@ -25,7 +24,7 @@ function findById(id) {
     .first();
 }
 
-const updateUserPreferenceById = ({ username, password, photo, first_name, last_name }, id) => {
+function updateUserPreferenceById({ username, password, photo, first_name, last_name }, id) {
   return db('users')
     .where({ id })
     .update({ username, password, photo, first_name, last_name });
