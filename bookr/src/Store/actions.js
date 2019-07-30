@@ -11,11 +11,13 @@ export const CLOSE_BOOK = 'CLOSE_BOOK';
 
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
-
+// ${adress}auth/register
+// ${adress}auth/login
+// ADD IT LATER !!!!
 export const register = creds => dispatch => {
-  return axios.post(`${adress}auth/register`, creds)
+  return axios.post(`http://localhost:3400/auth/register`, creds)
     .then(res => {
-      debugger
+
       dispatch({ type: REGISTER });
     })
     .catch(err => {
@@ -26,17 +28,16 @@ export const register = creds => dispatch => {
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
 
-  return axios.post(`${adress}auth/login`, creds)
+  return axios.post(`http://localhost:3400/auth/login`, creds)
     .then(res => {
-      
+      debugger
       localStorage.setItem('username', creds.username);
       localStorage.setItem('token', res.data.token);
-      localStorage.setItem('id', res.data.id);
 
       dispatch({ type: LOGIN_SUCCESS, payload: res.data })
     })
     .catch(err => {
-      
+      debugger
       dispatch({ type: LOGIN_FAIL, payload: err.response.data.message });
     });
 };
