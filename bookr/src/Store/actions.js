@@ -10,6 +10,7 @@ export const FETCH_BOOK = 'FETCH_BOOK';
 export const CLOSE_BOOK = 'CLOSE_BOOK';
 export const SEARCH_BOOK = 'SEARCH_BOOK';
 export const SHOW_ALL_BOOKS_AGAIN = 'SHOW_ALL_BOOKS_AGAIN';
+export const SAFE_USER_PREFERENCES = 'SAFE_USER_PREFERENCES';
 
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
@@ -104,4 +105,8 @@ export const search  = (searchResultAsArray) => {
 
   export const showAllBooksAgain  = () => {
     return { type: SHOW_ALL_BOOKS_AGAIN }
+    };
+
+    export const safeUser = (user) => {
+      return { type: SAFE_USER_PREFERENCES, userPreferences: user};
     };
