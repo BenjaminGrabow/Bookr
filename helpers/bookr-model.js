@@ -13,17 +13,17 @@ const getBookById = (id) => {
 const getReviewById = (book_id) => {
   return db('reviews')
   .where({ book_id });
-}
+};
 
 const createNewBook = (book) => {
   return db('books')
   .insert(book);
 };
 
-const updateBookById = ({ title, author, publisher, description }, id) => {
+const updateBookById = ({ title, photo, author, publisher, description, price }, id) => {
   return db('books')
   .where({ id })
-  .update({ title, author, publisher, description });
+  .update({ title, photo, author, publisher, description, price });
 };
 
 const deleteBookById = (id) => {
@@ -38,5 +38,5 @@ module.exports = {
   createNewBook,
   updateBookById,
   deleteBookById,
-  getReviewById
+  getReviewById,
 };

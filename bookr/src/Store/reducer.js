@@ -4,7 +4,8 @@ const initialState = {
   loading: false,
   error: null,
   loggingIn: false,
-  books: []
+  books: [],
+  book: '',
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,6 +25,14 @@ const reducer = (state = initialState, action) => {
     case types.FETCH_BOOKS:
 
       return { ...state, books: action.fetchedBooks };
+
+    case types.FETCH_BOOK:
+
+      return { ...state, book: action.fetchedBook };
+
+    case types.CLOSE_BOOK:
+
+      return { ...state, book: '' };
 
     default: return state;
   }

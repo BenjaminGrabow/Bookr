@@ -1,0 +1,28 @@
+.single-book {
+
+  .close {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    i {
+      font-size: 2.5rem;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+
+
+  .reviews {
+    display: flex;
+    flex-direction: column;
+
+    .review {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

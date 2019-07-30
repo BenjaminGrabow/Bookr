@@ -6,6 +6,9 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
+export const FETCH_BOOK = 'FETCH_BOOK';
+export const CLOSE_BOOK = 'CLOSE_BOOK';
+
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
@@ -42,10 +45,26 @@ export const fetchBooks = () => dispatch => {
 
   axiosWithAuth().get(adress)
     .then(res => {
-debugger
+
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
   .catch(err => {
-   debugger
+
   });
+};
+
+export const fetchBook = (id) => dispatch => {
+
+  axiosWithAuth().get(`${adress}${id}`)
+    .then(res => {
+
+      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+    })
+  .catch(err => {
+
+  });
+};
+
+export const closeBook  = () => {
+return { type: CLOSE_BOOK }
 };
