@@ -19,7 +19,13 @@ class Bookr extends React.Component {
     this.props.fetchBooks();
   };
 
- 
+  handleChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   async handleToken(token, title, price) {
     const product = {
