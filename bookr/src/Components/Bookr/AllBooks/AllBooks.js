@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook } from '../../../Store/actions';
+import { fetchBooks, fetchBook, closeBook } from '../../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -40,7 +40,8 @@ async handleToken(token, title, price) {
     if(this.props.book){
       return (
         <div>
-        <i className="fa fa-window-close"></i>
+        <i className="fa fa-window-close"
+        onClick={this.props.closeBook}/>
         <p>{this.props.book.book.title}</p>
         <p>{this.props.book.book.author}</p>
         <p>{this.props.book.book.publisher}</p>
@@ -84,4 +85,4 @@ const mapStateToProps = state => {
   };
 };
  
-export default connect(mapStateToProps, { fetchBooks, fetchBook } )(AllBooks);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook } )(AllBooks);
