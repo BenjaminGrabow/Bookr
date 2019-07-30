@@ -39,6 +39,10 @@ const reducer = (state = initialState, action) => {
 
       return { ...state, copyOfBooks: state.books, books: action.search_result };
 
+      case types.SHOW_ALL_BOOKS_AGAIN:
+
+        return { ...state, books: state.copyOfBooks };
+
     default: return state;
   }
 };
