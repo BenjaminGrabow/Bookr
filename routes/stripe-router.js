@@ -1,11 +1,8 @@
+const server = require('express').Router();
 const stripe = require("stripe")("STRIPE_SECRET_KEY");
 const uuid = require("uuid/v4");
 
-app.get("/", (req, res) => {
-  res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
-});
-
-app.post("/payment", async (req, res) => {
+server.post("/payment", async (req, res) => {
   console.log("Request:", req.body);
 
   let error;
@@ -50,3 +47,5 @@ app.post("/payment", async (req, res) => {
 
   res.json({ error, status });
 });
+
+module.exports = server;

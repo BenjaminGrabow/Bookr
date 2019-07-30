@@ -4,7 +4,7 @@ const helmet = require('helmet');
 
 const authRoute = require('../routes/auth-router');
 const bookRoute = require('../routes/book-router');
-const stripeRoute = require('../routes/stripe');
+const stripeRoute = require('../routes/stripe-router');
 
 const server = express();
 
