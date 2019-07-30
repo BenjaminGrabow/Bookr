@@ -13,7 +13,8 @@ class Bookr extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      review: ''
+      review: '',
+      search_book: '',
     }
   }
 
@@ -30,11 +31,11 @@ class Bookr extends React.Component {
   };
 
   addReview = (book_id) => {
-   this.props.addReview(this.state.review, book_id);
+    this.props.addReview(this.state.review, book_id);
 
-   this.setState({
-     review: ''
-   });
+    this.setState({
+      review: ''
+    });
   };
 
   async handleToken(token, title, price) {
@@ -102,9 +103,9 @@ class Bookr extends React.Component {
             })}
           </div>
           <div className="add-review">
-            <i 
-            onClick={() => this.addReview(this.props.book.book.id)}
-            className="fa fa-plus-square" />
+            <i
+              onClick={() => this.addReview(this.props.book.book.id)}
+              className="fa fa-plus-square" />
             <input
               type="text"
               value={this.state.review}
@@ -117,36 +118,33 @@ class Bookr extends React.Component {
     }
     return (
       <div className="bookr">
-      <div className="functionality">
-          <i className="fa fa-backward"
+        <div className="search-bar">
+          <i className="fa fa-window-close"
             onClick={this.props.back} />
           <input
             placeholder="Search"
-            className="topInput"
-            name="searchBrand"
+            className="search-input"
+            name="search_book"
             onChange={this.handleChange}
-            value={this.state.searchBrand}
+            value={this.state.search_book}
             type="text"
           />
           <i className="fa fa-search"
-            onClick={this.searchIt}
+            onClick={this.searchBook}
           />
-          <i
-            onClick={this.showAddInput}
-            className="fa fa-plus-circle" />
         </div>
-      <div 
-      className="books">
-        {this.props.books ? (this.props.books.map((book, index) => {
-          return <div
-            key={index}
-          className="single-book">
-<img src={book.photo} alt="book"/>
-          <p onClick={() =>
-              this.props.fetchBook(book.id)}>{book.title}</p>
-              </div>
-        })) : null}
-      </div>
+        <div
+          className="books">
+          {this.props.books ? (this.props.books.map((book, index) => {
+            return <div
+              key={index}
+              className="single-book">
+              <img src={book.photo} alt="book" />
+              <p onClick={() =>
+                this.props.fetchBook(book.id)}>{book.title}</p>
+            </div>
+          })) : null}
+        </div>
       </div>
     );
   }
