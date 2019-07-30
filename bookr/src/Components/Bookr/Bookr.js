@@ -68,6 +68,7 @@ class Bookr extends React.Component {
             return <div
             className="review"
               key={index}>
+                <img scr={review.photo} alt="user"/>
               <p>{review.reviewer}</p>
               <p>{review.review}</p>
             </div>
