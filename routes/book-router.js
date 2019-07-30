@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const Book = require('../helpers/bookr-model.js');
 
-const { validatePostId, validateDeleteId, validatePutId } = require('../middleware/middleware');
+const { validatePost, validateDeleteId, validatePutId } = require('../middleware/middleware');
 
 router.get('/', async (req, res) => {
   
@@ -42,7 +42,7 @@ router.get("/reviews/:id", async (req, res) => {
   }
 });
 
-router.post("/books",validatePostId, (req, res) => {
+router.post("/",validatePost, (req, res) => {
       res.status(200).json(req.book);
 });
 

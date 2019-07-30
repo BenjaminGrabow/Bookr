@@ -1,14 +1,18 @@
 const Books = require("../helpers/bookr-model");
 
-async function validatePostId(req, res, next) {
-  const newBook = await Books.createNewBook(req.body);
-  const book = await Books.getBookById(newBook[0]);
+async function validatePost(req, res, next) {
+  const request = req.body;
+  
   try {
-    if (newBook) {
+    if (request.author &&
+      request.title &&
+      request.publisher) {
+        const newBook = await Books.createNewBook(request);
+        const book = await Books.getBookById(newBook[0]);
       req.book = book;
       next();
     } else {
-      res.status(400).json({ message: 'invalid Id ' })
+      res.status(400).json({ message: 'You must provide at least title, author and publisher !' })
     }
   } catch (error) {
     res.status(500).json({ errorMessage: 'request dont could process' })
@@ -39,8 +43,6 @@ async function validatePutId(req, res, next) {
     if (result) {
       req.book = book;
       next();
-    } else {
-      res.status(400).json({ message: 'invalid Id ' })
     }
   } catch (error) {
     res.status(500).json({ errorMessage: 'request dont could process' })
@@ -49,7 +51,7 @@ async function validatePutId(req, res, next) {
 
 
 module.exports = {
-  validatePostId,
+  validatePost,
   validateDeleteId,
   validatePutId
 };
