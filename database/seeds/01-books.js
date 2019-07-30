@@ -131,16 +131,15 @@ exports.seed = function (knex, Promise) {
           price: 12.99
         },
         {
-          id: 6,
-          title: 'Deep Work: Rules for Focused Success in a Distracted World ',
+          id: 12,
+          title: 'Bill Gates: A Biography',
           publisher: 'Amazon',
-          author: 'Cal Newport',
-          description: `One of the most valuable skills in our economy is 
-          becoming increasingly rare. If you master this skill, you'll achieve
-           extraordinary results.
-          Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41QoykqonNL._SX317_BO1,204,203,200_.jpg',
-          price: 20.99
+          author: 'Michael B. Becraft',
+          description: `The cofounder of Microsoft, Bill Gates helped transform 
+          society by ushering in the era of ubiquitous personal computing. This book examines the life and
+           achievements of this standout American inventor and philanthropist`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41E2B5boBiL._SX313_BO1,204,203,200_.jpg',
+          price: 29.99
         }
       ]);
     });
