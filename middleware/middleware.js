@@ -35,10 +35,10 @@ async function validateDeleteId(req, res, next) {
 };
 
 async function validatePutId(req, res, next) {
-const { title, author, publisher, description } = req.body;
+const { title, author, publisher, description, price } = req.body;
 
   try {
-      const result = await Books.updateBookById({ title, author, publisher, description }, req.params.id);
+      const result = await Books.updateBookById({ title, author, publisher, description, price }, req.params.id);
      
       const book = await Books.getBookById(req.params.id);
       
