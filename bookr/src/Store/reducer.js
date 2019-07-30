@@ -6,7 +6,6 @@ const initialState = {
   loggingIn: false,
   books: [],
   book: '',
-  // id: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -31,9 +30,9 @@ const reducer = (state = initialState, action) => {
 
       return { ...state, book: action.fetchedBook };
 
-    // case types.SAVE_ID:
+    case types.CLOSE_BOOK:
 
-    //   return { ...state, id: action.id };
+      return { ...state, book: '' };
 
     default: return state;
   }
