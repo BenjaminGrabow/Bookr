@@ -14,7 +14,7 @@ function Payment() {
 
   async function handleToken(token, addresses) {
     const response = await axios.post(
-      "https://localhost:3300/payment",
+      "http://localhost:3300/payment",
       { token, product }
     );
     const { status } = response.data;
