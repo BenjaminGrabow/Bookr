@@ -72,14 +72,21 @@ export const closeBook  = () => {
 return { type: CLOSE_BOOK }
 };
 
-export const addReview = (review) => dispatch => {
+export const addReview = (review , book_id) => dispatch => {
+debugger
 
-  axios.post(`http://localhost:3400/review`, )
+const objectReview = {
+  review: review,
+  reviewer: localStorage.getItem('username'),
+  book_id: book_id,
+  photo: 'add functionality later with localstorage when user saves picture'
+}
+
+  axios.post(`http://localhost:3400/review`, objectReview )
     .then(res => {
-
-      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+      dispatch({ type: ADD_REVIEW, fetchedBook: res.data });
     })
   .catch(err => {
-
+debugger
   });
 };
