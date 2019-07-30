@@ -1,5 +1,18 @@
 // MULTI BOOK DISPLAY 
+.books {
+  display  : flex;
+  flex-wrap: wrap;
 
+  .single-book {
+    width: 30%;
+    height: 20rem;
+   
+    img {
+      width: 50%;
+      height: 15rem;
+    }
+  }
+}
 
 
 
@@ -20,8 +33,8 @@
 .single-book {
 
   .close {
-    width: 100%;
-    display: flex;
+    width          : 100%;
+    display        : flex;
     justify-content: flex-end;
 
     i {
@@ -34,31 +47,31 @@
   }
 
   .pic-next-to-main-data {
-    display: flex;
+    display   : flex;
     text-align: center;
 
     img {
-      width: 33.3rem;
+      width : 33.3rem;
       height: 50rem;
     }
 
     .main-data {
-      display: flex;
-      flex-direction: column;
+      display        : flex;
+      flex-direction : column;
       justify-content: space-between;
-      width: 65%;
+      width          : 65%;
     }
   }
 
   .reviews {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-      overflow-y : auto;
-      width: 100%;
-      height: 20rem;
-    
+    overflow-y    : auto;
+    width         : 100%;
+    height        : 20rem;
+
     .review {
-      display: flex;
+      display        : flex;
       justify-content: space-around;
 
       .pic-name {
