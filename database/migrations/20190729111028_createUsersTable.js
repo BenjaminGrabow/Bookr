@@ -7,6 +7,9 @@ exports.up = function (knex) {
       .unique();
     users.string('password', 50)
       .notNullable();
+    users.text('photo', 50);
+    users.text('first_name', 50);
+    users.text('last_name', 50);
   })
     .createTable('books', books => {
       books.increments();
