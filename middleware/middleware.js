@@ -1,6 +1,6 @@
 const Books = require("../helpers/bookr-model");
 
-async function validatePost(req, res, next) {
+async function validatePostForBook(req, res, next) {
   const request = req.body;
 
   try {
@@ -56,7 +56,7 @@ const { title, author, publisher, description, price } = req.body;
 
 
 module.exports = {
-  validatePost,
+  validatePostForBook,
   validateDeleteId,
   validatePutId
 };
