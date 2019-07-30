@@ -29,8 +29,8 @@ class Bookr extends React.Component {
     });
   };
 
-  addReview = () => {
-   this.props.addReview(this.state.review);
+  addReview = (book_id) => {
+   this.props.addReview(this.state.review, book_id);
 
    this.setState({
      review: ''
@@ -103,7 +103,7 @@ class Bookr extends React.Component {
           </div>
           <div className="add-review">
             <i 
-            onClick={this.addReview}
+            onClick={() => this.addReview(this.props.book.book.id)}
             className="fa fa-plus-square" />
             <input
               type="text"

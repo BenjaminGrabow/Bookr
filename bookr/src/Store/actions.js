@@ -8,6 +8,7 @@ export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCH_BOOK = 'FETCH_BOOK';
 export const CLOSE_BOOK = 'CLOSE_BOOK';
+export const ADD_REVIEW = 'ADD_REVIEW';
 
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
@@ -69,4 +70,16 @@ export const fetchBook = (id) => dispatch => {
 
 export const closeBook  = () => {
 return { type: CLOSE_BOOK }
+};
+
+export const addReview = (review) => dispatch => {
+
+  axios.post(`http://localhost:3400/review`, )
+    .then(res => {
+
+      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+    })
+  .catch(err => {
+
+  });
 };
