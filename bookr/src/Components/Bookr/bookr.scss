@@ -23,6 +23,18 @@
     .review {
       display: flex;
       justify-content: space-around;
+
+      .pic-name {
+        width: 40%;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+
+      .review-text {
+        width: 60%;
+      }
     }
   }
 }
