@@ -20,12 +20,11 @@ async function validatePost(req, res, next) {
 };
 
 async function validateDeleteId(req, res, next) {
-  // const { id } = req.params
+  const { id } = req.params
 
-  const deleteBook = await Books.deleteBookById(req.params.id);
+  const deleteBook = await Books.deleteBookById(id);
   try {
     if (deleteBook) {
-      req.book = book;
       next();
     } else {
       res.status(400).json({ message: 'invalid Id ' })

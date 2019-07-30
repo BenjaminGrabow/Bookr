@@ -61,19 +61,8 @@ router.put("/:id",validatePutId, async (req, res) => {
 
 });
 
-router.delete('/:id', validateDeleteId, (req, res) => {
-  // const deleteBook = await Book.deleteBookById(req.params.id);
-
-  // try {
-  //   if (deleteBook) {
-      res.status(200).json(req.book);
-  //   } else {
-  //     res.status(400).json({ message: 'invalid Id ' });
-  //   }
-  // } catch (error) {
-  //   res.status(500).json({ errorMessage: `request could'nt process` });
-  // }
-
+router.delete('/:id' ,validateDeleteId, (req, res) => {
+      res.status(200).json({ message: "book got deleted !"});
 });
 
   module.exports = router;
