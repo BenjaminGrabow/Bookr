@@ -7,7 +7,7 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const REGISTER = 'REGISTER';
 export const FETCH_BOOKS = 'FETCH_BOOKS';
 export const FETCH_BOOK = 'FETCH_BOOK';
-// export const SAVE_ID = 'SAVE_ID';
+export const CLOSE_BOOK = 'CLOSE_BOOK';
 
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
@@ -65,7 +65,6 @@ debugger
   });
 };
 
-// export const saveId  = (id) => {
-//   debugger
-// return { type: SAVE_ID, id: id }
-// };
+export const closeBook  = () => {
+return { type: CLOSE_BOOK }
+};
