@@ -3,16 +3,18 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
 function Payment() {
   const [product] = React.useState({
     name: "Tesla Roadster",
     price: 64998.67,
-    description: "Cool car"
+    // description: "Cool car"
   });
 
   async function handleToken(token, addresses) {
+    console.log(product, token)
     const response = await axios.post(
       "http://localhost:3300/payment",
       { token, product }
