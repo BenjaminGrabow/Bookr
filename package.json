@@ -28,7 +28,8 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.17.0",
-    "sqlite3": "^4.0.8"
+    "sqlite3": "^4.0.8",
+    "uuidv4": "^4.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
