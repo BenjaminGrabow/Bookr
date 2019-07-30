@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -30,7 +30,11 @@ class Bookr extends React.Component {
   };
 
   addReview = () => {
-  
+   this.props.addReview(this.state.review);
+
+   this.setState({
+     review: ''
+   });
   };
 
   async handleToken(token, title, price) {
@@ -131,4 +135,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview })(Bookr);
