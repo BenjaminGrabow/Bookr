@@ -44,21 +44,8 @@ router.post("/",validatePost, (req, res) => {
       res.status(200).json(req.book);
 });
 
-router.put("/:id",validatePutId, async (req, res) => {
-  // const { title, author, publisher, description } = req.body;
-
-  // const result = await Book.updateBookById({ title, author, publisher, description }, req.params.id);
-
-  // try {
-  //   if (result) {
-      res.status(200).json(req.book);
-  //   } else {
-  //     res.status(400).json({ message: 'invalid Id ' });
-  //   }
-  // } catch (error) {
-  //   res.status(500).json({ errorMessage: `request could'nt process` });
-  // }
-
+router.put("/:id",validatePutId, (req, res) => {
+      res.status(200).json({ message: "book got updated !" });
 });
 
 router.delete('/:id' ,validateDeleteId, (req, res) => {
