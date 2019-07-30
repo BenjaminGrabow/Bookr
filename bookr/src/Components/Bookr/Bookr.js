@@ -71,8 +71,10 @@ class Bookr extends React.Component {
     }
     return (
       <div>
-        {this.props.books ? (this.props.books.map(book => {
-          return <p onClick={() =>
+        {this.props.books ? (this.props.books.map((book, index) => {
+          return <p
+          key={index}
+          onClick={() =>
             this.props.fetchBook(book.id)}>{book.title}</p>
         })) : null}
       </div>
