@@ -47,10 +47,14 @@ class Bookr extends React.Component {
             <i className="fa fa-window-close"
               onClick={this.props.closeBook} />
           </div>
+          <div className="pic-next-to-main-data">
           <img src={this.props.book.book.photo} alt="book" />
+          <div className="main-data">
           <p>{this.props.book.book.title}</p>
-          <p>Author {this.props.book.book.author}</p>
-          <p>Publisher{this.props.book.book.publisher}</p>
+          <p>Author: {this.props.book.book.author}</p>
+          <p>Publisher: {this.props.book.book.publisher}</p>
+          </div>
+          </div>
           <p>{this.props.book.book.description}</p>
           <p>{this.props.book.book.price} $</p>
           <StripeCheckout
