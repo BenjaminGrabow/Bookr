@@ -23,7 +23,7 @@ class Bookr extends React.Component {
     const product = {
       name: title, price: price
     }
-    
+
     console.log(token, product)
     const response = await axios.post(
       "https://bookr-build-week.herokuapp.com/payment",
@@ -42,11 +42,12 @@ class Bookr extends React.Component {
     if (this.props.book) {
       return (
         <div
-        className="single-book">
+          className="single-book">
           <div className="close">
-          <i className="fa fa-window-close"
-            onClick={this.props.closeBook} />
-            </div>
+            <i className="fa fa-window-close"
+              onClick={this.props.closeBook} />
+          </div>
+          <img src={this.props.book.book.photo} alt="book" />
           <p>{this.props.book.book.title}</p>
           <p>Author {this.props.book.book.author}</p>
           <p>Publisher{this.props.book.book.publisher}</p>
@@ -64,19 +65,19 @@ class Bookr extends React.Component {
             shippingAddress
           />
           <div className="reviews">
-          {this.props.book.reviews.map((review, index) => {
-            return <div
-            className="review"
-              key={index}>
+            {this.props.book.reviews.map((review, index) => {
+              return <div
+                className="review"
+                key={index}>
                 <div className="pic-name">
-                <img scr={review.photo} alt="user"/>
-              <p>{review.reviewer}</p>
+                  <img scr={review.photo} alt="user" />
+                  <p>{review.reviewer}</p>
                 </div>
                 <div className="review-text">
-              <p>{review.review}</p>
+                  <p>{review.review}</p>
+                </div>
               </div>
-            </div>
-          })}
+            })}
           </div>
         </div>
       )
@@ -85,9 +86,9 @@ class Bookr extends React.Component {
       <div>
         {this.props.books ? (this.props.books.map((book, index) => {
           return <p
-          key={index}
-          onClick={() =>
-            this.props.fetchBook(book.id)}>{book.title}</p>
+            key={index}
+            onClick={() =>
+              this.props.fetchBook(book.id)}>{book.title}</p>
         })) : null}
       </div>
     );
