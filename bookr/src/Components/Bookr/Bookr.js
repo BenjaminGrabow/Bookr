@@ -41,9 +41,12 @@ class Bookr extends React.Component {
   render() {
     if (this.props.book) {
       return (
-        <div>
+        <div
+        className="single-book">
+          <div className="close">
           <i className="fa fa-window-close"
             onClick={this.props.closeBook} />
+            </div>
           <p>{this.props.book.book.title}</p>
           <p>{this.props.book.book.author}</p>
           <p>{this.props.book.book.publisher}</p>
