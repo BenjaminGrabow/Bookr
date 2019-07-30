@@ -24,7 +24,7 @@ async function validatePostForReview(req, res, next) {
 
   try {
     if (request.review) {
-      const newReview = await Books.createNewPost(request);
+      const newReview = await Books.createNewReview(request);
       req.review = newReview;
       next();
     } else {

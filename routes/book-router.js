@@ -47,7 +47,7 @@ router.post("/",validatePostForBook, (req, res) => {
       res.status(200).json(req.book);
 });
 
-router.post("/",validatePostForReview, (req, res) => {
+router.post("/review",validatePostForReview, (req, res) => {
   res.status(200).json(req.review);
 });
 
