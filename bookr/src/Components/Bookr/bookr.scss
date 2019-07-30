@@ -6,6 +6,7 @@
   .single-book {
     width: 30%;
     height: 20rem;
+    margin: 1rem;
    
     img {
       width: 50%;
@@ -13,6 +14,7 @@
     }
   }
 }
+
 
 .search-bar {
   height: 3rem;
@@ -44,10 +46,9 @@ padding: 0;
 }
 
 &:hover {
-color: blue;
+color: #f4ff61;
 }
 }
-
 
 .search-input {
 border-radius: 3rem;

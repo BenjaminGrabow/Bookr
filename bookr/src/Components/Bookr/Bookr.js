@@ -55,7 +55,7 @@ class Bookr extends React.Component {
     } else {
       toast("Something went wrong", { type: "error" });
     }
-  }
+  };
 
   searchBook = () => {
     this.props.search(this.props.books.filter(book =>
@@ -64,7 +64,6 @@ class Bookr extends React.Component {
     this.setState({
       search_book: '',
     });
-
   };
 
   render() {
