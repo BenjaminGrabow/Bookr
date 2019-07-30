@@ -12,10 +12,6 @@ function findUserPreferences() {
   return db("user_preference").select("id", "first_name");
 }
 
-function findBy(filter) {
-  return db("user_preference").where(filter);
-}
-
 async function addUserPreference(userPreference) {
   const [id] = await db("user_preference").insert(userPreference);
 
