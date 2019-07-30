@@ -3,6 +3,9 @@ const bcrypt = require('bcryptjs');
 
 const Users = require('../helpers/users-model.js');
 
+const generateToken = require("../tokenservice/tokenservice");
+
+
 router.post('/register', (req, res) => {
   let user = req.body;
   const hash = bcrypt.hashSync(user.password, 10);

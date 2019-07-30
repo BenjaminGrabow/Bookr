@@ -13,7 +13,5 @@ function generateToken(user) {
 } 
 
 module.exports = {
-  authenticate,
-  validateId,
   generateToken
 };
