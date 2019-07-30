@@ -40,7 +40,7 @@ async handleToken(token, title, price) {
     if(this.props.book){
       return (
         <div>
-        <i class="fa fa-window-close"></i>
+        <i className="fa fa-window-close"></i>
         <p>{this.props.book.book.title}</p>
         <p>{this.props.book.book.author}</p>
         <p>{this.props.book.book.publisher}</p>
@@ -48,15 +48,18 @@ async handleToken(token, title, price) {
         <p>{this.props.book.book.price}</p>
         <StripeCheckout
         stripeKey="pk_test_Grqfk8uqKNCJYpAQS2t89UB700wHJklrMa"
-        token={(token) => this.handleToken(token, this.props.book.book.title,
+        token={(token) =>
+           this.handleToken(token, 
+            this.props.book.book.title,
            this.props.book.book.price )}
         amount={this.props.book.book.price * 100}
         name="Tesla Roadster"
         billingAddress
         shippingAddress
       />
-        {this.props.book.reviews.map(review => {
-          return <div>
+        {this.props.book.reviews.map((review, index )=> {
+          return <div 
+          key={index}>
             <p>{review.reviewer}</p>
             <p>{review.review}</p>
           </div>
