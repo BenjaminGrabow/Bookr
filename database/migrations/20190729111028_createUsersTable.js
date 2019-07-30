@@ -21,6 +21,7 @@ exports.up = function (knex) {
       reviews.increments();
       reviews.text('reviewer', 50).notNullable();
       reviews.text('review', 500).notNullable();
+      reviews.text('photo', 50);
       reviews
         .integer("book_id")
         .unsigned()
