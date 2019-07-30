@@ -16,8 +16,8 @@ exports.up = function (knex) {
     user
       .integer("user_id")
       .unsigned()
-      .notNullable()
       .unique()
+      .notNullable()
       .references("id")
       .inTable("users")
       .onUpdate('CASCADE')
@@ -51,6 +51,7 @@ exports.up = function (knex) {
 exports.down = function (knex, Promise) {
   return knex.schema
     .dropTableIfExists('users')
+    .dropTableIfExists('user_preference')
     .dropTableIfExists('books')
     .dropTableIfExists('reviews');
 };
