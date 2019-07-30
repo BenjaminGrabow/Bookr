@@ -26,7 +26,7 @@ class Bookr extends React.Component {
 
     console.log(token, productData)
     const response = await axios.post(
-      "http://localhost:3300/payment",
+      "https://bookr-build-week.herokuapp.com/payment",
       { token, productData }
     );
     const { status } = response.data;
@@ -65,7 +65,6 @@ class Bookr extends React.Component {
           />
           <div className="reviews">
           {this.props.book.reviews.map((review, index) => {
-            console.log(review)
             return <div
             className="review"
               key={index}>
