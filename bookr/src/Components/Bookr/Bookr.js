@@ -116,6 +116,25 @@ class Bookr extends React.Component {
       )
     }
     return (
+      <div className="bookr">
+      <div className="functionality">
+          <i className="fa fa-backward"
+            onClick={this.props.back} />
+          <input
+            placeholder="Search"
+            className="topInput"
+            name="searchBrand"
+            onChange={this.handleChange}
+            value={this.state.searchBrand}
+            type="text"
+          />
+          <i className="fa fa-search"
+            onClick={this.searchIt}
+          />
+          <i
+            onClick={this.showAddInput}
+            className="fa fa-plus-circle" />
+        </div>
       <div 
       className="books">
         {this.props.books ? (this.props.books.map((book, index) => {
@@ -127,6 +146,7 @@ class Bookr extends React.Component {
               this.props.fetchBook(book.id)}>{book.title}</p>
               </div>
         })) : null}
+      </div>
       </div>
     );
   }
