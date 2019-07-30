@@ -1,5 +1,5 @@
 const server = require('express').Router();
-const stripe = require("stripe")("STRIPE_SECRET_KEY");
+const stripe = require("stripe")("sk_test_j5vEAa5mDDXxAZ0D0KJ3lH3x00tu6gpneX");
 const uuid = require("uuid/v4");
 
 server.post("/payment", async (req, res) => {
