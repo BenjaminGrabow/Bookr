@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBooks, fetchBook } from '../../../Store/actions';
+import StripeCheckout from "react-stripe-checkout";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 class AllBooks extends React.Component {
   constructor(props) {
@@ -49,15 +52,6 @@ const mapStateToProps = state => {
  
 export default connect(mapStateToProps, { fetchBooks, fetchBook } )(AllBooks);
 
-import React from "react";
-import ReactDOM from "react-dom";
-import StripeCheckout from "react-stripe-checkout";
-import axios from "axios";
-import { toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
-import "./styles.css";
-
 toast.configure();
 
 function App() {
@@ -69,7 +63,7 @@ function App() {
 
   async function handleToken(token, addresses) {
     const response = await axios.post(
-      "https://ry7v05l6on.sse.codesandbox.io/checkout",
+      "https://localhost:3300/payment",
       { token, product }
     );
     const { status } = response.data;
