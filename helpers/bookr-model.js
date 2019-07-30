@@ -20,10 +20,10 @@ const createNewBook = (book) => {
   .insert(book);
 };
 
-const updateBookById = ({ title, photo, author, publisher, description }, id) => {
+const updateBookById = ({ title, photo, author, publisher, description, price }, id) => {
   return db('books')
   .where({ id })
-  .update({ title, photo, author, publisher, description });
+  .update({ title, photo, author, publisher, description, price });
 };
 
 const deleteBookById = (id) => {
