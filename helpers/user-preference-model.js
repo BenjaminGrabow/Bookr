@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function findUserPreferences() {
-  return db("user_preference").select("id", "first_name");
+  return db("user_preference");
 }
 
 async function addUserPreference(userPreference) {
@@ -18,10 +18,8 @@ async function addUserPreference(userPreference) {
 }
 
 function findById(id) {
-  return db("users")
-    .select("id", "username")
-    .where({ id })
-    .first();
+  return db("user_preference")
+    .where({ id });
 }
 
 function updateUserPreferenceById({ username, password, photo, first_name, last_name }, id) {
