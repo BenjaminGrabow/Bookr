@@ -40,7 +40,8 @@ async handleToken(token, title, price) {
     if(this.props.book){
       return (
         <div>
-        <a href="/payment"><p>{this.props.book.book.title}</p></a>
+        <i class="fa fa-window-close"></i>
+        <p>{this.props.book.book.title}</p>
         <p>{this.props.book.book.author}</p>
         <p>{this.props.book.book.publisher}</p>
         <p>{this.props.book.book.description}</p>
@@ -60,7 +61,6 @@ async handleToken(token, title, price) {
             <p>{review.review}</p>
           </div>
         })}
-
         </div>
       )
     } 
