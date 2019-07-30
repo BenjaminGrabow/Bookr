@@ -20,6 +20,11 @@ const createNewBook = (book) => {
   .insert(book);
 };
 
+const createNewReview = (review) => {
+  return db('reviews')
+  .insert(review);
+};
+
 const updateBookById = ({ title, photo, author, publisher, description, price }, id) => {
   return db('books')
   .where({ id })
@@ -39,4 +44,5 @@ module.exports = {
   updateBookById,
   deleteBookById,
   getReviewById,
+  createNewReview
 };
