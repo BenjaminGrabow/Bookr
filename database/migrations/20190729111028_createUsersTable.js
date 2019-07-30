@@ -15,6 +15,7 @@ exports.up = function (knex) {
       books.text('publisher', 50).notNullable();
       books.text('photo', 50);
       books.text('description', 1000);
+      books.integer('price');
     })
     .createTable('reviews', reviews => {
       reviews.increments();
