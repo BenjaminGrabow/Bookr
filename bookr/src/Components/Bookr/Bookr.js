@@ -57,6 +57,16 @@ class Bookr extends React.Component {
     }
   }
 
+  searchBook = () => {
+    this.props.search(this.props.books.filter(book =>
+       book.title.toLowerCase().startsWith(this.state.search_book)));
+
+    this.setState({
+      search_book: '',
+    });
+
+  };
+
   render() {
     if (this.props.book) {
       return (
