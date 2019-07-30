@@ -1,6 +1,7 @@
-const jwt = require("jsonwebtoken");
-const secrets = require("../database/secrets");
 const Books = require("../helpers/bookr-model");
+const { jwtSecret } = require('../database/secrets')
+
+const jwtKey = jwtSecret;
 
 async function validateId(req, res, next) {
   const { id } = req.params
@@ -35,19 +36,7 @@ async function validateId(req, res, next) {
     }
   }
 
- function generateToken(user) {
-  const payload = {
-    subject: user.id,
-    username: user.username,
-  };
-  const options = {
-    expiresIn: "1d"
-  };
-  return jwt.sign(payload, secrets.jwtSecret, options);
-} 
-
 module.exports = {
   authenticate,
   validateId,
-  generateToken
 };
