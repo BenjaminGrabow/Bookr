@@ -54,14 +54,14 @@ export const fetchBooks = () => dispatch => {
 };
 
 export const fetchBook = (id) => dispatch => {
-debugger
+
   axiosWithAuth().get(`${adress}${id}`)
     .then(res => {
-debugger
+
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
   .catch(err => {
-debugger
+
   });
 };
 
