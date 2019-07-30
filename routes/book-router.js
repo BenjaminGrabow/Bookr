@@ -45,7 +45,7 @@ router.post("/",validatePost, (req, res) => {
 });
 
 router.put("/:id",validatePutId, (req, res) => {
-      res.status(200).json({ message: "book got updated !" });
+      res.status(200).json(req.book);
 });
 
 router.delete('/:id' ,validateDeleteId, (req, res) => {
