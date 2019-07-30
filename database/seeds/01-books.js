@@ -102,25 +102,32 @@ exports.seed = function (knex, Promise) {
           price: 18.99
         },
         {
-          id: 4, title: `Thinking, Fast and Slow`,
+          id: 10, title: `Ashes to Ashes: An Unputdownable Thriller from the Sunday Times Bestseller`,
           publisher: 'Amazon',
-          author: 'Daniel Kahneman',
-          description: `The phenomenal international bestseller - 2 million copies sold - that will change the way you make decisions
-
-          'A lifetime's worth of wisdom' Steven D. Levitt, co-author of Freakonomics
-          'There have been many good books on human rationality and irrationality, but only one masterpiece.
-           That masterpiece is Thinking, Fast and Slow' Financial Times`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41jZIThj0aL._SX324_BO1,204,203,200_.jpg',
+          author: 'Paul Finch',
+          description: `The Sunday Times bestseller returns with his next unforgettable crime thriller. 
+          Fans of MJ Arlidge and Stuart MacBride won't be able to put this down. John Sagan is a forgettable man.
+           You could pass him in the street and not realise he's there. But then, that's why he's so dangerous. 
+           A torturer for hire, Sagan has terrorised - and mutilated - countless victims.
+           And now he's on the move. DS Mark 'Heck' Heckenburg must chase the trail, even when it leads him to his hometown of Bradburn
+            - a place he never thought he'd set foot in again. But Sagan isn't the only problem. Bradburn is being terrorised by a lone
+             killer who burns his victims to death. And with the victims chosen at random, no-one knows who will be next. Least of all Heck...`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51piaAbVXYL._SX321_BO1,204,203,200_.jpg',
           price: 10.19
         },
         {
-          id: 5, title: 'The Power of Habit: Why We Do What We Do, and How to Change',
+          id: 11, title: 'The Dry: The Sunday Times Crime Book of the Year 2017',
           publisher: 'Amazon',
-          author: 'Charles Duhigg',
-          description: `We can always change. In The Power of Habit, award-winning New York Times business reporter Charles 
-          Duhigg translates cutting-edge behavioural science into practical self-improvement action, distilling advanced neuroscience
-           into fascinating narratives of transformation. `,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41owDNwBMNL._SX324_BO1,204,203,200_.jpg',
+          author: 'Jane Harper',
+          description: `Jane Harper's new novel, The Lost Man, is out now.
+          WINNER OF THE BRITISH BOOK AWARDS CRIME THRILLER BOOK OF THE YEAR 2018
+          WINNER OF THE CWA GOLD DAGGER AWARD 2017
+          Amazon.com's #1 Pick for Best Mystery & Thriller 2017
+          'One of the most stunning debuts I've ever read...Read it!' David Baldacci
+          'Packed with sneaky moves and teasing possibilities that keep the reader guessing...
+          The Dry is a breathless page-turner'
+           Janet Maslin, New York Times `,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41vdFebA9KL._SX310_BO1,204,203,200_.jpg',
           price: 12.99
         },
         {
