@@ -68,6 +68,72 @@ exports.seed = function (knex, Promise) {
           Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.`,
           photo: 'https://images-na.ssl-images-amazon.com/images/I/41QoykqonNL._SX317_BO1,204,203,200_.jpg',
           price: 20.99
+        },
+        {
+          id: 7, title: `The Organized Mind: Thinking Straight in the Age of Information Overload`,
+          publisher: 'Amazon',
+          author: ' Daniel Levitin',
+          description: `Author and neuroscientist Daniel Levitin tackles the
+           problems of twenty-first century information overload in his New 
+          York Times and Sunday Times bestselling book The Organized Mind.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/414PFUnar-L._SX324_BO1,204,203,200_.jpg',
+          price: 30.99
+        },
+        {
+          id: 8, title: 'Business English - Must-know phrases that can save your job ',
+          publisher: 'Amazon',
+          author: 'Henry Fischer',
+          description: `This is a phrasebook - nothing more, nothing less. Keep it short. Keep it simple.
+          Learn Business English anywhere, anytime with this simple eBook. 
+          You plan a business letter, meeting, presentation or phone call - this eBook is the perfect crib.
+          More than 500 useful phrases. English only. No nonsense, just essence!
+          We wish you good luck and great success with all upcoming business events!`,
+          photo: 'https://images-eu.ssl-images-amazon.com/images/I/51FzmD7fIuL.jpg',
+          price: 27.50
+        },
+        {
+          id: 9,
+          title: 'Strangers: The Unforgettable Crime Thriller from the #1 Bestseller ',
+          publisher: 'Amazon',
+          author: 'Paul Finch',
+          description: `When Lucy Clayburn goes undercover to find a prolific female serial killer, she puts herself
+           in the line of fire in the criminal underworld.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51rmIoSs6hL._SX327_BO1,204,203,200_.jpg',
+          price: 18.99
+        },
+        {
+          id: 4, title: `Thinking, Fast and Slow`,
+          publisher: 'Amazon',
+          author: 'Daniel Kahneman',
+          description: `The phenomenal international bestseller - 2 million copies sold - that will change the way you make decisions
+
+          'A lifetime's worth of wisdom' Steven D. Levitt, co-author of Freakonomics
+          'There have been many good books on human rationality and irrationality, but only one masterpiece.
+           That masterpiece is Thinking, Fast and Slow' Financial Times`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41jZIThj0aL._SX324_BO1,204,203,200_.jpg',
+          price: 10.19
+        },
+        {
+          id: 5, title: 'The Power of Habit: Why We Do What We Do, and How to Change',
+          publisher: 'Amazon',
+          author: 'Charles Duhigg',
+          description: `We can always change. In The Power of Habit, award-winning New York Times business reporter Charles 
+          Duhigg translates cutting-edge behavioural science into practical self-improvement action, distilling advanced neuroscience
+           into fascinating narratives of transformation. `,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41owDNwBMNL._SX324_BO1,204,203,200_.jpg',
+          price: 12.99
+        },
+        {
+          id: 6,
+          title: 'Deep Work: Rules for Focused Success in a Distracted World ',
+          publisher: 'Amazon',
+          author: 'Cal Newport',
+          description: `One of the most valuable skills in our economy is 
+          becoming increasingly rare. If you master this skill, you'll achieve
+           extraordinary results.
+          Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41QoykqonNL._SX317_BO1,204,203,200_.jpg',
+          price: 20.99
         }
       ]);
     });
