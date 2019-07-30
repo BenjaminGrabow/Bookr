@@ -65,6 +65,7 @@ class Bookr extends React.Component {
           />
           <div className="reviews">
           {this.props.book.reviews.map((review, index) => {
+            console.log(review)
             return <div
             className="review"
               key={index}>
