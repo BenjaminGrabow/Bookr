@@ -19,6 +19,8 @@ class Bookr extends React.Component {
     this.props.fetchBooks();
   };
 
+ 
+
   async handleToken(token, title, price) {
     const product = {
       name: title, price: price
@@ -82,6 +84,15 @@ class Bookr extends React.Component {
                 </div>
               </div>
             })}
+          </div>
+          <div className="add-review">
+          <i class="fa fa-plus-square"/>
+          <input
+                    type="text"
+                    value={this.state.review}
+                    onChange={this.handleChange}
+                    placeholder="review"
+                    name="review" />
           </div>
         </div>
       )
