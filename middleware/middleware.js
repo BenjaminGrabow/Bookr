@@ -20,8 +20,9 @@ async function validatePost(req, res, next) {
 };
 
 async function validateDeleteId(req, res, next) {
-  const { id } = req.params
-  const deleteBook = await Book.deleteBookById(id);
+  // const { id } = req.params
+
+  const deleteBook = await Books.deleteBookById(req.params.id);
   try {
     if (deleteBook) {
       req.book = book;

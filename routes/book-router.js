@@ -23,9 +23,7 @@ router.get("/:id", async (req, res) => {
       getBook.map(book => {
         res.status(200).json({ book, reviews: reviews});
       });
-     } else if(getBook) {
-      res.status(200).json(getBook);
-     } else {
+    } else {
       res.status(400).json({ message: 'invalid Id ' });
     }
   } catch (error) {
@@ -63,7 +61,7 @@ router.put("/:id",validatePutId, async (req, res) => {
 
 });
 
-router.delete('/:id',validateDeleteId, async (req, res) => {
+router.delete('/:id', validateDeleteId, (req, res) => {
   // const deleteBook = await Book.deleteBookById(req.params.id);
 
   // try {
