@@ -1,10 +1,10 @@
 const Books = require("../helpers/bookr-model");
 
 async function validatePostId(req, res, next) {
-  const { id } = req.params
-  const book = await Books.getById(id);
+  const newBook = await Books.createNewBook(req.body);
+  const book = await Books.getBookById(newBook[0]);
   try {
-    if (book) {
+    if (newBook) {
       req.book = book;
       next();
     } else {

@@ -43,21 +43,7 @@ router.get("/reviews/:id", async (req, res) => {
 });
 
 router.post("/books",validatePostId, (req, res) => {
-
-  // const arrayOfId = await Text.createNewBook(req.body);
-
-  // const arrayOfBook = await Text.getBookById(arrayOfId[0]);
-
-  // try {
-  //   if (arrayOfId) {
       res.status(200).json(req.book);
-  //   } else {
-  //     res.status(400).json({ message: 'invalid Id ' });
-  //   }
-  // } catch (error) {
-  //   res.status(500).json({ errorMessage: `request could'nt process` });
-  // }
-
 });
 
 router.put("/:id",validatePutId, async (req, res) => {
