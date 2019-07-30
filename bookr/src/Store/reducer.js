@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   loggingIn: false,
   books: [],
+  copyOfBooks: [],
   book: '',
 }
 
@@ -36,7 +37,7 @@ const reducer = (state = initialState, action) => {
 
       case types.SEARCH_BOOK:
 
-      return { ...state, books: action.search_result };
+      return { ...state, copyOfBooks: state.books, books: action.search_result };
 
     default: return state;
   }
