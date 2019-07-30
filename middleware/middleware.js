@@ -19,6 +19,22 @@ async function validatePostForBook(req, res, next) {
   }
 };
 
+async function validatePostForReview(req, res, next) {
+  const request = req.body;
+
+  try {
+    if (request.review) {
+      const newReview = await Books.createNewPost(request);
+      req.review = newReview;
+      next();
+    } else {
+      res.status(400).json({ message: 'You must provide at least a review !' })
+    }
+  } catch (error) {
+    res.status(500).json({ errorMessage: 'request dont could process' })
+  }
+};
+
 async function validateDeleteId(req, res, next) {
   const { id } = req.params
 
@@ -57,6 +73,7 @@ const { title, author, publisher, description, price } = req.body;
 
 module.exports = {
   validatePostForBook,
+  validatePostForReview,
   validateDeleteId,
   validatePutId
 };
