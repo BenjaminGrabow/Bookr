@@ -20,14 +20,14 @@ class Bookr extends React.Component {
   };
 
   async handleToken(token, title, price) {
-    const productData = {
+    const product = {
       name: title, price: price
     }
-
-    console.log(token, productData)
+    
+    console.log(token, product)
     const response = await axios.post(
       "https://bookr-build-week.herokuapp.com/payment",
-      { token, productData }
+      { token, product }
     );
     const { status } = response.data;
     console.log("Response:", response.data);
