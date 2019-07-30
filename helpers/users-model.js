@@ -5,7 +5,6 @@ const db = require("../database/dbConfig.js");
     find,
     findBy,
     findById,
-    updateUserById,
     remove
   };
 
@@ -29,12 +28,6 @@ const db = require("../database/dbConfig.js");
       .where({ id })
       .first();
   }
-
-  const updateUserById = ({ username, password, photo, first_name, last_name }, id) => {
-    return db('users')
-    .where({ id })
-    .update({ username, password, photo, first_name, last_name });
-  };
 
   function remove(id) {
     return db('users').where({ id }).delete();
