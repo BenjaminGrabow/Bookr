@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -130,7 +130,7 @@ class Bookr extends React.Component {
       <div className="bookr">
         <div className="search-bar">
           <i className="fa fa-window-close"
-            onClick={this.props.back} />
+            onClick={this.props.showAllBooksAgain} />
           <input
             placeholder="Search"
             className="search-input"
@@ -167,4 +167,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain })(Bookr);
