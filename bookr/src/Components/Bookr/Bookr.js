@@ -29,6 +29,10 @@ class Bookr extends React.Component {
     });
   };
 
+  addReview = () => {
+  
+  };
+
   async handleToken(token, title, price) {
     const product = {
       name: title, price: price
@@ -54,16 +58,16 @@ class Bookr extends React.Component {
         <div
           className="single-book">
           <div className="pic-next-to-main-data">
-          <img src={this.props.book.book.photo} alt="book" />
-          <div className="main-data">
-          <div className="close">
-            <i className="fa fa-window-close"
-              onClick={this.props.closeBook} />
-          </div>
-          <p>{this.props.book.book.title}</p>
-          <p>Author: {this.props.book.book.author}</p>
-          <p>Publisher: {this.props.book.book.publisher}</p>
-          </div>
+            <img src={this.props.book.book.photo} alt="book" />
+            <div className="main-data">
+              <div className="close">
+                <i className="fa fa-window-close"
+                  onClick={this.props.closeBook} />
+              </div>
+              <p>{this.props.book.book.title}</p>
+              <p>Author: {this.props.book.book.author}</p>
+              <p>Publisher: {this.props.book.book.publisher}</p>
+            </div>
           </div>
           <p>{this.props.book.book.description}</p>
           <p>{this.props.book.book.price} $</p>
@@ -94,13 +98,15 @@ class Bookr extends React.Component {
             })}
           </div>
           <div className="add-review">
-          <i class="fa fa-plus-square"/>
-          <input
-                    type="text"
-                    value={this.state.review}
-                    onChange={this.handleChange}
-                    placeholder="review"
-                    name="review" />
+            <i 
+            onClick={this.addReview}
+            className="fa fa-plus-square" />
+            <input
+              type="text"
+              value={this.state.review}
+              onChange={this.handleChange}
+              placeholder="review"
+              name="review" />
           </div>
         </div>
       )
