@@ -59,13 +59,15 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 6,
-          title: 'The Kite Runner',
+          title: 'Deep Work: Rules for Focused Success in a Distracted World ',
           publisher: 'Amazon',
-          author: 'Khaled Hosseini',
-          description: `The #1 New York Times bestselling debut novel that introduced Khaled Hosseini 
-              to millions of readers the world over.`,
-          photo: 'https://jamesclear.com/wp-content/uploads/2017/04/The-Kite-Runner-by-Khaled-Hosseini-444x700.jpg',
-          price: 20
+          author: 'Cal Newport',
+          description: `One of the most valuable skills in our economy is 
+          becoming increasingly rare. If you master this skill, you'll achieve
+           extraordinary results.
+          Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41QoykqonNL._SX317_BO1,204,203,200_.jpg',
+          price: 20.99
         }
       ]);
     });
