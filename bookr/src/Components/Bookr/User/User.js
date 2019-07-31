@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { safeUserPreferences } from '../../../Store/actions';
-// import styled from 'styled-components';
+import './user.scss';
 import { NavLink } from 'react-router-dom';
 
 // const StyledDiv = styled.div`
