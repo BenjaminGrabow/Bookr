@@ -49,9 +49,9 @@ const newUser = action.user_preference;
 
           return { ...state, userData: newUser };
 
-          case types._USER_PREFERENCE:
+          case types.CHECK_USER_PREFERENCE:
             
-                      return { ...state, userData: newUser };
+                    return { ...state, userData: action.user_preference };
     default: return state;
   }
 };
