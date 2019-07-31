@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -21,6 +21,7 @@ class Bookr extends React.Component {
 
   componentDidMount = () => {
     this.props.fetchBooks();
+    this.props.checkUserPreference();
   };
 
   handleChange = (e) => {
@@ -33,7 +34,7 @@ class Bookr extends React.Component {
 
   addReview = (book_id) => {
     this.props.addReview(this.state.review, book_id);
-console.log(this.props.userData.photo, this.props.userData.first_name )
+console.log(this.props.userData)
     this.setState({
       review: ''
     });
@@ -160,9 +161,11 @@ console.log(this.props.userData.photo, this.props.userData.first_name )
             return <div
               key={index}
               className="single-book">
-              <img src={book.photo} alt="book" />
-              <p onClick={() =>
-                this.props.fetchBook(book.id)}>{book.title}</p>
+              <img
+              onClick={() =>
+                 this.props.fetchBook(book.id)}
+               src={book.photo} alt="book" />
+              <p>{book.title}</p>
             </div>
           })) : null}
         </div>
@@ -180,4 +183,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference })(Bookr);

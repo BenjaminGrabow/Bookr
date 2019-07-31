@@ -52,11 +52,10 @@ export const fetchBooks = () => dispatch => {
 
   axiosWithAuth().get('http://localhost:3400/')
     .then(res => {
-
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
     .catch(err => {
-
+    debugger
     });
 };
 
@@ -68,7 +67,7 @@ export const fetchBook = (id) => dispatch => {
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
     .catch(err => {
-
+debugger
     });
 };
 
