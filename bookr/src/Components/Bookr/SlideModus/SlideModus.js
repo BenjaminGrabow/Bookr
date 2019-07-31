@@ -195,6 +195,8 @@ class Bookr extends React.Component {
             onClick={this.searchBook}
           />
         </div>
+        <Slider
+            className="slider">
         <div
           className="books">
           {this.props.books ? (this.props.books.map((book, index) => {
@@ -209,6 +211,7 @@ class Bookr extends React.Component {
             </div>
           })) : null}
         </div>
+        </Slider>
       </div>
     );
   }
