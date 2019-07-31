@@ -17,8 +17,8 @@ npm install
 ### Add Neccessary Environment Variables
 Edit the .env.sample file to add:
 
--A jsonwebtoken secret to encrypt jsonwebtoken
--Port number where the server can listen on
+- A jsonwebtoken secret to encrypt jsonwebtoken
+- Port number where the server can listen on
 
 After that rename the file to .env
 
