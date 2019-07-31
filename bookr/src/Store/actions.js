@@ -161,9 +161,10 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
   
   axios.put(`http://localhost:3400/user/${userId}`, newUserPreference)
     .then(res => {
- 
+ debugger
       return axios.get(`http://localhost:3400/user/${userId}`)
         .then(res => {
+          debugger
           dispatch({ type: UPDATE_USER_PREFERENCE, user_preference: res.data });
         });
     })

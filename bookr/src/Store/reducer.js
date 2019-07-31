@@ -52,6 +52,10 @@ const reducer = (state = initialState, action) => {
     case types.CHECK_USER_PREFERENCE:
 
       return { ...state, userData: action.user_preference };
+
+    case types.UPDATE_USER_PREFERENCE:
+
+      return { ...state, userData: action.user_preference };
     default: return state;
   }
 };

@@ -69,6 +69,16 @@ class User extends React.Component {
 
 	updateUserPreference = () => {
    this.props.updateUserPreference(this.state.firstname,this.state.lastname,this.state.photo);
+
+   this.setState({
+    firstname: '',
+    lastname: '',
+    // age: '',
+    // adress: '',
+    photo: '',
+    // mobilephonenumber: '',
+    inputForStart: false,
+  });
 	};
 
 	render() {
