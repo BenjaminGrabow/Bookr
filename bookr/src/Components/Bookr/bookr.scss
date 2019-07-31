@@ -102,6 +102,10 @@
 
 .single-book {
 
+  p {
+    font-size: 1.5rem;
+  }
+
   .close {
     width          : 100%;
     display        : flex;
@@ -143,13 +147,10 @@
     .review {
       display        : flex;
       justify-content: space-around;
-
-      p {
-        font-size: 1.5rem;
-      }
+      align-items: center;
 
       .pic-name {
-        width     : 40%;
+        width     : 37.5%;
         text-align: center;
 
         img {
@@ -158,13 +159,21 @@
           border-radius: 50%;
         }
       }
+ 
+      .star {
+        width: 25%;
 
-      .checked {
-        color: orange;
+        i {
+          font-size: 1.5rem;
+        }
+
+        .checked {
+          color: orange;
+        }
       }
 
       .review-text {
-        width: 60%;
+        width: 37.5%;
       }
     }
   }
