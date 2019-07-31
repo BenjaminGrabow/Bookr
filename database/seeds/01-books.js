@@ -251,66 +251,53 @@ exports.seed = function (knex, Promise) {
           price: 40.99
         },
         {
-          id: 8, title: 'Business English - Must-know phrases that can save your job ',
+          id: 20, title: 'Fintech: The New DNA of Financial Services',
           publisher: 'Amazon',
-          author: 'Henry Fischer',
-          description: `This is a phrasebook - nothing more, nothing less. Keep it short. Keep it simple.
-          Learn Business English anywhere, anytime with this simple eBook. 
-          You plan a business letter, meeting, presentation or phone call - this eBook is the perfect crib.
-          More than 500 useful phrases. English only. No nonsense, just essence!
-          We wish you good luck and great success with all upcoming business events!`,
-          photo: 'https://images-eu.ssl-images-amazon.com/images/I/51FzmD7fIuL.jpg',
-          price: 27.50
+          author: 'Pranay Gupta',
+          description: `This extraordinary book, written by leading players in a burgeoning
+           technology revolution, is about the merger of finance and technology (fintech),
+            and covers its various aspects and how they impact each discipline within the
+             financial services industry. It is an honest and direct analysis of where each
+              segment of financial services will stand. Fintech: The New DNA of Financial Services
+               provides an in-depth introduction to understanding the various areas of fintech and
+                terminology such as AI, big data, robo-advisory, blockchain, cryptocurrency, 
+                InsurTech, cloud computing, crowdfunding and many more. Contributions from fintech
+                 innovators discuss banking, insurance and investment management
+           applications, as well as the legal and human resource implications of fintech in the
+            future.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41et1LLljPL._SX346_BO1,204,203,200_.jpg',
+          price: 27.99
         },
         {
-          id: 9,
-          title: 'Strangers: The Unforgettable Crime Thriller from the #1 Bestseller ',
+          id: 21,
+          title: 'Never Split the Difference: Negotiating as if Your Life Depended on It',
           publisher: 'Amazon',
-          author: 'Paul Finch',
-          description: `When Lucy Clayburn goes undercover to find a prolific female serial killer, she puts herself
-           in the line of fire in the criminal underworld.`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/51rmIoSs6hL._SX327_BO1,204,203,200_.jpg',
-          price: 18.99
-        },
-        {
-          id: 10, title: `Ashes to Ashes: An Unputdownable Thriller from the Sunday Times Bestseller`,
-          publisher: 'Amazon',
-          author: 'Paul Finch',
-          description: `The Sunday Times bestseller returns with his next unforgettable crime thriller. 
-          Fans of MJ Arlidge and Stuart MacBride won't be able to put this down. John Sagan is a forgettable man.
-           You could pass him in the street and not realise he's there. But then, that's why he's so dangerous. 
-           A torturer for hire, Sagan has terrorised - and mutilated - countless victims.
-           And now he's on the move. DS Mark 'Heck' Heckenburg must chase the trail, even when it leads him to his hometown of Bradburn
-            - a place he never thought he'd set foot in again. But Sagan isn't the only problem. Bradburn is being terrorised by a lone
-             killer who burns his victims to death. And with the victims chosen at random, no-one knows who will be next. Least of all Heck...`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/51piaAbVXYL._SX321_BO1,204,203,200_.jpg',
-          price: 10.19
-        },
-        {
-          id: 11, title: 'The Dry: The Sunday Times Crime Book of the Year 2017',
-          publisher: 'Amazon',
-          author: 'Jane Harper',
-          description: `Jane Harper's new novel, The Lost Man, is out now.
-          WINNER OF THE BRITISH BOOK AWARDS CRIME THRILLER BOOK OF THE YEAR 2018
-          WINNER OF THE CWA GOLD DAGGER AWARD 2017
-          Amazon.com's #1 Pick for Best Mystery & Thriller 2017
-          'One of the most stunning debuts I've ever read...Read it!' David Baldacci
-          'Packed with sneaky moves and teasing possibilities that keep the reader guessing...
-          The Dry is a breathless page-turner'
-           Janet Maslin, New York Times `,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41vdFebA9KL._SX310_BO1,204,203,200_.jpg',
+          author: 'Chris Voss',
+          description: `After a stint policing the rough streets of Kansas City, Missouri, Chris 
+          Voss joined the FBI,
+           where his career as a kidnapping negotiator brought him face-to-face with bank
+            robbers, gang leaders and terrorists. Never Split the Difference takes you inside
+             his world of high-stakes negotiations, revealing the nine key principles that helped
+              Voss and his colleagues succeed when it mattered the most – when people’s lives were
+               at stake. 
+          Rooted in the real-life experiences of an intelligence professional at the top
+           of his game, Never Split the Difference will give you the competitive edge in any 
+           discussion.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/5119RQ4ZRlL._SX324_BO1,204,203,200_.jpg',
           price: 12.99
         },
         {
-          id: 12,
-          title: 'Bill Gates: A Biography',
+          id: 22, title: `Crashed: How a Decade of Financial Crises Changed the World`,
           publisher: 'Amazon',
-          author: 'Michael B. Becraft',
-          description: `The cofounder of Microsoft, Bill Gates helped transform 
-          society by ushering in the era of ubiquitous personal computing. This book examines the life and
-           achievements of this standout American inventor and philanthropist`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41E2B5boBiL._SX313_BO1,204,203,200_.jpg',
-          price: 29.99
+          author: 'Adam Tooze',
+          description: `In September 2008 the Great Financial Crisis, triggered by the collapse
+           of Lehman brothers, shook the world. A decade later its spectre still haunts us. As
+            the appalling scope and scale of the crash was revealed, the financial institutions 
+            that had symbolised the West's triumph since the end of the Cold War, seemed -
+           through greed, malice and incompetence - to be about to bring the entire system to its
+            knees.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51jN0UakNYL._SX324_BO1,204,203,200_.jpg',
+          price: 14.19
         }
       ]);
     });
