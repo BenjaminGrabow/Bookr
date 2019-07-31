@@ -104,10 +104,10 @@ export const search  = (searchResultAsArray) => {
   return { type: SEARCH_BOOK, search_result: searchResultAsArray }
   };
 
-  export const showAllBooksAgain  = () => {
+export const showAllBooksAgain  = () => {
     return { type: SHOW_ALL_BOOKS_AGAIN }
     };
 
-    export const safeUserPreferences = (user) => {
+export const safeUserPreferences = (user) => {
       return { type: SAFE_USER_PREFERENCES, user_preferences: user};
-    };
+};

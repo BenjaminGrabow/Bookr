@@ -4,7 +4,7 @@ exports.seed = function(knex, Promise) {
       return knex('reviews').insert([
         {id: 1, reviewer: 'Ryan',
       review: 'Awesome book !',
-      photo: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd2eJVSAd0BO0iOipuHg1wY0gtcf828hnD1d4_CFEucv17YLs',
       book_id: 1
     },
         {id: 2, reviewer: 'Peter',
