@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference } from '../../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { NavLink } from 'react-router-dom';
-import './bookr.scss';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
@@ -195,10 +194,10 @@ class Bookr extends React.Component {
             onClick={this.searchBook}
           />
         </div>
-        <Slider
-            className="slider">
         <div
           className="books">
+        <Slider
+            className="slider">
           {this.props.books ? (this.props.books.map((book, index) => {
             return <div
               key={index}
@@ -210,8 +209,8 @@ class Bookr extends React.Component {
               <p>{book.title}</p>
             </div>
           })) : null}
-        </div>
         </Slider>
+        </div>
       </div>
     );
   }
