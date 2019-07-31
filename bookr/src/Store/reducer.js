@@ -44,7 +44,7 @@ const reducer = (state = initialState, action) => {
 
       return { ...state, books: state.copyOfBooks };
 
-    case types.SAFE_USER_PREFERENCES:
+    case types.SAFE_USER_PREFERENCE:
       const newUser = action.user_preference;
 
       return { ...state, userData: newUser };

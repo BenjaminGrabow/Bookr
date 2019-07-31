@@ -11,8 +11,8 @@ export const CLOSE_BOOK = 'CLOSE_BOOK';
 export const SEARCH_BOOK = 'SEARCH_BOOK';
 export const SHOW_ALL_BOOKS_AGAIN = 'SHOW_ALL_BOOKS_AGAIN';
 export const CHECK_USER_PREFERENCE = 'CHECK_USER_PREFERENCE';
-export const SAFE_USER_PREFERENCES = 'SAFE_USER_PREFERENCES';
-
+export const SAFE_USER_PREFERENCE = 'SAFE_USER_PREFERENCE';
+export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 // ${adress}auth/register
@@ -139,7 +139,32 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
  
       return axios.get(`http://localhost:3400/user/${userId}`)
         .then(res => {
-          dispatch({ type: SAFE_USER_PREFERENCES, user_preference: res.data });
+          dispatch({ type: SAFE_USER_PREFERENCE, user_preference: res.data });
+        });
+    })
+    .catch(err => {
+      debugger
+    });
+};
+
+export const updateUserPreference = (firstname, lastname, photo) => dispatch => {
+
+  const userId = localStorage.getItem('user_id');
+  debugger
+  const newUserPreference = {
+    first_name: firstname,
+    last_name: lastname,
+    user_id: userId,
+    photo: photo
+  };
+
+  
+  axios.put(`http://localhost:3400/user/${userId}`, newUserPreference)
+    .then(res => {
+ 
+      return axios.get(`http://localhost:3400/user/${userId}`)
+        .then(res => {
+          dispatch({ type: UPDATE_USER_PREFERENCE, user_preference: res.data });
         });
     })
     .catch(err => {
