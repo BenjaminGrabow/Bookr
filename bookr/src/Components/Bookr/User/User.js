@@ -4,153 +4,6 @@ import { safeUserPreferences } from '../../../Store/actions';
 import './user.scss';
 import { NavLink } from 'react-router-dom';
 
-// const StyledDiv = styled.div`
-// background: #bdc3c7;
-// background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-// background: linear-gradient(to right, #eaeaea, #deecff);
-
-
-
-
-// .navLink {
-// text-decoration: none;
-// font-size: 2rem;
-        
-				
-// p {
-// font-size: 2.5rem;font-weight: bold;transition: .8s;color: #bdc3c7;margin: 0;
-				
-// &:hover {
-// color: blue;filter: brightness(150%);text-decoration: underline;}
-// }
-// }
-
-// p {
-// margin: 0;
-// }
-
-// .off {
-// display:none;
-// }
-
-// .startScreen {
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// background: #bdc3c7;
-// background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-// background: linear-gradient(to right, #eaeaea, #deecff); 
-// }
-
-// .fa-play {
-// font-size: 20rem;
-// transition: .8s;
-
-// &:hover {
-// color: red;
-// }
-// }
-
-// .startH1 {
-// font-size: 2.5rem;
-// }
-
-// .form {
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// padding-bottom: .5rem;
-
-
-
-// input {
-// width: 70%;
-// border-radius: .5rem;
-// font-size: 2rem;
-// margin-bottom: .9rem;
-// }
-
-// button {
-// width: 25%;
-// height: 4rem;
-// border-radius: .5rem;
-// background: #bdc3c7;
-// background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-// background: linear-gradient(to right, #eaeaea, #deecff);
-// border: .3rem solid black;
-// transition: .8s;
-
-// &:hover {
-// border: .3rem solid red;
-// }
-
-// &:hover, i:hover {
-// color: red;
-// }
-// }
-
-// i {
-// font-size: 3rem;
-// }
-// }
-
-// img {
-// border-radius: .7rem;
-// width: 50%;
-// height: 18rem;
-// }
-
-// .user {
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-
-// button {
-// width: 25%;
-// height: 5rem;
-// border-radius: .5rem;
-// background: #bdc3c7;
-// background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-// background: linear-gradient(to right, #eaeaea, #deecff);
-// border: .3rem solid black;
-// transition: .8s;
-// margin: 1rem;
-
-// &:hover {
-// border: .3rem solid red;
-// }
-
-// &:hover, i:hover {
-// color: red;
-// }
-// }
-
-// i {
-// font-size: 3rem;
-// }
-// }
-
-// .userStyling {
-// display: flex;
-// justify-content: space-around;
-// width: 100%;
-
-// .text {
-// display: flex;
-// flex-direction: column;
-// align-items: baseline;
-// }
-// p {
-// font-size: 2rem;
-// margin: .6rem;
-// }
-
-// span {
-// font-weight: bold;
-// }
-// }
-// `;
-
 class User extends React.Component {
 	constructor(props) {
 		super(props);
@@ -217,6 +70,7 @@ class User extends React.Component {
 		if (this.props.userData) {
 			return this.props.userData.map((user, index) => {
 				return <div
+        className="user"
 					key={index}>
 					<NavLink
 						to="/bookr"
@@ -302,7 +156,8 @@ class User extends React.Component {
 			})
 		}
 		return (
-			<div>
+			<div
+      className="user">
 				<NavLink
 					to="/bookr"
 					className="navLink">
