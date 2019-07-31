@@ -36,22 +36,22 @@ const reducer = (state = initialState, action) => {
 
       return { ...state, book: '' };
 
-      case types.SEARCH_BOOK:
+    case types.SEARCH_BOOK:
 
       return { ...state, copyOfBooks: state.books, books: action.search_result };
 
-      case types.SHOW_ALL_BOOKS_AGAIN:
+    case types.SHOW_ALL_BOOKS_AGAIN:
 
-        return { ...state, books: state.copyOfBooks };
+      return { ...state, books: state.copyOfBooks };
 
-        case types.SAFE_USER_PREFERENCES:
-const newUser = action.user_preference;
+    case types.SAFE_USER_PREFERENCES:
+      const newUser = action.user_preference;
 
-          return { ...state, userData: newUser };
+      return { ...state, userData: newUser };
 
-          case types.CHECK_USER_PREFERENCE:
-            
-                    return { ...state, userData: action.user_preference };
+    case types.CHECK_USER_PREFERENCE:
+
+      return { ...state, userData: action.user_preference };
     default: return state;
   }
 };

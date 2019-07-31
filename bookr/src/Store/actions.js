@@ -132,10 +132,11 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
     user_id: userId,
     photo: photo
   };
-  debugger
+
+  
   axios.post(`http://localhost:3400/user`, newUserPreference)
     .then(res => {
-      debugger
+ 
       return axios.get(`http://localhost:3400/user/${userId}`)
         .then(res => {
           dispatch({ type: SAFE_USER_PREFERENCES, user_preference: res.data });

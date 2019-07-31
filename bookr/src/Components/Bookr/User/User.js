@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { checkUserPreference, safeUserPreferences } from '../../../Store/actions';
+import { checkUserPreference, safeUserPreferences, updateUserPreference } from '../../../Store/actions';
 import './user.scss';
 import { NavLink } from 'react-router-dom';
 
@@ -234,4 +234,4 @@ const mapStateToProps = state => {
 	}
 };
 
-export default connect(mapStateToProps, { checkUserPreference, safeUserPreferences })(User);
+export default connect(mapStateToProps, { checkUserPreference, safeUserPreferences, updateUserPreference })(User);
