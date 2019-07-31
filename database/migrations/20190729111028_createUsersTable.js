@@ -32,12 +32,17 @@ exports.up = function (knex) {
       books.text('description', 1000);
       books.integer('price');
     })
-    .createTable('reviews', reviews => {
-      reviews.increments();
-      reviews.text('reviewer', 50).notNullable();
-      reviews.text('review', 500).notNullable();
-      reviews.text('photo', 50);
-      reviews
+    .createTable('reviews', review => {
+      review.increments();
+      review.text('reviewer', 50).notNullable();
+      review.text('review', 500).notNullable();
+      review.text('photo', 50);
+      review.text('star1', 20);
+      review.text('star2', 20);
+      review.text('star3', 20);
+      review.text('star4', 20);
+      review.text('star5', 20);
+      review
         .integer("book_id")
         .unsigned()
         .notNullable()
