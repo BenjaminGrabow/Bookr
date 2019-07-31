@@ -150,7 +150,7 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
 export const updateUserPreference = (firstname, lastname, photo) => dispatch => {
 
   const userId = localStorage.getItem('user_id');
-  debugger
+
   const newUserPreference = {
     first_name: firstname,
     last_name: lastname,
@@ -158,13 +158,12 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
     photo: photo
   };
 
-  
   axios.put(`http://localhost:3400/user/${userId}`, newUserPreference)
     .then(res => {
- debugger
+
       return axios.get(`http://localhost:3400/user/${userId}`)
         .then(res => {
-          debugger
+
           dispatch({ type: UPDATE_USER_PREFERENCE, user_preference: res.data });
         });
     })

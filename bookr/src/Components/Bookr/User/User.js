@@ -101,10 +101,10 @@ class User extends React.Component {
 							<div
 								className="text">
 								<p>
-									<span>First name:</span> {user.firstname}
+									<span>First name:</span> {user.first_name}
 								</p>
 								<p>
-									<span>Last Name:</span> {user.lastname}
+									<span>Last Name:</span> {user.last_name}
 								</p>
 								{/* <p>
 									<span>Age:</span> {user.age}</p> */}
