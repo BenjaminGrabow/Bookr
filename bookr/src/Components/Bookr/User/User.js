@@ -157,10 +157,10 @@ class User extends React.Component {
 		this.state = {
 			firstname: '',
 			lastname: '',
-			age: '',
-			adress: '',
-			picture: '',
-			mobilephonenumber: '',
+			// age: '',
+			// adress: '',
+			photo: '',
+			// mobilephonenumber: '',
 			inputForStart: false,
 		}
 	}
@@ -180,37 +180,38 @@ class User extends React.Component {
 	safePreferences = () => {
 		if (this.state.firstname &&
 			this.state.lastname &&
-			this.state.age &&
-			this.state.adress &&
-			this.state.picture &&
-			this.state.mobilephonenumber) {
+			// this.state.age &&
+			// this.state.adress &&
+      this.state.photo 
+      //&& this.state.mobilephonenumber
+      ) {
 
-			const user = [{
+			const user = {
 				firstname: this.state.firstname,
 				lastname: this.state.lastname,
-				age: this.state.age,
-				adress: this.state.adress,
-				picture: this.state.picture,
-				mobilephonenumber: this.state.mobilephonenumber,
-			}];
+				// age: this.state.age,
+				// adress: this.state.adress,
+				photo: this.state.photo,
+				// mobilephonenumber: this.state.mobilephonenumber,
+			};
 
-			this.sendUserData(user);
+			// this.sendUserData(user);
+      this.props.safeUserPreferences(this.state.firstname,this.state.lastname,this.state.photo);
 
 			this.setState({
 				firstname: '',
 				lastname: '',
-				age: '',
-				adress: '',
-				picture: '',
-				mobilephonenumber: '',
+				// age: '',
+				// adress: '',
+				photo: '',
+				// mobilephonenumber: '',
 				inputForStart: false,
 			});
 		}
 	};
 
-	sendUserData = (user) => {
-		this.props.safeUserPreferences(user);
-	};
+	// sendUserData = (user) => {
+	// };
 
 	render() {
 		if (this.props.userData) {
@@ -226,7 +227,7 @@ class User extends React.Component {
 						className={!this.state.inputForStart ? 'user' : 'off'}>
 						<div className="userStyling">
 							<img
-								src={user.picture}
+								src={user.photo}
 								alt="user" />
 							<div
 								className="text">
@@ -236,14 +237,14 @@ class User extends React.Component {
 								<p>
 									<span>Last Name:</span> {user.lastname}
 								</p>
-								<p>
-									<span>Age:</span> {user.age}</p>
-								<p>
+								{/* <p>
+									<span>Age:</span> {user.age}</p> */}
+								{/* <p>
 									<span>Adress:</span> {user.adress}
-								</p>
-								<p>
+								</p> */}
+								{/* <p>
 									<span>Mobilephone:</span> {user.mobilephonenumber}
-								</p>
+								</p> */}
 							</div>
 						</div>
 						<button
@@ -266,7 +267,7 @@ class User extends React.Component {
 							name="lastname"
 							placeholder="Last name"
 							onChange={this.handleChange} />
-						<input
+						{/* <input
 							value={this.state.age}
 							type="number"
 							min="18"
@@ -279,19 +280,19 @@ class User extends React.Component {
 							type="text"
 							name="adress"
 							placeholder="Adress"
-							onChange={this.handleChange} />
+							onChange={this.handleChange} /> */}
 						<input
-							value={this.state.picture}
+							value={this.state.photo}
 							type="text"
-							name="picture"
+							name="photo"
 							placeholder="Picture URL"
 							onChange={this.handleChange} />
-						<input
+						{/* <input
 							value={this.state.mobilephonenumber}
 							type="text"
 							name="mobilephonenumber"
 							placeholder="Mobilephone"
-							onChange={this.handleChange} />
+							onChange={this.handleChange} /> */}
 						<button
 							onClick={this.safePreferences}>
 							<i className="fa fa-upload"></i>
@@ -331,7 +332,7 @@ class User extends React.Component {
 						name="lastname"
 						placeholder="Last name"
 						onChange={this.handleChange} />
-					<input
+					{/* <input
 						value={this.state.age}
 						type="number"
 						min="18"
@@ -344,19 +345,19 @@ class User extends React.Component {
 						type="text"
 						name="adress"
 						placeholder="Adress"
-						onChange={this.handleChange} />
+						onChange={this.handleChange} /> */}
 					<input
-						value={this.state.picture}
+						value={this.state.photo}
 						type="text"
-						name="picture"
+						name="photo"
 						placeholder="Picture URL"
 						onChange={this.handleChange} />
-					<input
+					{/* <input
 						value={this.state.mobilephonenumber}
 						type="text"
 						name="mobilephonenumber"
 						placeholder="Mobilephone"
-						onChange={this.handleChange} />
+						onChange={this.handleChange} /> */}
 					<button
 						onClick={this.safePreferences}>
 						<i className="fa fa-upload"></i>
