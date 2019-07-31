@@ -128,7 +128,7 @@ debugger
 debugger
       return axios.get(`http://localhost:3400/user/${userId}`)
       .then(res => {
-              return { type: SAFE_USER_PREFERENCES, user_preference: res.data};
+              dispatch({ type: SAFE_USER_PREFERENCES, user_preference: res.data});
       });
     })
   .catch(err => {
