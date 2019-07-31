@@ -204,36 +204,51 @@ exports.seed = function (knex, Promise) {
           price: 10.19
         },
         {
-          id: 5, title: 'The Power of Habit: Why We Do What We Do, and How to Change',
+          id: 17, title: '100 Side Hustles: Unexpected Ideas for Making Extra Money Without Quitting Your Day Job ',
           publisher: 'Amazon',
-          author: 'Charles Duhigg',
-          description: `We can always change. In The Power of Habit, award-winning New York Times business reporter Charles 
-          Duhigg translates cutting-edge behavioural science into practical self-improvement action, distilling advanced neuroscience
-           into fascinating narratives of transformation. `,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41owDNwBMNL._SX324_BO1,204,203,200_.jpg',
-          price: 12.99
+          author: 'Chris Guillebeau',
+          description: `Best-selling author Chris Guillebeau presents a full-color ideabook featuring 100 stories of 
+          regular people launching successful side businesses that almost anyone can do.           `,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41RbF89Kz9L._SX394_BO1,204,203,200_.jpg',
+          price: 16.99
         },
         {
-          id: 6,
-          title: 'Deep Work: Rules for Focused Success in a Distracted World ',
+          id: 18,
+          title: 'Corporate Finance, Global Edition',
           publisher: 'Amazon',
-          author: 'Cal Newport',
-          description: `One of the most valuable skills in our economy is 
-          becoming increasingly rare. If you master this skill, you'll achieve
-           extraordinary results.
-          Deep Work is an indispensable guide to anyone seeking focused success in a distracted world.`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41QoykqonNL._SX317_BO1,204,203,200_.jpg',
-          price: 20.99
+          author: 'Jonathan Berk',
+          description: `For MBA/graduate students taking a course in corporate finance.
+           An Emphasis on Core Financial Principles to Elevate Individuals' Financial Decision
+            Making Using the unifying valuation framework based on the Law of One Price,
+             top researchers Jonathan Berk and Peter DeMarzo have set the new canon for corporate 
+             finance textbooks. Corporate Finance, Fourth Edition blends coverage of time-tested
+              principles and the latest advancements with the practical perspective of the financial
+               manager, so students have the knowledge and tools they need to make sound financial
+                decisions in their careers. For a streamlined book specifically tailored to the
+                 topics covered in the first one-semester course,
+           Corporate Finance: The Core is also available by Jonathan Berk and Peter DeMarzo. `,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51bft8CLN4L._SX258_BO1,204,203,200_.jpg',
+          price: 25.99
         },
         {
-          id: 7, title: `The Organized Mind: Thinking Straight in the Age of Information Overload`,
+          id: 19, title: `The Business Model Navigator: 55 Models That Will Revolutionise Your Business`,
           publisher: 'Amazon',
-          author: ' Daniel Levitin',
-          description: `Author and neuroscientist Daniel Levitin tackles the
-           problems of twenty-first century information overload in his New 
-          York Times and Sunday Times bestselling book The Organized Mind.`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/414PFUnar-L._SX324_BO1,204,203,200_.jpg',
-          price: 30.99
+          author: 'Oliver Gassmann',
+          description: `The brains behind The Business Model Navigator have discovered
+           that just 55 business models are responsible for 90% of the world's most
+            successful businesses. These 55 models – from the Add-On model used by
+             Ryanair to the Subscription model used by Spotify – provide the blueprints 
+             you need to revolutionise your business and drive powerful change.
+          As well as providing a practical framework for adapting and innovating your
+           business model, this book also includes each of the 55 models in a quick-read
+            format that covers:
+          What it is
+          Who invented it and who uses it now
+          When and how to apply it
+          “An excellent toolkit for developing your business model . ”
+          Dr Heinz Derenbach, CEO, Bosch Software Innovations`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41tEyiJZzQL._SX332_BO1,204,203,200_.jpg',
+          price: 40.99
         },
         {
           id: 8, title: 'Business English - Must-know phrases that can save your job ',
