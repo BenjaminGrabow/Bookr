@@ -172,6 +172,11 @@ class Bookr extends React.Component {
       <p>User</p>
     </NavLink>
     <NavLink
+      to="/slider"
+      className="navLink">
+      <p>Slider</p>
+    </NavLink>
+    <NavLink
       to="/log_reg"
       className="navLink">
       <p onClick={this.logout}
