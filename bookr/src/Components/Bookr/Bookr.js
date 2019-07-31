@@ -16,6 +16,7 @@ class Bookr extends React.Component {
     this.state = {
       review: '',
       search_book: '',
+      starRating: ''
     }
   }
 
@@ -34,10 +35,15 @@ class Bookr extends React.Component {
 
   addReview = (book_id) => {
     if(this.props.userData) {
-      this.props.addReview(this.state.review, book_id, this.props.userData[0].photo, this.props.userData[0].first_name);
+      this.props.addReview(this.state.review,
+        this.state.starRating,
+         book_id,
+          this.props.userData[0].photo,
+           this.props.userData[0].first_name);
       
       this.setState({
-        review: ''
+        review: '',
+        starRating: ''
       });
     } else {
       alert('You must provide information about yourself in User settings to be able to write reviews.')
@@ -144,6 +150,14 @@ class Bookr extends React.Component {
               onChange={this.handleChange}
               placeholder="review"
               name="review" />
+              <input
+              type="number"
+              min="1"
+              max="5"
+              value={this.state.starRating}
+              onChange={this.handleChange}
+              placeholder="Star rating"
+              name="starRating" />
           </div>
         </div>
       )
