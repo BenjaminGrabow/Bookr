@@ -2,8 +2,6 @@ const db = require("../database/dbConfig.js");
 
 module.exports = {
   addUserPreference,
-  findUserPreferences,
-  findById,
   findByUserId,
   updateUserPreferenceById,
 };
