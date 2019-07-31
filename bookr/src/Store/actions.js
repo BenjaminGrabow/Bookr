@@ -75,13 +75,13 @@ export const closeBook = () => {
   return { type: CLOSE_BOOK }
 };
 
-export const addReview = (review, book_id) => dispatch => {
+export const addReview = (review, book_id, photo, first_name) => dispatch => {
 
   const objectReview = {
     review: review,
-    reviewer: localStorage.getItem('username'),
+    reviewer: first_name,
     book_id: book_id,
-    photo: 'add functionality later with localstorage when user saves picture'
+    photo: photo
   }
   debugger
   axios.post(`http://localhost:3400/review`, objectReview)
