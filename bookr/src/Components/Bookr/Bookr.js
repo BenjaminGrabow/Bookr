@@ -78,6 +78,10 @@ class Bookr extends React.Component {
     }
   };
 
+  logout = () => {
+   localStorage.clear();
+  };
+
   render() {
     if (this.props.book) {
       return (
