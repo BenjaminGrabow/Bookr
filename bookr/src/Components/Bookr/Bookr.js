@@ -141,16 +141,16 @@ class Bookr extends React.Component {
             })}
           </div>
           <div className="add-review">
-            <i
-              onClick={() =>
-                 this.addReview(this.props.book.book.id)}
-              className="fa fa-plus-square" />
             <input
               type="text"
               value={this.state.review}
               onChange={this.handleChange}
               placeholder="review"
               name="review" />
+            <i
+              onClick={() =>
+                 this.addReview(this.props.book.book.id)}
+              className="fa fa-plus-square" />
               <input
               name="starRating"
               type="number"
