@@ -111,3 +111,20 @@ export const showAllBooksAgain  = () => {
 export const safeUserPreferences = (user) => {
       return { type: SAFE_USER_PREFERENCES, user_preferences: user};
 };
+
+export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
+
+  const newUserPreference = {
+    
+  }
+
+
+  axiosWithAuth().get(`http://localhost:3400/${id}`)
+    .then(res => {
+
+      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+    })
+  .catch(err => {
+
+  });
+};
