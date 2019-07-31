@@ -70,12 +70,17 @@
 
   .single-book {
     width: 30%;
-    height: 20rem;
+    height: 25rem;
     margin: 1rem;
    
     img {
       width: 50%;
       height: 15rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 700;
     }
   }
 }
