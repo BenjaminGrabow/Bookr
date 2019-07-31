@@ -8,7 +8,7 @@ The Application is live here
 
 ### Clone this repository and navigate into it
 
-git clone https://github.com/bw-expat-journal/Back-End.git && cd Back-End
+git clone https://github.com/BenjaminGrabow/Bookr.git && cd Bookr
 
 ### Install dependencies
 
