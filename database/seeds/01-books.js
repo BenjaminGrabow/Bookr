@@ -169,28 +169,38 @@ exports.seed = function (knex, Promise) {
              deeper treatment
            of futures, options, and other derivative security markets than most investment texts.`,
           photo: 'https://images-na.ssl-images-amazon.com/images/I/41Q1eAeMalL._SX392_BO1,204,203,200_.jpg',
-          price: 55
+          price: 39.90
         },
         {
-          id: 3,
-          title: 'The Kite Runner',
+          id: 15,
+          title: 'Ego is the Enemy: The Fight to Master Our Greatest Opponent',
           publisher: 'Amazon',
-          author: 'Khaled Hosseini',
-          description: `The #1 New York Times bestselling debut novel that introduced Khaled Hosseini 
-              to millions of readers the world over.`,
-          photo: 'https://jamesclear.com/wp-content/uploads/2017/04/The-Kite-Runner-by-Khaled-Hosseini-444x700.jpg',
-          price: 20
+          author: 'Ryan Holiday',
+          description: `It's wrecked the careers of promising young geniuses. It's evaporated
+           great fortunes and run companies into the ground. It's made adversity unbearable and 
+           turned struggle into shame. Every great philosopher has warned against it, in our most
+            lasting stories and countless works of art, in all culture and all ages. Its name? Ego,
+             and it is the enemy - of ambition, of success and of resilience. In Ego is the Enemy,
+              Ryan Holiday shows us how and why ego is such a powerful internal opponent to be 
+              guarded against at all stages of our careers and lives, and that we can only create
+               our best work when we identify, acknowledge and disarm its dangers. Drawing on an
+                array of inspiring characters and narratives from literature, philosophy and history,
+                 the book explores the nature and dangers of ego to illustrate how you can be humble
+                  in your aspirations, gracious in your success and resilient in your failures. The 
+                  result is an inspiring and timely reminder that humility and confidence are our 
+                  greatest friends when confronting the challenges of a culture that tends to
+          flames of ego, a book full of themes and life lessons that will resonate, uplift and inspire.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51os4QMx98L._SX365_BO1,204,203,200_.jpg',
+          price: 17.99
         },
         {
-          id: 4, title: `Thinking, Fast and Slow`,
+          id: 16, title: `The Culture Map: Decoding How People Think, Lead, and Get Things Done Across Cultures`,
           publisher: 'Amazon',
-          author: 'Daniel Kahneman',
-          description: `The phenomenal international bestseller - 2 million copies sold - that will change the way you make decisions
-
-          'A lifetime's worth of wisdom' Steven D. Levitt, co-author of Freakonomics
-          'There have been many good books on human rationality and irrationality, but only one masterpiece.
-           That masterpiece is Thinking, Fast and Slow' Financial Times`,
-          photo: 'https://images-na.ssl-images-amazon.com/images/I/41jZIThj0aL._SX324_BO1,204,203,200_.jpg',
+          author: 'Erin Meyer',
+          description: `An international business expert helps you understand and navigate cultural
+           differences in this insightful
+           and practical guide, perfect for both your work and personal life.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51XqPmTMfFL._SX326_BO1,204,203,200_.jpg',
           price: 10.19
         },
         {
