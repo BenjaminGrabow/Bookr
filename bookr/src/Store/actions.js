@@ -13,6 +13,7 @@ export const SHOW_ALL_BOOKS_AGAIN = 'SHOW_ALL_BOOKS_AGAIN';
 export const CHECK_USER_PREFERENCE = 'CHECK_USER_PREFERENCE';
 export const SAFE_USER_PREFERENCE = 'SAFE_USER_PREFERENCE';
 export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
+export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 // ${adress}auth/register
@@ -38,7 +39,7 @@ export const login = creds => dispatch => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user_id', res.data.id);
 
-      dispatch({ type: LOGIN_SUCCESS, payload: res.data })
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
       debugger
@@ -113,11 +114,11 @@ export const addReview = (review, stars, book_id, photo, first_name) => dispatch
 };
 
 export const search = (searchResultAsArray) => {
-  return { type: SEARCH_BOOK, search_result: searchResultAsArray }
+  return { type: SEARCH_BOOK, search_result: searchResultAsArray };
 };
 
 export const showAllBooksAgain = () => {
-  return { type: SHOW_ALL_BOOKS_AGAIN }
+  return { type: SHOW_ALL_BOOKS_AGAIN };
 };
 
 export const checkUserPreference = () => dispatch => {
@@ -184,4 +185,8 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
     .catch(err => {
       debugger
     });
+};
+
+export const deleteUserPreference = () => {
+  return { type: DELETE_USER_PREFERENCE };
 };
