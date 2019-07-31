@@ -10,6 +10,7 @@ export const FETCH_BOOK = 'FETCH_BOOK';
 export const CLOSE_BOOK = 'CLOSE_BOOK';
 export const SEARCH_BOOK = 'SEARCH_BOOK';
 export const SHOW_ALL_BOOKS_AGAIN = 'SHOW_ALL_BOOKS_AGAIN';
+export const CHECK_USER_PREFERENCE = 'CHECK_USER_PREFERENCE';
 export const SAFE_USER_PREFERENCES = 'SAFE_USER_PREFERENCES';
 
 
@@ -54,9 +55,9 @@ export const fetchBooks = () => dispatch => {
 
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
-  .catch(err => {
+    .catch(err => {
 
-  });
+    });
 };
 
 export const fetchBook = (id) => dispatch => {
@@ -66,72 +67,81 @@ export const fetchBook = (id) => dispatch => {
 
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
-  .catch(err => {
+    .catch(err => {
 
-  });
+    });
 };
 
-export const closeBook  = () => {
-return { type: CLOSE_BOOK }
+export const closeBook = () => {
+  return { type: CLOSE_BOOK }
 };
 
-export const addReview = (review , book_id) => dispatch => {
-debugger
+export const addReview = (review, book_id) => dispatch => {
+  debugger
 
-const objectReview = {
-  review: review,
-  reviewer: localStorage.getItem('username'),
-  book_id: book_id,
-  photo: 'add functionality later with localstorage when user saves picture'
-}
-debugger
-  axios.post(`http://localhost:3400/review`, objectReview )
+  const objectReview = {
+    review: review,
+    reviewer: localStorage.getItem('username'),
+    book_id: book_id,
+    photo: 'add functionality later with localstorage when user saves picture'
+  }
+  debugger
+  axios.post(`http://localhost:3400/review`, objectReview)
     .then(res => {
-       return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
-    .then(res => {
-      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+      return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
+        .then(res => {
+          dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+        })
     })
-  })
-  .catch(err => {
-      
+    .catch(err => {
+
     })
-  .catch(err => {
-debugger
-  });
+    .catch(err => {
+      debugger
+    });
 };
 
-export const search  = (searchResultAsArray) => {
+export const search = (searchResultAsArray) => {
   return { type: SEARCH_BOOK, search_result: searchResultAsArray }
-  };
+};
 
-export const showAllBooksAgain  = () => {
-    return { type: SHOW_ALL_BOOKS_AGAIN }
-    };
+export const showAllBooksAgain = () => {
+  return { type: SHOW_ALL_BOOKS_AGAIN }
+};
 
-// export const safeUserPreferences = (user) => {
-//       return { type: SAFE_USER_PREFERENCES, user_preferences: user};
-// };
+export const checkUserPreference = () => dispatch => {
+
+  const userId = localStorage.getItem('user_id');
+
+  return axios.get(`http://localhost:3400/user/${userId}`)
+    .then(res => {
+      dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
+    })
+    .catch(err => {
+      debugger
+    });
+};
 
 export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
 
   const userId = localStorage.getItem('user_id');
-debugger
+  debugger
   const newUserPreference = {
-  first_name: firstname,
-  last_name: lastname,
-  user_id: userId,
-  photo: photo
+    first_name: firstname,
+    last_name: lastname,
+    user_id: userId,
+    photo: photo
   };
-debugger
+  debugger
   axios.post(`http://localhost:3400/user`, newUserPreference)
     .then(res => {
-debugger
+      debugger
       return axios.get(`http://localhost:3400/user/${userId}`)
-      .then(res => {
-              dispatch({ type: SAFE_USER_PREFERENCES, user_preference: res.data});
-      });
+        .then(res => {
+          dispatch({ type: SAFE_USER_PREFERENCES, user_preference: res.data });
+        });
     })
-  .catch(err => {
-debugger
-  });
+    .catch(err => {
+      debugger
+    });
 };
