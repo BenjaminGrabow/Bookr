@@ -58,7 +58,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, books: action.fetchedBooks };
 
     case types.FETCH_BOOK:
- 
+
       return { ...state, book: action.fetchedBook };
 
     case types.CLOSE_BOOK:
@@ -85,6 +85,10 @@ const reducer = (state = initialState, action) => {
     case types.UPDATE_USER_PREFERENCE:
 
       return { ...state, userData: action.user_preference };
+
+    case types.DELETE_USER_PREFERENCE:
+
+      return { ...state, userData: null };
     default: return state;
   }
 };
