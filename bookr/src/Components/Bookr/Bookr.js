@@ -121,6 +121,13 @@ class Bookr extends React.Component {
                   <img src={review.photo} alt="user" />
                   <p>{review.reviewer}</p>
                 </div>
+                <div className="star">
+                    <i className={review.star1}></i>
+                    <i className={review.star2}></i>
+                    <i className={review.star3}></i>
+                    <i className={review.star4}></i>
+                    <i className={review.star5}></i>
+                  </div>
                 <div className="review-text">
                   <p>{review.review}</p>
                 </div>
