@@ -152,7 +152,8 @@ class Bookr extends React.Component {
     <NavLink
       to="/log_reg"
       className="navLink">
-      <p onClick={this.logout}>Logout</p>
+      <p onClick={this.logout}
+      className="logout">Logout</p>
     </NavLink>
     </nav>
         <div className="search-bar">
