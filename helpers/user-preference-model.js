@@ -18,11 +18,6 @@ async function addUserPreference(userPreference) {
   return findById(id);
 }
 
-function findById(id) {
-  return db("user_preference")
-    .where({ id });
-}
-
 
 function findByUserId(id) {
   return db("user_preference")
