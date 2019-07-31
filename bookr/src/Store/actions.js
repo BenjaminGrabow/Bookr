@@ -76,7 +76,6 @@ export const closeBook = () => {
 };
 
 export const addReview = (review, book_id) => dispatch => {
-  debugger
 
   const objectReview = {
     review: review,

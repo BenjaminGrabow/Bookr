@@ -33,11 +33,15 @@ class Bookr extends React.Component {
   };
 
   addReview = (book_id) => {
-    this.props.addReview(this.state.review, book_id);
-console.log(this.props.userData)
-    this.setState({
-      review: ''
-    });
+    if(this.props.userData) {
+      this.props.addReview(this.state.review, book_id, this.props.userData[0].photo, this.props.userData[0].first_name);
+      
+      this.setState({
+        review: ''
+      });
+    } else {
+      
+    }
   };
 
   async handleToken(token, title, price) {
