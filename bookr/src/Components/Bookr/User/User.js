@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { safeUserPreferences } from '../../../store/actions';
+import { safeUserPreferences } from '../../../Store/actions';
 // import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 

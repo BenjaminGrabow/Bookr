@@ -5,6 +5,7 @@ import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NavLink } from 'react-router-dom';
 import './bookr.scss';
 
 toast.configure();
@@ -127,6 +128,11 @@ class Bookr extends React.Component {
     }
     return (
       <div className="bookr">
+      <NavLink
+      to="/user"
+      className="navLink">
+      <p>User</p>
+    </NavLink>
         <div className="search-bar">
           <i className="fa fa-window-close"
             onClick={this.props.showAllBooksAgain} />

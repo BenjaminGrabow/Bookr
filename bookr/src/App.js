@@ -2,7 +2,7 @@ import React from 'react';
 import LogAndReg from './Components/Login/LogAndRegi';
 import PrivateRoute from './Components/Login/PrivateRoute';
 import Bookr from './Components/Bookr/Bookr';
-import User from './Components/Bookr/User';
+import User from './Components/Bookr/User/User';
 import { Route } from 'react-router-dom';
 import './App.css';
 
