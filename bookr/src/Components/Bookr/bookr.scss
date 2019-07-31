@@ -1,5 +1,9 @@
 // MULTI BOOK DISPLAY 
 
+input {
+  text-align: center;
+}
+
 .bookr {
   nav {
     display        : flex;
@@ -189,7 +193,16 @@
   justify-content: space-around;
 
   i {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+
+    &:hover {
+      color: #5DB7EA;
+    }
+  }
+
+  input {
+    width: 35%;
+    font-size: 2rem;
   }
 }
 
