@@ -14,7 +14,7 @@ router.get('/user', async (req, res) => {
 });
 
 router.get("/user/:id", async (req, res) => {
-  const getUserPreference = await UserPreference.findById(req.params.id)
+  const getUserPreference = await UserPreference.findByUserId(req.params.id)
   try {
     if(getUserPreference) {
         res.status(200).json(getUserPreference);
