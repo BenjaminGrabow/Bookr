@@ -10,34 +10,34 @@ const initialState = {
   userData: null,
 }
 
-const calculateRating = (array) => {
-  const goodRating = "fa fa-star checked"
+// const calculateRating = (array) => {
+//   const goodRating = "fa fa-star checked"
 
-  let counterForGoodReview = [];
+//   let counterForGoodReview = [];
 
-  const howManyStars = array.length * 5; // because there are 5 stars
+//   const howManyStars = array.length * 5; // because there are 5 stars
 
-  array.map(rating => {
-    counterForGoodReview.push(rating.star1 === goodRating);
+//   array.map(rating => {
+//     counterForGoodReview.push(rating.star1 === goodRating);
 
-    counterForGoodReview.push(rating.star2 === goodRating);
+//     counterForGoodReview.push(rating.star2 === goodRating);
 
-    counterForGoodReview.push(rating.star3 === goodRating);
+//     counterForGoodReview.push(rating.star3 === goodRating);
 
-    counterForGoodReview.push(rating.star4 === goodRating);
+//     counterForGoodReview.push(rating.star4 === goodRating);
 
-    counterForGoodReview.push(rating.star5 === goodRating);
+//     counterForGoodReview.push(rating.star5 === goodRating);
 
-    return rating;
-  });
+//     return rating;
+//   });
 
-  let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
+// let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
 
-  const calculateAverage = ((howManyGoodReviews / howManyStars) / 2) * 10; // divided by 2 because we have 5 stars and not 10 
-  // and multiplied by 10 because we need a bigger number for the Math.round method to get the right solution
+//   const calculateAverage = ((howManyGoodReviews / howManyStars) / 2) * 10; // divided by 2 because we have 5 stars and not 10 
+//   // and multiplied by 10 because we need a bigger number for the Math.round method to get the right solution
 
-  return Math.round(calculateAverage);
-};
+//   return Math.round(calculateAverage);
+// };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -58,7 +58,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, books: action.fetchedBooks };
 
     case types.FETCH_BOOK:
-
+ 
       return { ...state, book: action.fetchedBook };
 
     case types.CLOSE_BOOK:

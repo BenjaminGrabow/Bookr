@@ -34,8 +34,7 @@ export const login = creds => dispatch => {
 
   return axios.post(`http://localhost:3400/auth/login`, creds)
     .then(res => {
-      debugger
-      localStorage.setItem('username', creds.username);
+
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user_id', res.data.id);
 
@@ -127,7 +126,7 @@ export const checkUserPreference = () => dispatch => {
 
   return axios.get(`http://localhost:3400/user/${userId}`)
     .then(res => {
-      debugger
+
       if (res.data.toString()) {
         dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
       }
