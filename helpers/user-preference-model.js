@@ -8,16 +8,11 @@ module.exports = {
   updateUserPreferenceById,
 };
 
-function findUserPreferences() {
-  return db("user_preference");
-}
-
 async function addUserPreference(userPreference) {
   const [id] = await db("user_preference").insert(userPreference);
 
   return findById(id);
 }
-
 
 function findByUserId(id) {
   return db("user_preference")

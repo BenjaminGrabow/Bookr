@@ -2,17 +2,6 @@ const router = require('express').Router();
 
 const UserPreference = require('../helpers/user-preference-model.js');
 
-router.get('/user', async (req, res) => {
-  
-  try {
-    const userPreferences = await UserPreference.findUserPreferences();
-    
-  res.status(200).json(userPreferences);
-  } catch (error) {
-    res.status(500).json({ error: 'Cannot retrieve the preferences' });
-  }
-});
-
 router.get("/user/:id", async (req, res) => {
   const getUserPreference = await UserPreference.findByUserId(req.params.id)
   try {
