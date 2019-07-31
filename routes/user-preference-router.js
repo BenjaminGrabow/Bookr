@@ -9,7 +9,7 @@ router.get('/user', async (req, res) => {
     
   res.status(200).json(userPreferences);
   } catch (error) {
-    res.status(500).json({ error: 'Cannot retrieve the books' });
+    res.status(500).json({ error: 'Cannot retrieve the preferences' });
   }
 });
 

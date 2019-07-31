@@ -4,6 +4,7 @@ module.exports = {
   addUserPreference,
   findUserPreferences,
   findById,
+  findByUserId,
   updateUserPreferenceById,
 };
 
@@ -22,8 +23,14 @@ function findById(id) {
     .where({ id });
 }
 
+
+function findByUserId(user_id) {
+  return db("user_preference")
+    .where({ user_id });
+}
+
 function updateUserPreferenceById({ username, password, photo, first_name, last_name }, id) {
   return db('users')
-    .where({ id })
+    .where({ user_id })
     .update({ username, password, photo, first_name, last_name });
 };
