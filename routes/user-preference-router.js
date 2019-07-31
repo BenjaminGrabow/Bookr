@@ -43,9 +43,30 @@ router.post("/user", async (req, res) => {
   }
 });
 
-// router.put("/:id",validatePutId, (req, res) => {
-//       res.status(200).json(req.book);
-// });
+router.put("/user/:id", async (req, res) => {
+  // const request = req.body;
+  // const { id } = req.params;
+  // try {
+  //   if (request.first_name &&
+  //     request.last_name &&
+  //     request.photo) {
+  //       const updatedUserPreference = await UserPreference.updateUserPreferenceById({request}, id); 
+  //       res.status(200).json(updatedUserPreference);
+  //   } else {
+  //     res.status(400).json({ message: 'You must provide at least first name, last name and photo !' })
+  //   }
+  // } catch (error) {
+  //   res.status(500).json({ errorMessage: 'request dont could process' })
+  // }
+  const { user_id, first_name, lastname, photo } = req.body;
+
+  try {
+      const result = await UserPreference.updateUserPreferenceById({ user_id, first_name, lastname, photo }, req.params.id);
+  res.status(200).json(result)
+    } catch(error) {
+    console.log(error)
+  }  
+});
 
 
   module.exports = router;

@@ -24,13 +24,13 @@ function findById(id) {
 }
 
 
-function findByUserId(user_id) {
+function findByUserId(id) {
   return db("user_preference")
-    .where({ user_id });
+    .where('user_id', id);
 }
 
-function updateUserPreferenceById({ username, password, photo, first_name, last_name }, id) {
-  return db('users')
-    .where({ user_id })
-    .update({ username, password, photo, first_name, last_name });
+function updateUserPreferenceById({user_id, first_name, lastname, photo}, id) {
+  return db('user_preference')
+    .where('user_id', id )
+    .update({user_id, first_name, lastname, photo});
 };
