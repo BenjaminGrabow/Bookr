@@ -5,7 +5,7 @@ const initialState = {
   error: null,
   loggingIn: false,
   books: [],
-  copyOfBooks: [],
+  copyOfBooks: null,
   book: '',
   userData: null,
 }

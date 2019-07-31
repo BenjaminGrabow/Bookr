@@ -67,6 +67,12 @@ class Bookr extends React.Component {
     });
   };
 
+  closeSearchView = () => {
+    if(this.props.copyOfBooks) {
+      this.props.showAllBooksAgain()
+    }
+  };
+
   render() {
     if (this.props.book) {
       return (
@@ -77,7 +83,7 @@ class Bookr extends React.Component {
             <div className="main-data">
               <div className="close">
                 <i className="fa fa-window-close"
-                  onClick={this.props.closeBook} />
+                  onClick={ this.props.closeBook} />
               </div>
               <p>{this.props.book.book.title}</p>
               <p>Author: {this.props.book.book.author}</p>
@@ -135,7 +141,7 @@ class Bookr extends React.Component {
     </NavLink>
         <div className="search-bar">
           <i className="fa fa-window-close"
-            onClick={this.props.showAllBooksAgain} />
+            onClick={this.closeSearchView} />
           <input
             placeholder="Search"
             className="search-input"
@@ -168,7 +174,8 @@ class Bookr extends React.Component {
 const mapStateToProps = state => {
   return {
     books: state.books,
-    book: state.book
+    book: state.book,
+    copyOfBooks: state.copyOfBooks
   };
 };
 
