@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { safeUserPreferences } from '../../../Store/actions';
+import { checkUserPreference, safeUserPreferences } from '../../../Store/actions';
 import './user.scss';
 import { NavLink } from 'react-router-dom';
 
@@ -16,7 +16,11 @@ class User extends React.Component {
 			// mobilephonenumber: '',
 			inputForStart: false,
 		}
-	}
+  }
+  
+  componentDidMount = () => {
+    this.props.checkUserPreference()
+  };
 
 	startUserPreference = () => {
 		this.setState({
@@ -63,8 +67,9 @@ class User extends React.Component {
 		}
 	};
 
-	// sendUserData = (user) => {
-	// };
+	updateUserPreference = () => {
+    console.log('you made great work fucker !')
+	};
 
 	render() {
 		if (this.props.userData) {
@@ -104,7 +109,7 @@ class User extends React.Component {
 						<button
 							className="form change"
 							onClick={this.startUserPreference}>
-							<i className="fa fa-upload" /> Change
+							<i className="fa fa-upload" /> update
                                                         </button>
 					</div>
 					<div
@@ -148,7 +153,7 @@ class User extends React.Component {
 							placeholder="Mobilephone"
 							onChange={this.handleChange} /> */}
 						<button
-							onClick={this.safePreferences}>
+							onClick={this.updateUserPreference}>
 							<i className="fa fa-upload"></i>
 						</button>
 					</div>
@@ -229,4 +234,4 @@ const mapStateToProps = state => {
 	}
 };
 
-export default connect(mapStateToProps, { safeUserPreferences })(User);
+export default connect(mapStateToProps, { checkUserPreference, safeUserPreferences })(User);
