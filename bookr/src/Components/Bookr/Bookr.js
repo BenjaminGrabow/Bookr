@@ -139,11 +139,18 @@ class Bookr extends React.Component {
     }
     return (
       <div className="bookr">
+      <nav>
       <NavLink
       to="/user"
       className="navLink">
       <p>User</p>
     </NavLink>
+    <NavLink
+      to="/log_reg"
+      className="navLink">
+      <p>Logout</p>
+    </NavLink>
+    </nav>
         <div className="search-bar">
           <i className="fa fa-window-close"
             onClick={this.closeSearchView} />
