@@ -40,7 +40,7 @@ class Bookr extends React.Component {
         review: ''
       });
     } else {
-      
+      alert('You must provide information about yourself in User settings to be able to write reviews.')
     }
   };
 
