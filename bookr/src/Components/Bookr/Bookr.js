@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -22,6 +22,7 @@ class Bookr extends React.Component {
 
   componentDidMount = () => {
     this.props.fetchBooks();
+
     this.props.checkUserPreference();
   };
 
@@ -35,17 +36,26 @@ class Bookr extends React.Component {
 
   addReview = (book_id) => {
     if(this.props.userData) {
-      this.props.addReview(this.state.review,
-        this.state.starRating,
-         book_id,
-          this.props.userData[0].photo,
-           this.props.userData[0].first_name);
-      
-      this.setState({
-        review: '',
-        starRating: ''
-      });
+
+      if(this.state.review && this.state.starRating){
+       
+        this.props.addReview(this.state.review,
+          this.state.starRating,
+           book_id,
+            this.props.userData[0].photo,
+             this.props.userData[0].first_name);
+        
+        this.setState({
+          review: '',
+          starRating: ''
+        });
+
+      } else {
+
+      alert('You must provide a review and give a star rating.')
+      }
     } else {
+      
       alert('You must provide information about yourself in User settings to be able to write reviews.')
     }
   };
@@ -86,6 +96,8 @@ class Bookr extends React.Component {
 
   logout = () => {
    localStorage.clear();
+
+   this.props.deleteUserPreference();
   };
 
   render() {
@@ -227,4 +239,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference })(Bookr);
