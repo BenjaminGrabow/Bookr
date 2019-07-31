@@ -298,6 +298,37 @@ exports.seed = function (knex, Promise) {
             knees.`,
           photo: 'https://images-na.ssl-images-amazon.com/images/I/51jN0UakNYL._SX324_BO1,204,203,200_.jpg',
           price: 14.19
+        },
+        {
+          id: 23,
+          title: 'The International Law on Foreign Investment',
+          publisher: 'Amazon',
+          author: 'M Sornarajah',
+          description: `Following the Trans-Pacific Partnership (TPP) and Transatlantic Trade 
+          and Investment Partnership (TTIP), the demonstrations against investor-state arbitration
+           and the wide discussion during the 2016 US presidential election, the climate surrounding 
+           foreign investment law is one of controversy and change, and with implications for human
+            rights and environmental protection, foreign investment law has gained widespread public
+             attention and visibility. Addressing the pressing need to examine foreign investment 
+             law in the context of public international law, the role of the multinational corporation
+              in foreign investment and issues of liability for environmental and other damage, this
+               new edition analyses contractual and treaty-based methods of investment
+           protection and examines the effectiveness of bilateral and regional investment treaties.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/51CbVwsOeCL._SX346_BO1,204,203,200_.jpg',
+          price: 20.99
+        },
+        {
+          id: 24, title: `Reinventing the Product: How to Transform your Business and Create Value in the Digital Age`,
+          publisher: 'Amazon',
+          author: 'Eric Schaeffer',
+          description: `Digital technology is simultaneously friend and foe: highly 
+          disruptive, yet it cannot be ignored. Companies that fail to make use of it put 
+          themselves in the line of fire for disintermediation or even eradication. But digital 
+          technology is also the biggest opportunity to reposition incumbent product-making
+           businesses by thinking about how they
+           conceive, make, distribute and support the next generation of goods in the marketplace.`,
+          photo: 'https://images-na.ssl-images-amazon.com/images/I/41f6WMVJIWL._SX343_BO1,204,203,200_.jpg',
+          price: 30.99
         }
       ]);
     });
