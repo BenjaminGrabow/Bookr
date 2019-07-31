@@ -114,7 +114,7 @@ class Bookr extends React.Component {
                 this.props.book.book.title,
                 this.props.book.book.price)}
             amount={this.props.book.book.price * 100}
-            name="Tesla Roadster"
+            name={this.props.book.book.title}
             billingAddress
             shippingAddress
           />
@@ -128,11 +128,11 @@ class Bookr extends React.Component {
                   <p>{review.reviewer}</p>
                 </div>
                 <div className="star">
-                    <i className={review.star1}></i>
-                    <i className={review.star2}></i>
-                    <i className={review.star3}></i>
-                    <i className={review.star4}></i>
-                    <i className={review.star5}></i>
+                    <i className={review.star1}/>
+                    <i className={review.star2}/>
+                    <i className={review.star3}/>
+                    <i className={review.star4}/>
+                    <i className={review.star5}/>
                   </div>
                 <div className="review-text">
                   <p>{review.review}</p>
@@ -142,7 +142,8 @@ class Bookr extends React.Component {
           </div>
           <div className="add-review">
             <i
-              onClick={() => this.addReview(this.props.book.book.id)}
+              onClick={() =>
+                 this.addReview(this.props.book.book.id)}
               className="fa fa-plus-square" />
             <input
               type="text"

@@ -103,7 +103,7 @@
 .single-book {
 
   p {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .close {
@@ -112,7 +112,7 @@
     justify-content: flex-end;
 
     i {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
 
       &:hover {
         color: red;
@@ -158,6 +158,11 @@
           height       : 50%;
           border-radius: 50%;
         }
+
+        p {
+          color: black;
+          font-weight: bold;
+        }
       }
  
       .star {
@@ -177,6 +182,13 @@
       }
     }
   }
+}
+
+.add-review {
+  display: flex;
+  justify-content: space-around;
+
+  
 }
 
 // SLIDER
