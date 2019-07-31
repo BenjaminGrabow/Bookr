@@ -115,7 +115,10 @@ export const checkUserPreference = () => dispatch => {
 
   return axios.get(`http://localhost:3400/user/${userId}`)
     .then(res => {
-      dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
+      debugger
+      if(res.data.toString()){
+        dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
+      }
     })
     .catch(err => {
       debugger

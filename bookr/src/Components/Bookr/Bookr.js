@@ -33,7 +33,7 @@ class Bookr extends React.Component {
 
   addReview = (book_id) => {
     this.props.addReview(this.state.review, book_id);
-
+console.log(this.props.userData.photo, this.props.userData.first_name )
     this.setState({
       review: ''
     });
@@ -175,7 +175,8 @@ const mapStateToProps = state => {
   return {
     books: state.books,
     book: state.book,
-    copyOfBooks: state.copyOfBooks
+    copyOfBooks: state.copyOfBooks,
+    userData: state.userData
   };
 };
 
