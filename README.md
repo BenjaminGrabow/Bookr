@@ -26,7 +26,16 @@ After that rename the file to .env
 ### Start the application
 npm run start
 
-|     Method | Functionality        | Endpoint      |
-| ---------- | -------------        | ----------    |
-| POST       |Create a user account | /auth/register|
-| POST       |Login a user          | /auth/login   |
+|     Method | Functionality              | Endpoint      |
+| ---------- | -------------              | ----------    |
+| POST       |Create a user account       | /auth/register|
+| POST       |Login a user                | /auth/login   |
+| GET        | Get all books              | /             |
+| GET        | Get book by Id with reviews| /:id          |
+| POST       |Create new book             | /             |
+| PUT        | Update book                | /:id          |
+| DELETE     |Delete booke                | /:id          |
+| POST       |Buy a book / Stripe payment | /payment      |
+| GET        |Get user preference by Id   | /user/:id     |
+| POST       |Create new user preference  | /user         |
+| PUT        |Update user preference      | /user/:id     |
