@@ -68,7 +68,7 @@ class User extends React.Component {
 	};
 
 	updateUserPreference = () => {
-    console.log('you made great work fucker !')
+   this.props.updateUserPreference(this.state.firstname,this.state.lastname,this.state.photo);
 	};
 
 	render() {
