@@ -46,7 +46,7 @@ const reducer = (state = initialState, action) => {
 
         case types.SAFE_USER_PREFERENCES:
 
-          return { ...state, userData: action.user_preferences };
+          return { ...state, userData: action.user_preference };
     default: return state;
   }
 };

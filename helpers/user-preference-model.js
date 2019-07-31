@@ -7,9 +7,7 @@ module.exports = {
 };
 
 async function addUserPreference(userPreference) {
-  const [id] = await db("user_preference").insert(userPreference);
-
-  return findById(id);
+return db("user_preference").insert(userPreference);
 }
 
 function findByUserId(id) {
@@ -17,8 +15,8 @@ function findByUserId(id) {
     .where('user_id', id);
 }
 
-function updateUserPreferenceById({user_id, first_name, lastname, photo}, id) {
+function updateUserPreferenceById({user_id, first_name, last_name, photo}, id) {
   return db('user_preference')
     .where('user_id', id )
-    .update({user_id, first_name, lastname, photo});
+    .update({user_id, first_name, last_name, photo});
 };

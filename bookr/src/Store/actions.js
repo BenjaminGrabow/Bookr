@@ -108,23 +108,30 @@ export const showAllBooksAgain  = () => {
     return { type: SHOW_ALL_BOOKS_AGAIN }
     };
 
-export const safeUserPreferences = (user) => {
-      return { type: SAFE_USER_PREFERENCES, user_preferences: user};
-};
+// export const safeUserPreferences = (user) => {
+//       return { type: SAFE_USER_PREFERENCES, user_preferences: user};
+// };
 
 export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
 
+  const userId = localStorage.getItem('user_id');
+debugger
   const newUserPreference = {
-    
-  }
-
-
-  axiosWithAuth().get(`http://localhost:3400/${id}`)
+  first_name: firstname,
+  last_name: lastname,
+  user_id: userId,
+  photo: photo
+  };
+debugger
+  axios.post(`http://localhost:3400/user`, newUserPreference)
     .then(res => {
-
-      dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
+debugger
+      return axios.get(`http://localhost:3400/user/${userId}`)
+      .then(res => {
+              return { type: SAFE_USER_PREFERENCES, user_preference: res.data};
+      });
     })
   .catch(err => {
-
+debugger
   });
 };
