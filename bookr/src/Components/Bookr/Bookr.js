@@ -151,13 +151,14 @@ class Bookr extends React.Component {
               placeholder="review"
               name="review" />
               <input
+              name="starRating"
               type="number"
               min="1"
               max="5"
               value={this.state.starRating}
               onChange={this.handleChange}
-              placeholder="Star rating"
-              name="starRating" />
+              placeholder="Stars"
+               />
           </div>
         </div>
       )

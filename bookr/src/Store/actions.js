@@ -55,7 +55,7 @@ export const fetchBooks = () => dispatch => {
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
     .catch(err => {
-    debugger
+      debugger
     });
 };
 
@@ -67,7 +67,7 @@ export const fetchBook = (id) => dispatch => {
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
     })
     .catch(err => {
-debugger
+      debugger
     });
 };
 
@@ -75,15 +75,29 @@ export const closeBook = () => {
   return { type: CLOSE_BOOK }
 };
 
-export const addReview = (review, book_id, photo, first_name) => dispatch => {
+export const addReview = (review, stars, book_id, photo, first_name) => dispatch => {
+
+  const orangeStars = 'fa fa-star checked'.repeat(stars);
+
+  const blackStars = 'fa fa-star'.repeat(5 - stars);
+
+  const arrayOrange = orangeStars.match(/.{1,18}/g);
+  const arrayBlack = blackStars.match(/.{1,10}/g);
+
+  const mergeArrays = arrayOrange.concat(arrayBlack);
 
   const objectReview = {
     review: review,
     reviewer: first_name,
     book_id: book_id,
-    photo: photo
+    photo: photo,
+    star1: mergeArrays[0],
+    star2: mergeArrays[1],
+    star3: mergeArrays[2],
+    star4: mergeArrays[3],
+    star5: mergeArrays[4]
   }
-  debugger
+
   axios.post(`http://localhost:3400/review`, objectReview)
     .then(res => {
       return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
@@ -95,7 +109,7 @@ export const addReview = (review, book_id, photo, first_name) => dispatch => {
 
     })
     .catch(err => {
-      debugger
+
     });
 };
 
@@ -114,7 +128,7 @@ export const checkUserPreference = () => dispatch => {
   return axios.get(`http://localhost:3400/user/${userId}`)
     .then(res => {
       debugger
-      if(res.data.toString()){
+      if (res.data.toString()) {
         dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
       }
     })
@@ -134,10 +148,10 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
     photo: photo
   };
 
-  
+
   axios.post(`http://localhost:3400/user`, newUserPreference)
     .then(res => {
- 
+
       return axios.get(`http://localhost:3400/user/${userId}`)
         .then(res => {
           dispatch({ type: SAFE_USER_PREFERENCE, user_preference: res.data });
