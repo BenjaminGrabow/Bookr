@@ -38,7 +38,9 @@ class Bookr extends React.Component {
   addReview = (book_id) => {
     if (this.props.userData) {
 
-      if (this.state.review && this.state.starRating > 0 && this.state.starRating < 6) {
+      if (this.state.review &&
+         this.state.starRating > 0 &&
+          this.state.starRating < 6) {
 
         this.props.addReview(this.state.review,
           this.state.starRating,
@@ -291,10 +293,10 @@ class Bookr extends React.Component {
                 <div className="icons">
                 <i
                 onClick={this.deleteBook} 
-                className="fa fa-user-times" />
+                className="fa fa-user-times btn btn--white" />
                 <i 
                 onClick={this.updateBook}
-                className="fa fa-wrench" />
+                className="fa fa-wrench btn btn--white" />
               </div>
               </div>
             </div>
