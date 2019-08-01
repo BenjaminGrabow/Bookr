@@ -35,16 +35,16 @@ class Bookr extends React.Component {
   };
 
   addReview = (book_id) => {
-    if(this.props.userData) {
+    if (this.props.userData) {
 
-      if(this.state.review && this.state.starRating > 0 && this.state.starRating < 6){
-       
+      if (this.state.review && this.state.starRating > 0 && this.state.starRating < 6) {
+
         this.props.addReview(this.state.review,
           this.state.starRating,
-           book_id,
-            this.props.userData[0].photo,
-             this.props.userData[0].first_name);
-        
+          book_id,
+          this.props.userData[0].photo,
+          this.props.userData[0].first_name);
+
         this.setState({
           review: '',
           starRating: ''
@@ -52,7 +52,7 @@ class Bookr extends React.Component {
 
       } else {
 
-      alert('You must provide a review and give a star rating.')
+        alert('You must provide a review and give a star rating.')
       }
     } else {
       alert('You must provide information about yourself in User settings to be able to write reviews.')
@@ -80,7 +80,7 @@ class Bookr extends React.Component {
 
   searchBook = () => {
     this.props.search(this.props.books.filter(book =>
-       book.title.toLowerCase().startsWith(this.state.search_book)));
+      book.title.toLowerCase().startsWith(this.state.search_book)));
 
     this.setState({
       search_book: '',
@@ -88,23 +88,23 @@ class Bookr extends React.Component {
   };
 
   closeSearchView = () => {
-    if(this.props.copyOfBooks) {
+    if (this.props.copyOfBooks) {
 
       this.props.showAllBooksAgain()
     }
   };
 
   logout = () => {
-   localStorage.clear();
+    localStorage.clear();
 
-   this.props.deleteUserPreference();
+    this.props.deleteUserPreference();
   };
 
   rotate = (e, id) => {
 
     const card = document.querySelector(`.${e.currentTarget.className}`);
 
-    if(card.style.transform === 'rotateY(180deg)'){
+    if (card.style.transform === 'rotateY(180deg)') {
       card.style.transform = 'rotateY(0deg)';
 
     } else {
@@ -118,11 +118,11 @@ class Bookr extends React.Component {
 
     const styleTextSection = {
       transformStyle: "preserve-3d",
-      transition     : "all 1s ease",
-      width          : "30%",
-      height         : "30rem",
-      position       : "relative",
-      margin         : "1rem"
+      transition: "all 1s ease",
+      width: "30%",
+      height: "30rem",
+      position: "relative",
+      margin: "1rem"
     };
 
     if (this.props.book) {
@@ -134,7 +134,7 @@ class Bookr extends React.Component {
             <div className="main-data">
               <div className="close">
                 <i className="fa fa-window-close"
-                  onClick={ this.props.closeBook} />
+                  onClick={this.props.closeBook} />
               </div>
               <p>{this.props.book.book.title}</p>
               <p>Author: {this.props.book.book.author}</p>
@@ -143,14 +143,14 @@ class Bookr extends React.Component {
           </div>
           <p>{this.props.book.book.description}</p>
           <div className="average-rating-and-price">
-          {this.props.averageRating ? (<div className="star">
-                    <i className={this.props.averageRating[0]}></i>
-                    <i className={this.props.averageRating[1]}></i>
-                    <i className={this.props.averageRating[2]}></i>
-                    <i className={this.props.averageRating[3]}></i>
-                    <i className={this.props.averageRating[4]}></i>
-                  </div>) : <p>There are no reviews</p>}
-          <p>{this.props.book.book.price} $</p>
+            {this.props.averageRating ? (<div className="star">
+              <i className={this.props.averageRating[0]}></i>
+              <i className={this.props.averageRating[1]}></i>
+              <i className={this.props.averageRating[2]}></i>
+              <i className={this.props.averageRating[3]}></i>
+              <i className={this.props.averageRating[4]}></i>
+            </div>) : <p>There are no reviews</p>}
+            <p>{this.props.book.book.price} $</p>
           </div>
           <StripeCheckout
             stripeKey="pk_test_Grqfk8uqKNCJYpAQS2t89UB700wHJklrMa"
@@ -173,12 +173,12 @@ class Bookr extends React.Component {
                   <p>{review.reviewer}</p>
                 </div>
                 <div className="star">
-                    <i className={review.star1}/>
-                    <i className={review.star2}/>
-                    <i className={review.star3}/>
-                    <i className={review.star4}/>
-                    <i className={review.star5}/>
-                  </div>
+                  <i className={review.star1} />
+                  <i className={review.star2} />
+                  <i className={review.star3} />
+                  <i className={review.star4} />
+                  <i className={review.star5} />
+                </div>
                 <div className="review-text">
                   <p>{review.review}</p>
                 </div>
@@ -194,9 +194,9 @@ class Bookr extends React.Component {
               name="review" />
             <i
               onClick={() =>
-                 this.addReview(this.props.book.book.id)}
+                this.addReview(this.props.book.book.id)}
               className="fa fa-plus-square" />
-              <input
+            <input
               name="starRating"
               type="number"
               min="1"
@@ -204,31 +204,31 @@ class Bookr extends React.Component {
               value={this.state.starRating}
               onChange={this.handleChange}
               placeholder="Stars"
-               />
+            />
           </div>
         </div>
       )
     }
     return (
       <div className="bookr">
-      <nav>
-      <NavLink
-      to="/user"
-      className="navLink">
-      <p>User</p>
-    </NavLink>
-    <NavLink
-      to="/slider"
-      className="navLink">
-      <p>Slider</p>
-    </NavLink>
-    <NavLink
-      to="/log_reg"
-      className="navLink">
-      <p onClick={this.logout}
-      className="logout">Logout</p>
-    </NavLink>
-    </nav>
+        <nav>
+          <NavLink
+            to="/user"
+            className="navLink">
+            <p>User</p>
+          </NavLink>
+          <NavLink
+            to="/slider"
+            className="navLink">
+            <p>Slider</p>
+          </NavLink>
+          <NavLink
+            to="/log_reg"
+            className="navLink">
+            <p onClick={this.logout}
+              className="logout">Logout</p>
+          </NavLink>
+        </nav>
         <div className="search-bar">
           <i className="fa fa-window-close"
             onClick={this.closeSearchView} />
@@ -248,27 +248,27 @@ class Bookr extends React.Component {
           className="books">
           {this.props.books ? (this.props.books.map((book, index) => {
             return <div
-            style={styleTextSection}
-            key={index}
-            onClick={(event) => this.rotate(event, book.id)}
-            className={`card${index}`}>
+              style={styleTextSection}
+              key={index}
+              onClick={(event) => this.rotate(event, book.id)}
+              className={`card${index}`}>
               <div className="front">
-    
-              <img
-              onClick={() =>
-                 this.props.fetchBook(book.id)}
-               src={book.photo} alt="book" />
-              <p>{book.title}</p>
+
+                <img
+                  onClick={() =>
+                    this.props.fetchBook(book.id)}
+                  src={book.photo} alt="book" />
+                <p>{book.title}</p>
 
               </div>
               <div className="back" >
-              {this.props.averageRating ? (<div className="star">
-                    <i className={this.props.averageRating[0]}></i>
-                    <i className={this.props.averageRating[1]}></i>
-                    <i className={this.props.averageRating[2]}></i>
-                    <i className={this.props.averageRating[3]}></i>
-                    <i className={this.props.averageRating[4]}></i>
-                  </div>) : <p>There are no reviews</p>}
+                {this.props.averageRating ? (<div className="star">
+                  <i className={this.props.averageRating[0]}></i>
+                  <i className={this.props.averageRating[1]}></i>
+                  <i className={this.props.averageRating[2]}></i>
+                  <i className={this.props.averageRating[3]}></i>
+                  <i className={this.props.averageRating[4]}></i>
+                </div>) : <p>There are no reviews</p>}
               </div>
             </div>
           })) : null}

@@ -162,7 +162,19 @@ font-size: 2rem;
       display        : flex;
       flex-direction : column;
       justify-content: space-between;
-      width          : 65%;
+      width          : 100%;
+    }
+  }
+
+  .average-rating-and-price {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+      font-size: 3rem;
+      color: #59B5E9;
+      font-weight: bolder;
     }
   }
 
