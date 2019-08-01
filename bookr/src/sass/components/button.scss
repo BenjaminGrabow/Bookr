@@ -1,5 +1,5 @@
 .btn {
-  &:link, &:visited {
+  // &:link, &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -8,7 +8,7 @@
     transition: all .2s;
     position: relative;
     font-size: 1.6rem;
-    }
+    // }
     
     &:hover {
       transform: translateY(-.3rem);

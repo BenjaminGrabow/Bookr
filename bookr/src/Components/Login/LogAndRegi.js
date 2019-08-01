@@ -70,7 +70,8 @@ class LogAndRegi extends React.Component {
     if (this.state.register) {
       return (
         <div className="log-reg">
-          <button onClick={this.showInput}>Go to Login</button>
+          <button onClick={this.showInput}
+          className="btn btn--white">Go to Login</button>
           <div className="row">
             <form
               onSubmit={this.register}>
@@ -92,10 +93,11 @@ class LogAndRegi extends React.Component {
                 />
               </div>
 
-              <button
-                type="submit">
+              <p
+                type="submit"
+                className="btn btn--white">
                 <i className="fa fa-user-plus"></i>
-              </button>
+              </p>
             </form>
           </div>
         </div>
@@ -105,11 +107,13 @@ class LogAndRegi extends React.Component {
       return (
         <div
         className="log-reg">
-          <button onClick={this.showInput}>Register</button>
+          <div className="login">
+          <p 
+          onClick={this.showInput}
+          className="btn btn--white">Go to register</p>
           <div className="row">
             <form
               onSubmit={this.login}>
-
               <div
                 className="inputs">
                 <input
@@ -127,25 +131,31 @@ class LogAndRegi extends React.Component {
                   placeholder="Password"
                 />
               </div>
-              <button
+              <p
+              className="btn btn--white"
                 type="submit">
+                  Login
                 {/* {this.props.isLoggingIn ? (<Loader
                   type="ThreeDots"
                   color="#1f2a38"
                   height="12"
                   width="26" />) :
                   (<i className="fa fa-user-plus"></i>)} */}
-              </button>
+              </p>
             </form>
+          </div>
           </div>
         </div>)
     }
     return (
       <div className="log-reg">
         <div className="start">
-        <a onClick={this.showInput}
-        className="btn btn--white btn--animated">Register</a>
-        <button onClick={this.showInput}>Login</button>
+        <p
+        onClick={this.showInput}
+        className="btn btn--white">Register</p>
+        <p 
+        onClick={this.showInput}
+        className="btn btn--white">Login</p>
         </div>
       </div>
     );
