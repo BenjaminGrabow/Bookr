@@ -122,6 +122,13 @@ class Bookr extends React.Component {
 
   };
 
+  updateBook = () => {
+    const nav = document.querySelector(".navigation__checkbox");
+
+    nav.checked = "true";
+
+  };
+
   render() {
 
     const styleTextSection = {
