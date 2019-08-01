@@ -142,7 +142,16 @@ class Bookr extends React.Component {
             </div>
           </div>
           <p>{this.props.book.book.description}</p>
+          <div className="average-rating-and-price">
+          {this.props.averageRating ? (<div className="star">
+                    <i className={this.props.averageRating[0]}></i>
+                    <i className={this.props.averageRating[1]}></i>
+                    <i className={this.props.averageRating[2]}></i>
+                    <i className={this.props.averageRating[3]}></i>
+                    <i className={this.props.averageRating[4]}></i>
+                  </div>) : <p>There are no reviews</p>}
           <p>{this.props.book.book.price} $</p>
+          </div>
           <StripeCheckout
             stripeKey="pk_test_Grqfk8uqKNCJYpAQS2t89UB700wHJklrMa"
             token={(token) =>
