@@ -73,8 +73,6 @@ class LogAndRegi extends React.Component {
 <div className="register">
           <p onClick={this.showInput}
           className="btn btn--white btn--login">Go to Login</p>
-            <form
-              onSubmit={this.register}>
               <div
                 className="inputs">
                 <input
@@ -94,11 +92,10 @@ class LogAndRegi extends React.Component {
               </div>
 
               <p
-                type="submit"
+                onClick={this.register}
                 className="btn btn--white">
                 <i className="fa fa-user-plus"></i>
               </p>
-            </form>
             </div>
         </div>
       )
@@ -112,8 +109,6 @@ class LogAndRegi extends React.Component {
           onClick={this.showInput}
           className="btn btn--white btn--register">Go to Register</p>
          
-            <form
-              onSubmit={this.login}>
               <div
                 className="inputs">
                 <input
@@ -133,7 +128,7 @@ class LogAndRegi extends React.Component {
               </div>
               <p
               className="btn btn--white"
-                type="submit">
+              onClick={this.login}>
                   Login
                 {/* {this.props.isLoggingIn ? (<Loader
                   type="ThreeDots"
@@ -142,7 +137,6 @@ class LogAndRegi extends React.Component {
                   width="26" />) :
                   (<i className="fa fa-user-plus"></i>)} */}
               </p>
-            </form>
           
             </div>
         </div>)
