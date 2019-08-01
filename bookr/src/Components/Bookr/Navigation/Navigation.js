@@ -68,7 +68,17 @@ class Navigation extends React.Component {
                 name="price"
                 className="navigation__input" /></li>
 
-  
+            <div className="icons">
+              <i
+                onClick={this.deleteBook}
+                className="fa fa-user-times" />
+              <i
+                onClick={this.updateBook}
+                className="fa fa-wrench" />
+              <i
+                onClick={this.addBook}
+                className="fa fa-wrench" />
+            </div>
 
 
           </ul>
