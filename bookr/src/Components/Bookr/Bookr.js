@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -111,7 +111,7 @@ class Bookr extends React.Component {
       card.style.transform = 'rotateY(180deg)';
     }
 
-    this.props.fetchBook(id);
+    this.props.calculateRating(id);
   };
 
   render() {
@@ -280,4 +280,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating })(Bookr);
