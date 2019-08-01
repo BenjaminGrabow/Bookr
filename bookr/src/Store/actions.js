@@ -16,6 +16,9 @@ export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
 export const CALCULATE_RATING = 'CALCULATE_RATING';
 export const SAVE_BOOK_ID = 'SAVE_BOOK_ID';
+// export const ADD_BOOK = 'ADD_BOOK';
+export const UPDATE_BOOK = 'UPDATE_BOOK';
+export const DELETE_BOOK = 'DELETE_BOOK';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
@@ -205,4 +208,28 @@ export const calculateRating = (id) => dispatch => {
 
 export const saveBookId = (book_id) => {
   return { type: SAVE_BOOK_ID, book_id: book_id };
+};
+
+export const addBook = (title, publisher, author, description, photo, price) => dispatch => {
+
+  const newBook = {
+    title,
+    publisher,
+    author,
+    description,
+    photo,
+    price
+  };
+
+  axios.post(adress, newBook)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
 };

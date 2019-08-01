@@ -1,4 +1,5 @@
 import React from 'react';
+import { addBook, updateBook } from '../../../Store/actions';
 import { connect } from 'react-redux';
 
 class Navigation extends React.Component {
@@ -20,7 +21,7 @@ class Navigation extends React.Component {
     });
   };
 
-  PostPutBook = e => {
+  postPutBook = e => {
     if (e.target.className === "fa fa-wrench btn btn--white") {
       this.props.updateBook(this.props.book_id,
         this.state.title,
@@ -120,10 +121,10 @@ class Navigation extends React.Component {
 
             <div className="crud-icons">
               <i
-                onClick={this.PostPutBook}
+                onClick={this.postPutBook}
                 className="fa fa-wrench btn btn--white" />
               <i
-                onClick={this.PostPutBook}
+                onClick={this.postPutBook}
                 className="fa fa-plus-circle btn btn--white" />
             </div>
 
