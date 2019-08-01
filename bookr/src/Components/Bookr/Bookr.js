@@ -250,7 +250,9 @@ class Bookr extends React.Component {
 
               </div>
               <div className="back" >
-              <div className="star">
+              {this.props.averageRating ? 
+
+              }<div className="star">
                     <i className={this.props.averageRating.star1}></i>
                     <i className={this.props.averageRating.star2}></i>
                     <i className={this.props.averageRating.star3}></i>

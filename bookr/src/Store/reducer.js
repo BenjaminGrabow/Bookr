@@ -32,7 +32,7 @@ const calculateRating = (array) => {
     return rating;
   });
 
-let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
+  let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
 
   const calculateAverage = ((howManyGoodReviews / howManyStars) / 2) * 10; // divided by 2 because we have 5 stars and not 10 
   // and multiplied by 10 because we need a bigger number for the Math.round method to get the right solution
@@ -79,9 +79,17 @@ const reducer = (state = initialState, action) => {
 
     case types.FETCH_BOOK:
 
-    const averageRating = calculateRating(action.fetchedBook.reviews);
-debugger
-      return { ...state, book: action.fetchedBook, averageRating: averageRating };
+      const isThereARating = action.fetchedBook.reviews.some(rating => rating);
+
+      if (isThereARating) {
+        const averageRating = calculateRating(action.fetchedBook.reviews);
+
+        return { ...state, book: action.fetchedBook, averageRating: averageRating }
+
+      } else {
+
+        return { ...state, book: action.fetchedBook };
+      }
 
     case types.CLOSE_BOOK:
 
