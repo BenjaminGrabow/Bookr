@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -19,15 +20,24 @@ class Navigation extends React.Component {
     });
   };
 
-  delPostPutBook = e => {
-  if(e.target.className === "fa fa-user-times btn btn--white"){
-console.log('delete')
-
-  } else if(e.target.className === "fa fa-wrench btn btn--white") {
-    console.log('put')
-  } else { 
-    console.log('add')
-  }
+  PostPutBook = e => {
+    if (e.target.className === "fa fa-wrench btn btn--white") {
+      this.props.updateBook(this.props.book_id,
+        this.state.title,
+        this.state.publisher,
+        this.state.author,
+        this.state.description,
+        this.state.photo,
+        this.state.price);
+    } else {
+      console.log('add')
+      this.props.addBook(this.state.title,
+        this.state.publisher,
+        this.state.author,
+        this.state.description,
+        this.state.photo,
+        this.state.price);
+    }
   };
 
   render() {
@@ -47,7 +57,7 @@ console.log('delete')
           <ul className="navigation__list">
             <li className="navigation__item">
               <input
-              placeholder="Title"
+                placeholder="Title"
                 type="text"
                 value={this.state.title}
                 onChange={this.handleChange}
@@ -56,7 +66,7 @@ console.log('delete')
 
             <li className="navigation__item">
               <input
-              placeholder="Publisher"
+                placeholder="Publisher"
                 type="text"
                 value={this.state.publisher}
                 onChange={this.handleChange}
@@ -65,7 +75,7 @@ console.log('delete')
 
             <li className="navigation__item">
               <input
-              placeholder="Author"
+                placeholder="Author"
                 type="text"
                 value={this.state.author}
                 onChange={this.handleChange}
@@ -74,7 +84,7 @@ console.log('delete')
 
             <li className="navigation__item">
               <input
-              placeholder="Description"
+                placeholder="Description"
                 type="text"
                 value={this.state.description}
                 onChange={this.handleChange}
@@ -83,7 +93,7 @@ console.log('delete')
 
             <li className="navigation__item">
               <input
-              placeholder="Photo"
+                placeholder="Photo"
                 type="text"
                 value={this.state.photo}
                 onChange={this.handleChange}
@@ -92,7 +102,7 @@ console.log('delete')
 
             <li className="navigation__item">
               <input
-              placeholder="Price"
+                placeholder="Price"
                 type="number"
                 value={this.state.price}
                 onChange={this.handleChange}
@@ -101,13 +111,10 @@ console.log('delete')
 
             <div className="crud-icons">
               <i
-                onClick={this.delPostPutBook}
-                className="fa fa-user-times btn btn--white" />
-              <i
-                onClick={this.delPostPutBook}
+                onClick={this.PostPutBook}
                 className="fa fa-wrench btn btn--white" />
               <i
-                onClick={this.delPostPutBook}
+                onClick={this.PostPutBook}
                 className="fa fa-plus-circle btn btn--white" />
             </div>
 
@@ -119,4 +126,10 @@ console.log('delete')
   }
 }
 
-export default Navigation;
+const mapStateToProps = state => {
+  return {
+    book_id: state.book_id
+  };
+};
+
+export default connect(mapStateToProps, { updateBook, addBook })(Navigation);

@@ -118,9 +118,9 @@ class Bookr extends React.Component {
   };
 
   deleteBook = () => {
-    const nav = document.querySelector(".navigation__checkbox");
+    // const nav = document.querySelector(".navigation__checkbox");
 
-    nav.checked = "true";
+    // nav.checked = "true";
 
   };
 
