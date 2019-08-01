@@ -8,6 +8,7 @@ const initialState = {
   copyOfBooks: null,
   book: '',
   userData: null,
+  averageFromRatings: null,
 }
 
 // const calculateRating = (array) => {

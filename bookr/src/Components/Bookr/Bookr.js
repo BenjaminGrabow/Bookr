@@ -250,10 +250,13 @@ class Bookr extends React.Component {
 
               </div>
               <div className="back" >
-                <a href="https://github.com/BenjaminGrabow/Use-My-Tech-Stuff">
-                  <div
-                    className="entypo-github box"
-                    id="github" /></a>
+              <div className="star">
+                    <i className={this.props.averageRating.star1}></i>
+                    <i className={this.props.averageRating.star2}></i>
+                    <i className={this.props.averageRating.star3}></i>
+                    <i className={this.props.averageRating.star4}></i>
+                    <i className={this.props.averageRating.star5}></i>
+                  </div>
               </div>
             </div>
           })) : null}
@@ -269,7 +272,8 @@ const mapStateToProps = state => {
     books: state.books,
     book: state.book,
     copyOfBooks: state.copyOfBooks,
-    userData: state.userData
+    userData: state.userData,
+    averageRating: state.averageRating
   };
 };
 
