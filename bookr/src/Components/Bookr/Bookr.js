@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from "./Navigation/Navigation";
 import { connect } from 'react-redux';
-import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating } from '../../Store/actions';
+import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating, saveBookId } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -124,11 +124,12 @@ class Bookr extends React.Component {
 
   };
 
-  updateBook = () => {
+  updateBook = (book_id) => {
     const nav = document.querySelector(".navigation__checkbox");
 
     nav.checked = "true";
 
+    this.props.saveBookId(book_id);
   };
 
   render() {
@@ -292,10 +293,10 @@ class Bookr extends React.Component {
                 <p>{book.price} $</p>
                 <div className="icons">
                 <i
-                onClick={this.deleteBook} 
+                onClick={() => this.deleteBook(book.id)} 
                 className="fa fa-user-times btn btn--white" />
                 <i 
-                onClick={this.updateBook}
+                onClick={() => this.updateBook(book.id)}
                 className="fa fa-wrench btn btn--white" />
               </div>
               </div>
@@ -319,4 +320,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating })(Bookr);
+export default connect(mapStateToProps, { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating, saveBookId })(Bookr);

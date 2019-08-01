@@ -22,6 +22,7 @@ class Navigation extends React.Component {
   delPostPutBook = e => {
   if(e.target.className === "fa fa-user-times btn btn--white"){
 console.log('delete')
+
   } else if(e.target.className === "fa fa-wrench btn btn--white") {
     console.log('put')
   } else { 
