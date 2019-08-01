@@ -101,6 +101,8 @@ class User extends React.Component {
           </div>
           <div
             className={this.state.inputForStart ? 'form' : 'off'}>
+             <div className="inputs-btn">
+            <div className="inputs">
             <input
               value={this.state.firstname}
               type="text"
@@ -119,11 +121,11 @@ class User extends React.Component {
               name="photo"
               placeholder="Picture URL"
               onChange={this.handleChange} />
-
+</div>
             <i
               onClick={this.updateUserPreference}
               className="fa fa-upload"/>
-
+</div>
           </div>
         </div>
       })

@@ -70,6 +70,9 @@
 
 .user {
 height: 90vh;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .off {
@@ -81,6 +84,7 @@ display:none;
   flex-direction: column;
   height: 90vh;
   justify-content: center;
+  width: 100%;
 }
 
 .inputs-btn {
@@ -102,38 +106,6 @@ display:none;
 
   i {
     font-size: 6rem;
-  }
-}
-
-//USER STYLING 
-
-.user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  button {
-    width: 25%;
-    height: 5rem;
-    border-radius: .5rem;
-    background: #bdc3c7;
-    background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-    background: linear-gradient(to right, #eaeaea, #deecff);
-    border: .3rem solid black;
-    transition: .8s;
-    margin: 1rem;
-    
-    &:hover {
-      border: .3rem solid red;
-    }
-    
-    &:hover, i:hover {
-      color: red;
-    }
-  }
-  
-  i {
-    font-size: 3rem;
   }
 }
 
