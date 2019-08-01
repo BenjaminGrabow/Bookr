@@ -114,11 +114,12 @@ class Bookr extends React.Component {
   render() {
 
     const styleTextSection = {
-      color: this.state.textColor,
-      background: this.state.textBackgroundColor,
-      fontSize: `${this.state.textFontSize}px`,
-      height: `${this.state.textHeight}px`,
-      width:  `${this.state.textWidth}px`,
+      transformStyle: "preserve-3d",
+      transition     : "all 1s ease",
+      width          : "30%",
+      height         : "30rem",
+      position       : "relative",
+      margin         : "1rem"
     };
 
     if (this.props.book) {
@@ -234,7 +235,8 @@ class Bookr extends React.Component {
         <div
           className="books">
           {this.props.books ? (this.props.books.map((book, index) => {
-            return <div 
+            return <div
+            style={styleTextSection}
             key={index}
             onClick={this.rotate}
             className={`card${index}`}>
