@@ -49,31 +49,20 @@ Request spec:
 
 ```
 {
-  {
-        username:"beddtddddddddddddddddddddrzun",
-        password: "BEtdddddddddddddddrzuN"
+        username: "username", => accepts any string from 1 - 32 chars 
+        password: "password" => accepts any string from 1 - 32 chars
 }
-  email: 'example@email.com',
-  password: 'accepts any string from 6-32 chars',
-  confirm_password: 'accepts any string from 6-32 chars',
-  first_name: 'accepts letters from 2 -50 chars',
-  last_name: 'accepts letters from 2 -50 chars',
-}
+
 ```
 
 Response spec:
 
 ```
 {
-    "user": {
-        "id": 5,
-        "email": "example@gmail.com",
-        "first_name": "Name",
-        "last_name": "Example",
-        "is_admin": false || true
-    },
-    "token": "yuyujhjiiGHJIKKHJhHJhKhnbGHj.eyJ1c2VySWQiOjUsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNTY0NDk1OTg4LCJleHAiOjE1NjUxMDA3ODh9.SgCpomiiiioidhjdfI"
+    "id": 2,
+    "username": "username"
 }
+
 ```
 
 ### POST /auth/login
@@ -82,8 +71,9 @@ Request spec:
 
 ```
 {
-  email: 'example@email.com',
-  password: 'accepts any string from 6-32 chars'
+  email: 'username',
+  password: 'password'
+  
 }
 ```
 
@@ -91,14 +81,9 @@ Response spec:
 
 ```
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.hgjgkgooopooooopoKNHIOKKLOHHhoooooooo._7_DcsvIG6XlqRtmoqX3NmWnkREkFfkqswtmkCo1O2M",
-    "user": {
-        "id": 5,
-        "email": "haywhyze@gmail.com",
-        "is_admin": false,
-        "first_name": "Yusuf",
-        "last_name": "Ayo"
-    }
+    "message": "Welcome username !, have a token...",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5ctzuCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMCwidXNlcm5hbWUiOiJiZWZnZGZ",
+    "id": 10
 }
 
 ```
