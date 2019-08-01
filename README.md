@@ -41,9 +41,9 @@ npm run start
 | PUT        |Update user preference      | /user/:id     |
 //Postman documentation automatically
 
-### Request and Response Specifications
+## Request and Response Specifications
 
-## POST /auth/register
+### POST /auth/register
 
 Request spec:
 
@@ -70,4 +70,31 @@ Response spec:
     },
     "token": "yuyujhjiiGHJIKKHJhHJhKhnbGHj.eyJ1c2VySWQiOjUsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNTY0NDk1OTg4LCJleHAiOjE1NjUxMDA3ODh9.SgCpomiiiioidhjdfI"
 }
+```
+
+### POST /auth/login
+
+Request spec:
+
+```
+{
+  email: 'example@email.com',
+  password: 'accepts any string from 6-32 chars'
+}
+```
+
+Response spec:
+
+```
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.hgjgkgooopooooopoKNHIOKKLOHHhoooooooo._7_DcsvIG6XlqRtmoqX3NmWnkREkFfkqswtmkCo1O2M",
+    "user": {
+        "id": 5,
+        "email": "haywhyze@gmail.com",
+        "is_admin": false,
+        "first_name": "Yusuf",
+        "last_name": "Ayo"
+    }
+}
+
 ```
