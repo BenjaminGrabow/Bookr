@@ -75,11 +75,13 @@ class User extends React.Component {
             <p>Home</p>
           </NavLink>
           <div
-            className={!this.state.inputForStart ? 'user' : 'off'}>
+            className={!this.state.inputForStart ? "userStyle" : 'off'}>
             <div className="userStyling">
+              <div className="picture">
               <img
                 src={user.photo}
                 alt="user" />
+                </div>
               <div
                 className="text">
                 <p>
@@ -91,6 +93,7 @@ class User extends React.Component {
               </div>
             </div>
             <p
+            className="btn btn--white"
               onClick={this.startUserPreference}>
               updtate
                 <i className="fa fa-upload" />
@@ -122,7 +125,7 @@ class User extends React.Component {
               </div>
               <i
                 onClick={this.updateUserPreference}
-                className="fa fa-upload" />
+                className="fa fa-upload btn btn--white" />
             </div>
           </div>
         </div>
@@ -161,7 +164,7 @@ class User extends React.Component {
             </div>
             <i
               onClick={this.safePreferences}
-              className="fa fa-upload"></i>
+              className="fa fa-upload btn btn--white"></i>
 
           </div>
         </div>
