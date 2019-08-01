@@ -16,9 +16,7 @@ export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
-// ${adress}auth/register
-// ${adress}auth/login
-// ADD IT LATER !!!!
+
 export const register = creds => dispatch => {
   return axios.post(`${adress}auth/register`, creds)
     .then(res => {
