@@ -21,24 +21,24 @@ class Navigation extends React.Component {
 
         <ul className="navigation__list">
           <li className="navigation__item">
-            <a href="#"
-             className="navigation__link"><span>1</span>About Natours</a></li>
+            <input
+             className="navigation__input"/></li>
 
 <li className="navigation__item">
-            <a href="#"
-             className="navigation__link"><span>2</span>Your benefits</a></li>
+            <input
+             className="navigation__input"/></li>
 
 <li className="navigation__item">
-            <a href="#"
-             className="navigation__link"><span>3</span>Popular tours</a></li>
+            <input
+             className="navigation__input"/></li>
 
 <li className="navigation__item">
-            <a href="#"
-             className="navigation__link"><span>4</span>Stories</a></li>
+            <input
+             className="navigation__input"/></li>
 
 <li className="navigation__item">
-            <a href="#"
-             className="navigation__link"><span>5</span>Book now</a></li>
+            <input
+             className="navigation__input"/></li>
         </ul>
       </nav>
       </div>
