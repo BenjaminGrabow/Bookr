@@ -15,6 +15,7 @@ export const SAFE_USER_PREFERENCE = 'SAFE_USER_PREFERENCE';
 export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
 export const CALCULATE_RATING = 'CALCULATE_RATING';
+export const SAVE_BOOK_ID = 'SAVE_BOOK_ID';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
@@ -200,4 +201,8 @@ export const calculateRating = (id) => dispatch => {
     .catch(err => {
       debugger
     });
+};
+
+export const saveBookId = (book_id) => {
+  return { type: SAVE_BOOK_ID, book_id: book_id };
 };
