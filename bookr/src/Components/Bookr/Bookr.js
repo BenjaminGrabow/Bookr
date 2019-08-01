@@ -101,7 +101,7 @@ class Bookr extends React.Component {
   };
 
   rotate = (e) => {
-console.log(e.currentTarget.className)
+
     const card = document.querySelector(`.${e.currentTarget.className}`);
     if(card.style.transform === 'rotateY(180deg)'){
       card.style.transform = 'rotateY(0deg)';
@@ -112,6 +112,15 @@ console.log(e.currentTarget.className)
   }
 
   render() {
+
+    const styleTextSection = {
+      color: this.state.textColor,
+      background: this.state.textBackgroundColor,
+      fontSize: `${this.state.textFontSize}px`,
+      height: `${this.state.textHeight}px`,
+      width:  `${this.state.textWidth}px`,
+    };
+
     if (this.props.book) {
       return (
         <div
