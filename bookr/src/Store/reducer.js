@@ -8,37 +8,56 @@ const initialState = {
   copyOfBooks: null,
   book: '',
   userData: null,
-  averageFromRatings: null,
+  averageRating: null,
 }
 
-// const calculateRating = (array) => {
-//   const goodRating = "fa fa-star checked"
+const calculateRating = (array) => {
+  const goodRating = "fa fa-star checked"
 
-//   let counterForGoodReview = [];
+  let counterForGoodReview = [];
 
-//   const howManyStars = array.length * 5; // because there are 5 stars
+  const howManyStars = array.length * 5; // because there are 5 stars
 
-//   array.map(rating => {
-//     counterForGoodReview.push(rating.star1 === goodRating);
+  array.map(rating => {
+    counterForGoodReview.push(rating.star1 === goodRating);
 
-//     counterForGoodReview.push(rating.star2 === goodRating);
+    counterForGoodReview.push(rating.star2 === goodRating);
 
-//     counterForGoodReview.push(rating.star3 === goodRating);
+    counterForGoodReview.push(rating.star3 === goodRating);
 
-//     counterForGoodReview.push(rating.star4 === goodRating);
+    counterForGoodReview.push(rating.star4 === goodRating);
 
-//     counterForGoodReview.push(rating.star5 === goodRating);
+    counterForGoodReview.push(rating.star5 === goodRating);
 
-//     return rating;
-//   });
+    return rating;
+  });
 
-// let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
+let howManyGoodReviews = counterForGoodReview.filter(boolean => boolean === true).length;
 
-//   const calculateAverage = ((howManyGoodReviews / howManyStars) / 2) * 10; // divided by 2 because we have 5 stars and not 10 
-//   // and multiplied by 10 because we need a bigger number for the Math.round method to get the right solution
+  const calculateAverage = ((howManyGoodReviews / howManyStars) / 2) * 10; // divided by 2 because we have 5 stars and not 10 
+  // and multiplied by 10 because we need a bigger number for the Math.round method to get the right solution
 
-//   return Math.round(calculateAverage);
-// };
+  const averageOfGoodStars = Math.round(calculateAverage);
+
+  const orangeStars = 'fa fa-star checked'.repeat(averageOfGoodStars);
+
+  const blackStars = 'fa fa-star'.repeat(5 - averageOfGoodStars);
+
+  const arrayOrange = orangeStars.match(/.{1,18}/g);
+  const arrayBlack = blackStars.match(/.{1,10}/g);
+
+  const mergeArrays = arrayOrange.concat(arrayBlack);
+
+  const arrayOfStars = [
+    mergeArrays[0],
+    mergeArrays[1],
+    mergeArrays[2],
+    mergeArrays[3],
+    mergeArrays[4]
+  ];
+
+  return arrayOfStars;
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -60,7 +79,9 @@ const reducer = (state = initialState, action) => {
 
     case types.FETCH_BOOK:
 
-      return { ...state, book: action.fetchedBook };
+    const averageRating = calculateRating(action.fetchedBook.reviews);
+debugger
+      return { ...state, book: action.fetchedBook, averageRating: averageRating };
 
     case types.CLOSE_BOOK:
 
