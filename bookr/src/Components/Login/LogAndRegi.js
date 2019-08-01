@@ -141,9 +141,11 @@ class LogAndRegi extends React.Component {
         </div>)
     }
     return (
-      <div className="start">
+      <div className="log-reg">
+        <div className="start">
         <button onClick={this.showInput}>Register</button>
         <button onClick={this.showInput}>Login</button>
+        </div>
       </div>
     );
   }
