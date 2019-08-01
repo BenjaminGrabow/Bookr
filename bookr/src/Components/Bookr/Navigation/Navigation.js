@@ -3,8 +3,22 @@ import React from 'react';
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      title: '',
+      publisher: '',
+      author: '',
+      description: '',
+      photo: '',
+      price: ''
+    }
   }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="navigation">
@@ -22,49 +36,55 @@ class Navigation extends React.Component {
           <ul className="navigation__list">
             <li className="navigation__item">
               <input
+              placeholder="Title"
                 type="text"
                 value={this.state.title}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="title"
                 className="navigation__input" /></li>
 
             <li className="navigation__item">
               <input
+              placeholder="Publisher"
                 type="text"
                 value={this.state.publisher}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="publisher"
                 className="navigation__input" /></li>
 
             <li className="navigation__item">
               <input
+              placeholder="Author"
                 type="text"
                 value={this.state.author}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="author"
                 className="navigation__input" /></li>
 
             <li className="navigation__item">
               <input
+              placeholder="Description"
                 type="text"
                 value={this.state.description}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="description"
                 className="navigation__input" /></li>
 
             <li className="navigation__item">
               <input
+              placeholder="Photo"
                 type="text"
                 value={this.state.photo}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="photo"
                 className="navigation__input" /></li>
 
             <li className="navigation__item">
               <input
+              placeholder="Price"
                 type="number"
                 value={this.state.price}
-                onChange={this.changeHandler}
+                onChange={this.handleChange}
                 name="price"
                 className="navigation__input" /></li>
 
