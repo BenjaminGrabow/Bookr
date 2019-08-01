@@ -10,7 +10,7 @@ function generateToken(user) {
     expiresIn: "1d"
   };
   return jwt.sign(payload, secrets.jwtSecret, options);
-} 
+}
 
 module.exports = {
   generateToken

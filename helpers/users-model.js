@@ -27,7 +27,7 @@ const db = require("../database/dbConfig.js");
       .select("id", "username")
       .where({ id })
       .first();
-  } 
+  }
 
   function remove(id) {
     return db('users').where({ id }).delete();

@@ -8,6 +8,21 @@ exports.up = function (knex) {
     users.string('password', 50)
       .notNullable();
   })
+  .createTable('user_preference', user => {
+    user.increments();
+    user.text('photo', 50);
+    user.text('first_name', 50);
+    user.text('last_name', 50);
+    user
+      .integer("user_id")
+      .unsigned()
+      .unique()
+      .notNullable()
+      .references("id")
+      .inTable("users")
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
+  })
     .createTable('books', books => {
       books.increments();
       books.text('title', 50).notNullable();
@@ -17,12 +32,17 @@ exports.up = function (knex) {
       books.text('description', 1000);
       books.integer('price');
     })
-    .createTable('reviews', reviews => {
-      reviews.increments();
-      reviews.text('reviewer', 50).notNullable();
-      reviews.text('review', 500).notNullable();
-      reviews.text('photo', 50);
-      reviews
+    .createTable('reviews', review => {
+      review.increments();
+      review.text('reviewer', 50).notNullable();
+      review.text('review', 500).notNullable();
+      review.text('photo', 50);
+      review.text('star1', 20);
+      review.text('star2', 20);
+      review.text('star3', 20);
+      review.text('star4', 20);
+      review.text('star5', 20);
+      review
         .integer("book_id")
         .unsigned()
         .notNullable()
@@ -36,6 +56,7 @@ exports.up = function (knex) {
 exports.down = function (knex, Promise) {
   return knex.schema
     .dropTableIfExists('users')
+    .dropTableIfExists('user_preference')
     .dropTableIfExists('books')
     .dropTableIfExists('reviews');
 };

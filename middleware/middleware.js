@@ -1,6 +1,6 @@
 const Books = require("../helpers/bookr-model");
 
-async function validatePost(req, res, next) {
+async function validatePostForBook(req, res, next) {
   const request = req.body;
 
   try {
@@ -13,6 +13,22 @@ async function validatePost(req, res, next) {
       next();
     } else {
       res.status(400).json({ message: 'You must provide at least title, author and publisher !' })
+    }
+  } catch (error) {
+    res.status(500).json({ errorMessage: 'request dont could process' })
+  }
+};
+
+async function validatePostForReview(req, res, next) {
+  const request = req.body;
+
+  try {
+    if (request.review) {
+      const newReview = await Books.createNewReview(request);
+      req.review = newReview;
+      next();
+    } else {
+      res.status(400).json({ message: 'You must provide at least a review !' })
     }
   } catch (error) {
     res.status(500).json({ errorMessage: 'request dont could process' })
@@ -56,7 +72,8 @@ const { title, author, publisher, description, price } = req.body;
 
 
 module.exports = {
-  validatePost,
+  validatePostForBook,
+  validatePostForReview,
   validateDeleteId,
   validatePutId
 };

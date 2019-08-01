@@ -1,4 +1,5 @@
 import React from 'react';
+import './LogAndReg.scss';
 import { connect } from 'react-redux'
 import { login, register } from '../../Store/actions';
 
@@ -68,7 +69,7 @@ class LogAndRegi extends React.Component {
   render() {
     if (this.state.register) {
       return (
-        <div>
+        <div className="log-reg">
           <button onClick={this.showInput}>Go to Login</button>
           <div className="row">
             <form
@@ -102,7 +103,8 @@ class LogAndRegi extends React.Component {
     }
     if (this.state.login) {
       return (
-        <div>
+        <div
+        className="log-reg">
           <button onClick={this.showInput}>Register</button>
           <div className="row">
             <form
@@ -139,9 +141,11 @@ class LogAndRegi extends React.Component {
         </div>)
     }
     return (
-      <div>
+      <div className="log-reg">
+        <div className="start">
         <button onClick={this.showInput}>Register</button>
         <button onClick={this.showInput}>Login</button>
+        </div>
       </div>
     );
   }
