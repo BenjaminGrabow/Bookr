@@ -115,6 +115,13 @@ class Bookr extends React.Component {
     this.props.calculateRating(id);
   };
 
+  deleteBook = () => {
+    const nav = document.querySelector(".navigation__checkbox");
+
+    nav.checked = "true";
+
+  };
+
   render() {
 
     const styleTextSection = {
@@ -275,8 +282,12 @@ class Bookr extends React.Component {
                 </div>) : <p>There are no reviews</p>}
                 <p>{book.price} $</p>
                 <div className="icons">
-                <i className="fa fa-user-times" />
-                <i className="fa fa-wrench" />
+                <i
+                onClick={this.deleteBook} 
+                className="fa fa-user-times" />
+                <i 
+                onClick={this.updateBook}
+                className="fa fa-wrench" />
               </div>
               </div>
             </div>
