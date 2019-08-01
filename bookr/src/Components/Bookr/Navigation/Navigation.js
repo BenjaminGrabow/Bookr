@@ -22,6 +22,10 @@ class Navigation extends React.Component {
   };
 
   postPutBook = e => {
+    const nav = document.querySelector(".navigation__checkbox");
+
+    nav.checked = false;
+
     if (e.target.className === "fa fa-wrench btn btn--white") {
       this.props.updateBook(this.props.book_id,
         this.state.title,
@@ -37,7 +41,7 @@ class Navigation extends React.Component {
         this.state.author,
         this.state.description,
         this.state.photo,
-        this.state.price);
+        this.state.price);  
     }
 
     this.setState({
@@ -48,6 +52,7 @@ class Navigation extends React.Component {
       photo: '',
       price: ''
     });
+
   };
 
   render() {
@@ -58,7 +63,9 @@ class Navigation extends React.Component {
           className="navigation__checkbox"
           id="navi-toggle" />
 
-        <label className="navigation__button" htmlFor="navi-toggle" >MENU</label>
+        <label className="navigation__button" htmlFor="navi-toggle" >
+        <i className="fa fa-plus-circle" />
+        </label>
 
         <div className="navigation__background">&nbsp;</div>
 

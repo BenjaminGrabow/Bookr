@@ -120,7 +120,7 @@ class Bookr extends React.Component {
   updateBook = (book_id) => {
     const nav = document.querySelector(".navigation__checkbox");
 
-    nav.checked = "true";
+    nav.checked = true;
 
     this.props.saveBookId(book_id);
   };
