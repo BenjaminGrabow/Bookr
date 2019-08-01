@@ -37,7 +37,7 @@ class Bookr extends React.Component {
   addReview = (book_id) => {
     if(this.props.userData) {
 
-      if(this.state.review && this.state.starRating){
+      if(this.state.review && this.state.starRating > 0 && this.state.starRating < 6){
        
         this.props.addReview(this.state.review,
           this.state.starRating,
