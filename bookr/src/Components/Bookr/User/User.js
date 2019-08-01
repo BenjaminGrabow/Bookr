@@ -43,15 +43,6 @@ class User extends React.Component {
       //&& this.state.mobilephonenumber
       ) {
 
-			const user = {
-				firstname: this.state.firstname,
-				lastname: this.state.lastname,
-				// age: this.state.age,
-				// adress: this.state.adress,
-				photo: this.state.photo,
-				// mobilephonenumber: this.state.mobilephonenumber,
-			};
-
 			// this.sendUserData(user);
       this.props.safeUserPreferences(this.state.firstname,this.state.lastname,this.state.photo);
 
