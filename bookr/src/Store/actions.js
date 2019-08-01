@@ -14,6 +14,7 @@ export const CHECK_USER_PREFERENCE = 'CHECK_USER_PREFERENCE';
 export const SAFE_USER_PREFERENCE = 'SAFE_USER_PREFERENCE';
 export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
+export const CALCULATE_RATING = 'CALCULATE_RATING';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
@@ -187,4 +188,16 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
 
 export const deleteUserPreference = () => {
   return { type: DELETE_USER_PREFERENCE };
+};
+
+export const calculateRating = (id) => dispatch => {
+
+  axiosWithAuth().get(`${adress}${id}`)
+    .then(res => {
+
+      dispatch({ type: CALCULATE_RATING, fetchedBook: res.data });
+    })
+    .catch(err => {
+      debugger
+    });
 };
