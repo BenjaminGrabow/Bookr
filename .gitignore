@@ -24,4 +24,4 @@ yarn-error.log*
 
 # /database/secrets.js
 
-.env
+.env.JWT_SECRET
