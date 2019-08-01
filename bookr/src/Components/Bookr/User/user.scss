@@ -1,22 +1,3 @@
-// .user {
-// height         : 100vh;
-// height         : 90vh;
-// display        : flex;
-// flex-direction : column;
-// justify-content: space-around;
-// align-items    : center;
-
-// .navLink {
-// text-decoration: none;
-// font-size      : 2rem;
-
-// p {
-// font-size: 2.5rem;font-weight: bold;transition: .8s;color: #bdc3c7;margin: 0;
-
-// &:hover {
-// color: blue;filter: brightness(150%);text-decoration: underline;}
-// }
-// }
 
 // p {
 // margin: 0;
@@ -66,7 +47,17 @@
 //   height       : 18rem;
 // }
 
-
+.navLink {
+  text-decoration: none;
+  font-size      : 3rem;
+  font-weight: 900;
+  
+  &:hover {
+  color: black;
+  filter: brightness(150%);
+  text-decoration: underline;
+  }
+  }
 
 .user {
   background-image: linear-gradient(to right bottom, rgba(185, 192, 183, 0.8), #d7d1c98c), url(../../img/books.jpg);
@@ -109,6 +100,7 @@
 
   i {
     font-size: 6rem;
+    color: black;
   }
 }
 
