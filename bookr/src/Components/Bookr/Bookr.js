@@ -100,6 +100,17 @@ class Bookr extends React.Component {
    this.props.deleteUserPreference();
   };
 
+  rotate = () => {
+
+    const card = document.querySelector(".card");
+    if(card.style.transform === 'rotateY(180deg)'){
+      card.style.transform = 'rotateY(0deg)';
+    } else {
+      card.style.transform = 'rotateY(180deg)';
+    }
+
+  }
+
   render() {
     if (this.props.book) {
       return (
@@ -214,14 +225,25 @@ class Bookr extends React.Component {
         <div
           className="books">
           {this.props.books ? (this.props.books.map((book, index) => {
-            return <div
-              key={index}
-              className="single-book">
+            return <div 
+            key={index}
+            onClick={this.rotate}
+            className="card single-book">
+              <div className="front">
+              
               <img
               onClick={() =>
                  this.props.fetchBook(book.id)}
                src={book.photo} alt="book" />
               <p>{book.title}</p>
+
+              </div>
+              <div className="back" >
+                <a href="https://github.com/BenjaminGrabow/Use-My-Tech-Stuff">
+                  <div
+                    className="entypo-github box"
+                    id="github" /></a>
+              </div>
             </div>
           })) : null}
         </div>
@@ -229,6 +251,7 @@ class Bookr extends React.Component {
     );
   }
 }
+
 
 const mapStateToProps = state => {
   return {
