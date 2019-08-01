@@ -16,9 +16,6 @@ export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
 export const CALCULATE_RATING = 'CALCULATE_RATING';
 export const SAVE_BOOK_ID = 'SAVE_BOOK_ID';
-// export const ADD_BOOK = 'ADD_BOOK';
-export const UPDATE_BOOK = 'UPDATE_BOOK';
-export const DELETE_BOOK = 'DELETE_BOOK';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
 
