@@ -9,7 +9,8 @@ const initialState = {
   book: '',
   userData: null,
   averageRating: null,
-}
+  book_id: '',
+};
 
 const calculateRating = (array) => {
   const goodRating = "fa fa-star checked"
@@ -133,6 +134,11 @@ const reducer = (state = initialState, action) => {
 
             return { ...state,  averageRating: null };
           }
+
+          case types.SAVE_BOOK_ID:
+
+      return { ...state, book_id: action.book_id };
+
     default: return state;
   }
 };
