@@ -39,3 +39,4 @@ npm run start
 | GET        |Get user preference by Id   | /user/:id     |
 | POST       |Create new user preference  | /user         |
 | PUT        |Update user preference      | /user/:id     |
+//Postman documentation automatically

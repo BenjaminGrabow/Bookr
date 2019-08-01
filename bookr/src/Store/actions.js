@@ -20,7 +20,7 @@ const adress = 'https://bookr-build-week.herokuapp.com/';
 // ${adress}auth/login
 // ADD IT LATER !!!!
 export const register = creds => dispatch => {
-  return axios.post(`http://localhost:3400/auth/register`, creds)
+  return axios.post(`${adress}auth/register`, creds)
     .then(res => {
 
       dispatch({ type: REGISTER });
@@ -33,7 +33,7 @@ export const register = creds => dispatch => {
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
 
-  return axios.post(`http://localhost:3400/auth/login`, creds)
+  return axios.post(`${adress}auth/login`, creds)
     .then(res => {
 
       localStorage.setItem('token', res.data.token);
@@ -50,7 +50,7 @@ export const login = creds => dispatch => {
 
 export const fetchBooks = () => dispatch => {
 
-  axiosWithAuth().get('http://localhost:3400/')
+  axiosWithAuth().get(adress)
     .then(res => {
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
@@ -61,7 +61,7 @@ export const fetchBooks = () => dispatch => {
 
 export const fetchBook = (id) => dispatch => {
 
-  axiosWithAuth().get(`http://localhost:3400/${id}`)
+  axiosWithAuth().get(`${adress}${id}`)
     .then(res => {
 
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
@@ -98,9 +98,9 @@ export const addReview = (review, stars, book_id, photo, first_name) => dispatch
     star5: mergeArrays[4]
   }
 
-  axios.post(`http://localhost:3400/review`, objectReview)
+  axios.post(`${adress}review`, objectReview)
     .then(res => {
-      return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
+      return axiosWithAuth().get(`${adress}${book_id}`)
         .then(res => {
           dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
         })
@@ -125,7 +125,7 @@ export const checkUserPreference = () => dispatch => {
 
   const userId = localStorage.getItem('user_id');
 
-  return axios.get(`http://localhost:3400/user/${userId}`)
+  return axios.get(`${adress}user/${userId}`)
     .then(res => {
 debugger
       if (res.data.toString()) {
@@ -149,10 +149,10 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
   };
 
 
-  axios.post(`http://localhost:3400/user`, newUserPreference)
+  axios.post(`${adress}user`, newUserPreference)
     .then(res => {
 
-      return axios.get(`http://localhost:3400/user/${userId}`)
+      return axios.get(`${adress}user/${userId}`)
         .then(res => {
           dispatch({ type: SAFE_USER_PREFERENCE, user_preference: res.data });
         });
@@ -173,10 +173,10 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
     photo: photo
   };
 
-  axios.put(`http://localhost:3400/user/${userId}`, newUserPreference)
+  axios.put(`${adress}user/${userId}`, newUserPreference)
     .then(res => {
 
-      return axios.get(`http://localhost:3400/user/${userId}`)
+      return axios.get(`${adress}user/${userId}`)
         .then(res => {
 
           dispatch({ type: UPDATE_USER_PREFERENCE, user_preference: res.data });
