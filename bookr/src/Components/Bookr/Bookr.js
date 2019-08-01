@@ -211,8 +211,9 @@ class Bookr extends React.Component {
       )
     }
     return (
-      <div className="bookr">
+      <div>
         <Navigation/>
+      <div className="bookr">
         <nav>
           <NavLink
             to="/user"
@@ -281,6 +282,7 @@ class Bookr extends React.Component {
             </div>
           })) : null}
         </div>
+      </div>
       </div>
     );
   }
