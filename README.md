@@ -40,3 +40,34 @@ npm run start
 | POST       |Create new user preference  | /user         |
 | PUT        |Update user preference      | /user/:id     |
 //Postman documentation automatically
+
+### Request and Response Specifications
+
+## POST /auth/register
+
+Request spec:
+
+```
+{
+  email: 'example@email.com',
+  password: 'accepts any string from 6-32 chars',
+  confirm_password: 'accepts any string from 6-32 chars',
+  first_name: 'accepts letters from 2 -50 chars',
+  last_name: 'accepts letters from 2 -50 chars',
+}
+```
+
+Response spec:
+
+```
+{
+    "user": {
+        "id": 5,
+        "email": "example@gmail.com",
+        "first_name": "Name",
+        "last_name": "Example",
+        "is_admin": false || true
+    },
+    "token": "yuyujhjiiGHJIKKHJhHJhKhnbGHj.eyJ1c2VySWQiOjUsImlzX2FkbWluIjpmYWxzZSwiaWF0IjoxNTY0NDk1OTg4LCJleHAiOjE1NjUxMDA3ODh9.SgCpomiiiioidhjdfI"
+}
+```
