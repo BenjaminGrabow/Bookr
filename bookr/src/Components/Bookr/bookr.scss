@@ -76,51 +76,72 @@ input {
 .books {
   display  : flex;
   flex-wrap: wrap;
-  
-  .card {
-    position: absolute;
+  .card0,
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8,
+  .card9,
+  .card10,
+  .card11,
+  .card12,
+  .card13,
+  .card14,
+  .card15,
+  .card16,
+  .card17,
+  .card18,
+  .card19,
+  .card20,
+  .card21,
+  .card22,
+  .card23 {
+    position       : absolute;
     transform-style: preserve-3d;
-    transition: all 1s ease;
-    
-    width: 30%;
-    height: 30rem;
-    position: relative;
-    margin: 1rem; 
+    transition     : all 1s ease;
+    width          : 30%;
+    height         : 30rem;
+    position       : relative;
+    margin         : 1rem;
   }
-  
+
   .front {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+    display            : flex;
+    flex-direction     : column;
+    justify-content    : center;
+    align-items        : center;
+    position           : absolute;
     backface-visibility: hidden;
-    width: 100%; 
-    height: 100%;
-    box-shadow: 5px 5px 4px 5px white;
-    
-    
+    width              : 100%;
+    height             : 100%;
+    box-shadow         : 5px 5px 4px 5px white;
+
+
     img {
       width : 50%;
       height: 15rem;
     }
-    
+
     p {
       font-size  : 1.5rem;
       font-weight: 700;
     }
   }
-  
+
   .back {
-    transform: rotateY(180deg);
-    position: absolute;
+    transform          : rotateY(180deg);
+    position           : absolute;
     backface-visibility: hidden;
-    color: white;
-    width: 100%;
-    height: 100%;
-    box-shadow: 5px 5px 4px 5px black;
+    color              : white;
+    width              : 100%;
+    height             : 100%;
+    box-shadow         : 5px 5px 4px 5px black;
   }
-  
+
 }
 
 
@@ -179,7 +200,7 @@ input {
     .review {
       display        : flex;
       justify-content: space-around;
-      align-items: center;
+      align-items    : center;
 
       .pic-name {
         width     : 37.5%;
@@ -192,11 +213,11 @@ input {
         }
 
         p {
-          color: black;
+          color      : black;
           font-weight: bold;
         }
       }
- 
+
       .star {
         width: 25%;
 
@@ -217,7 +238,7 @@ input {
 }
 
 .add-review {
-  display: flex;
+  display        : flex;
   justify-content: space-around;
 
   i {
@@ -229,7 +250,7 @@ input {
   }
 
   input {
-    width: 35%;
+    width    : 35%;
     font-size: 2rem;
   }
 }

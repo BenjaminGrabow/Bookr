@@ -100,9 +100,9 @@ class Bookr extends React.Component {
    this.props.deleteUserPreference();
   };
 
-  rotate = () => {
-
-    const card = document.querySelector(".card");
+  rotate = (e) => {
+console.log(e.currentTarget.className)
+    const card = document.querySelector(`.${e.currentTarget.className}`);
     if(card.style.transform === 'rotateY(180deg)'){
       card.style.transform = 'rotateY(0deg)';
     } else {
@@ -228,7 +228,7 @@ class Bookr extends React.Component {
             return <div 
             key={index}
             onClick={this.rotate}
-            className="card">
+            className={`card${index}`}>
               <div className="front">
     
               <img
