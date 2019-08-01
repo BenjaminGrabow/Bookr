@@ -2,7 +2,7 @@
 
 Bookr is a app where you can buy and compare books.
 
-The Application is live here 
+The Application is live [here](https://bookr-build-week.herokuapp.com/).
 
 ## Installation
 
