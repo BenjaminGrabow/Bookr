@@ -262,6 +262,7 @@ class Bookr extends React.Component {
 
               </div>
               <div className="back" >
+                <p>{book.author}</p>
                 {this.props.averageRating ? (<div className="star">
                   <i className={this.props.averageRating[0]}></i>
                   <i className={this.props.averageRating[1]}></i>
@@ -269,6 +270,7 @@ class Bookr extends React.Component {
                   <i className={this.props.averageRating[3]}></i>
                   <i className={this.props.averageRating[4]}></i>
                 </div>) : <p>There are no reviews</p>}
+                <p>{book.price} $</p>
               </div>
             </div>
           })) : null}
