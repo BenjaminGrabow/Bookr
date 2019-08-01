@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from "./Navigation/Navigation";
 import { connect } from 'react-redux';
 import { fetchBooks, fetchBook, closeBook, addReview, search, showAllBooksAgain, checkUserPreference, deleteUserPreference, calculateRating } from '../../Store/actions';
 import StripeCheckout from "react-stripe-checkout";
@@ -211,6 +212,7 @@ class Bookr extends React.Component {
     }
     return (
       <div className="bookr">
+        <Navigation/>
         <nav>
           <NavLink
             to="/user"
