@@ -233,3 +233,27 @@ export const addBook = (title, publisher, author, description, photo, price) => 
       debugger
     });
 };
+
+export const updateBook = (book_id, title, publisher, author, description, photo, price) => dispatch => {
+
+  const updatedBook = {
+    title,
+    publisher,
+    author,
+    description,
+    photo,
+    price
+  };
+
+  axios.post(`${adress}${book_id}`, updatedBook)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
+};
