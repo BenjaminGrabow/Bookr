@@ -1,18 +1,18 @@
 // .user {
-// height: 100vh;
-// height: 90vh;
-// display: flex;
-// flex-direction: column;
+// height         : 100vh;
+// height         : 90vh;
+// display        : flex;
+// flex-direction : column;
 // justify-content: space-around;
-// align-items: center;
+// align-items    : center;
 
 // .navLink {
 // text-decoration: none;
-// font-size: 2rem;
-        				
+// font-size      : 2rem;
+
 // p {
 // font-size: 2.5rem;font-weight: bold;transition: .8s;color: #bdc3c7;margin: 0;
-				
+
 // &:hover {
 // color: blue;filter: brightness(150%);text-decoration: underline;}
 // }
@@ -24,28 +24,28 @@
 
 
 // .form {
-//   display: flex;
+//   display       : flex;
 //   flex-direction: column;
-//   align-items: center;
+//   align-items   : center;
 //   padding-bottom: .5rem;
-  
+
 // input {
-//   width: 70%;
+//   width        : 70%;
 //   border-radius: .5rem;
-//   font-size: 2rem;
+//   font-size    : 2rem;
 //   margin-bottom: .9rem;
 // }
 
 // button {
-//   width: 25%;
-//   height: 4rem;
+//   width        : 25%;
+//   height       : 4rem;
 //   border-radius: .5rem;
-//   background: #bdc3c7;
-//   background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-//   background: linear-gradient(to right, #eaeaea, #deecff);
-//   border: .3rem solid black;
-//   transition: .8s;
-  
+//   background   : #bdc3c7;
+//   background   : -webkit-linear-gradient(to right, #eaeaea, #deecff); 
+//   background   : linear-gradient(to right, #eaeaea, #deecff);
+//   border       : .3rem solid black;
+//   transition   : .8s;
+
 //   &:hover {
 //     border: .3rem solid red;
 //   }
@@ -62,44 +62,47 @@
 
 // img {
 //   border-radius: .7rem;
-//   width: 50%;
-//   height: 18rem;
+//   width        : 50%;
+//   height       : 18rem;
 // }
 
 
 
 .user {
-height: 90vh;
-display: flex;
-flex-direction: column;
-align-items: center;
+  background-image: linear-gradient(to right bottom, rgba(185, 192, 183, 0.8), #d7d1c98c), url(../../img/books.jpg);
+  height          : 100vh;
+  background-size : cover;
+
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
 }
 
 .off {
-display:none;
+  display: none;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
+  display        : flex;
+  flex-direction : column;
+  height         : 90vh;
   justify-content: center;
-  width: 100%;
+  width          : 100%;
 }
 
 .inputs-btn {
-  display: flex;
+  display        : flex;
   justify-content: space-around;
-  align-items: center;
-  
+  align-items    : center;
+
   .inputs {
-    display: flex;
-    flex-direction: column;
+    display        : flex;
+    flex-direction : column;
     justify-content: space-around;
-    height: 20rem;
+    height         : 20rem;
 
     input {
-      height: 3rem;
+      height   : 3rem;
       font-size: 2rem;
     }
   }
@@ -110,20 +113,21 @@ display:none;
 }
 
 .userStyling {
-  display: flex;
+  display        : flex;
   justify-content: space-around;
-  width: 100%;
-  
+  width          : 100%;
+
   .text {
-    display: flex;
+    display       : flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items   : baseline;
   }
+
   p {
     font-size: 2rem;
-    margin: .6rem;
+    margin   : .6rem;
   }
-  
+
   span {
     font-weight: bold;
   }

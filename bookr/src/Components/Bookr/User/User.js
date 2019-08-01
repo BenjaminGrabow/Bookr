@@ -38,8 +38,8 @@ class User extends React.Component {
     ) {
 
       this.props.safeUserPreferences(this.state.firstname,
-         this.state.lastname,
-          this.state.photo);
+        this.state.lastname,
+        this.state.photo);
 
       this.setState({
         firstname: '',
@@ -52,8 +52,8 @@ class User extends React.Component {
 
   updateUserPreference = () => {
     this.props.updateUserPreference(this.state.firstname,
-       this.state.lastname,
-        this.state.photo);
+      this.state.lastname,
+      this.state.photo);
 
     this.setState({
       firstname: '',
@@ -90,42 +90,40 @@ class User extends React.Component {
                 </p>
               </div>
             </div>
-
             <p
               onClick={this.startUserPreference}>
               updtate
                 <i className="fa fa-upload" />
             </p>
-
-
           </div>
+
           <div
             className={this.state.inputForStart ? 'form' : 'off'}>
-             <div className="inputs-btn">
-            <div className="inputs">
-            <input
-              value={this.state.firstname}
-              type="text"
-              name="firstname"
-              placeholder="First name"
-              onChange={this.handleChange} />
-            <input
-              value={this.state.lastname}
-              type="text"
-              name="lastname"
-              placeholder="Last name"
-              onChange={this.handleChange} />
-            <input
-              value={this.state.photo}
-              type="text"
-              name="photo"
-              placeholder="Picture URL"
-              onChange={this.handleChange} />
-</div>
-            <i
-              onClick={this.updateUserPreference}
-              className="fa fa-upload"/>
-</div>
+            <div className="inputs-btn">
+              <div className="inputs">
+                <input
+                  value={this.state.firstname}
+                  type="text"
+                  name="firstname"
+                  placeholder="First name"
+                  onChange={this.handleChange} />
+                <input
+                  value={this.state.lastname}
+                  type="text"
+                  name="lastname"
+                  placeholder="Last name"
+                  onChange={this.handleChange} />
+                <input
+                  value={this.state.photo}
+                  type="text"
+                  name="photo"
+                  placeholder="Picture URL"
+                  onChange={this.handleChange} />
+              </div>
+              <i
+                onClick={this.updateUserPreference}
+                className="fa fa-upload" />
+            </div>
           </div>
         </div>
       })
@@ -161,7 +159,6 @@ class User extends React.Component {
                 placeholder="Picture URL"
                 onChange={this.handleChange} />
             </div>
-
             <i
               onClick={this.safePreferences}
               className="fa fa-upload"></i>
