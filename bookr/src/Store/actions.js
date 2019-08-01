@@ -245,7 +245,7 @@ export const updateBook = (book_id, title, publisher, author, description, photo
     price
   };
 
-  axios.post(`${adress}${book_id}`, updatedBook)
+  axios.put(`${adress}${book_id}`, updatedBook)
     .then(res => {
 
       return axios.get(adress)
