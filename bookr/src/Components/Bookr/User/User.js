@@ -37,7 +37,9 @@ class User extends React.Component {
       this.state.photo
     ) {
 
-      this.props.safeUserPreferences(this.state.firstname, this.state.lastname, this.state.photo);
+      this.props.safeUserPreferences(this.state.firstname,
+         this.state.lastname,
+          this.state.photo);
 
       this.setState({
         firstname: '',
@@ -49,7 +51,9 @@ class User extends React.Component {
   };
 
   updateUserPreference = () => {
-    this.props.updateUserPreference(this.state.firstname, this.state.lastname, this.state.photo);
+    this.props.updateUserPreference(this.state.firstname,
+       this.state.lastname,
+        this.state.photo);
 
     this.setState({
       firstname: '',
@@ -132,18 +136,8 @@ class User extends React.Component {
           className="navLink">
           <p>Home</p>
         </NavLink>
-        {/* <div
-          className={!this.state.inputForStart ? 'startScreen' : 'off'}>
-          <h1
-            className="startH1">
-            Click on the button to start filling out your user preferences
-                                        </h1>
-          <i
-            onClick={this.startUserPreference}
-            className="fa fa-play"></i>
-        </div> */}
         <div
-          className={this.state.inputForStart === false ? 'off' : 'form'}>
+          className={this.state.inputForStart ? 'off' : 'form'}>
           <div className="inputs-btn">
             <div className="inputs">
               <input
