@@ -75,21 +75,21 @@ const reducer = (state = initialState, action) => {
 
     case types.FETCH_BOOKS:
 
+      return { ...state, books: action.fetchedBooks };
+
+    case types.FETCH_BOOK:
+
         const areThereRatings = action.fetchedBook.reviews.some(rating => rating);
 
         if(areThereRatings) {
           const averageRating = calculateRating(action.fetchedBook.reviews);
 
-          return { ...state, books: action.fetchedBooks, averageRating: averageRating }
+          return { ...state, book: action.fetchedBook, averageRating: averageRating }
   
         } else {
 
-          return { ...state, books: action.fetchedBooks,  averageRating: null };
+          return { ...state, book: action.fetchedBook,  averageRating: null };
         }
-
-    case types.FETCH_BOOK:
-
-    return { ...state, book: action.fetchedBook, averageRating: null };
 
     case types.CLOSE_BOOK:
 
