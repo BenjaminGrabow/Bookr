@@ -254,3 +254,18 @@ export const updateBook = (book_id, title, publisher, author, description, photo
       debugger
     });
 };
+
+export const deleteBook = (book_id) => dispatch => {
+
+  axios.delete(`${adress}${book_id}`)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
+};
