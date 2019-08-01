@@ -80,15 +80,15 @@ const reducer = (state = initialState, action) => {
     case types.FETCH_BOOK:
 
       const isThereARating = action.fetchedBook.reviews.some(rating => rating);
-
-      if (isThereARating) {
+debugger
+      if(isThereARating) {
         const averageRating = calculateRating(action.fetchedBook.reviews);
-
+debugger
         return { ...state, book: action.fetchedBook, averageRating: averageRating }
 
       } else {
-
-        return { ...state, book: action.fetchedBook };
+debugger
+        return { ...state, book: action.fetchedBook, averageRating: null };
       }
 
     case types.CLOSE_BOOK:

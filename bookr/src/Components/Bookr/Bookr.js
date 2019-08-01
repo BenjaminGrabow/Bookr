@@ -55,7 +55,6 @@ class Bookr extends React.Component {
       alert('You must provide a review and give a star rating.')
       }
     } else {
-      
       alert('You must provide information about yourself in User settings to be able to write reviews.')
     }
   };
@@ -90,6 +89,7 @@ class Bookr extends React.Component {
 
   closeSearchView = () => {
     if(this.props.copyOfBooks) {
+
       this.props.showAllBooksAgain()
     }
   };
@@ -100,16 +100,19 @@ class Bookr extends React.Component {
    this.props.deleteUserPreference();
   };
 
-  rotate = (e) => {
+  rotate = (e, id) => {
 
     const card = document.querySelector(`.${e.currentTarget.className}`);
+
     if(card.style.transform === 'rotateY(180deg)'){
       card.style.transform = 'rotateY(0deg)';
+
     } else {
       card.style.transform = 'rotateY(180deg)';
     }
 
-  }
+    this.props.fetchBook(id);
+  };
 
   render() {
 
@@ -238,7 +241,7 @@ class Bookr extends React.Component {
             return <div
             style={styleTextSection}
             key={index}
-            onClick={this.rotate}
+            onClick={(event) => this.rotate(event, book.id)}
             className={`card${index}`}>
               <div className="front">
     
@@ -250,15 +253,13 @@ class Bookr extends React.Component {
 
               </div>
               <div className="back" >
-              {this.props.averageRating ? 
-
-              }<div className="star">
-                    <i className={this.props.averageRating.star1}></i>
-                    <i className={this.props.averageRating.star2}></i>
-                    <i className={this.props.averageRating.star3}></i>
-                    <i className={this.props.averageRating.star4}></i>
-                    <i className={this.props.averageRating.star5}></i>
-                  </div>
+              {this.props.averageRating ? (<div className="star">
+                    <i className={this.props.averageRating[0]}></i>
+                    <i className={this.props.averageRating[1]}></i>
+                    <i className={this.props.averageRating[2]}></i>
+                    <i className={this.props.averageRating[3]}></i>
+                    <i className={this.props.averageRating[4]}></i>
+                  </div>) : null}
               </div>
             </div>
           })) : null}
