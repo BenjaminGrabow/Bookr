@@ -228,9 +228,9 @@ class Bookr extends React.Component {
             return <div 
             key={index}
             onClick={this.rotate}
-            className="card single-book">
+            className="card">
               <div className="front">
-              
+    
               <img
               onClick={() =>
                  this.props.fetchBook(book.id)}

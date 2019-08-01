@@ -76,58 +76,52 @@ input {
 .books {
   display  : flex;
   flex-wrap: wrap;
-
-  .single-book {
-    width : 30%;
-    height: 25rem;
-    margin: 1rem;
-
+  
+  .card {
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    
+    width: 30%;
+    height: 30rem;
+    position: relative;
+    margin: 1rem; 
+  }
+  
+  .front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%; 
+    height: 100%;
+    box-shadow: 5px 5px 4px 5px white;
+    
+    
     img {
       width : 50%;
       height: 15rem;
     }
-
+    
     p {
       font-size  : 1.5rem;
       font-weight: 700;
     }
   }
+  
+  .back {
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+    color: white;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 4px 5px black;
+  }
+  
 }
-
-.card {
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
-  width: 100%;
-  height: 100%;
-  width: 70%;
-  height: 30rem;
-  position: relative;
-  margin: 1rem;
-
-
-}
-
-.front {
-display: flex;
-justify-content: space-between;
-position: absolute;
-backface-visibility: hidden;
-width: 100%; 
-height: 100%;
-box-shadow: 5px 5px 4px 5px white;
-}
-
-.back {
-  transform: rotateY(180deg);
-  position: absolute;
-  backface-visibility: hidden;
-  color: white;
-  width: 100%;
-  height: 100%;
-  box-shadow: 5px 5px 4px 5px black;
-}
-
 
 
 
