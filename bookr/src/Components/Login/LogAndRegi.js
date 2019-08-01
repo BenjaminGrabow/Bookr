@@ -18,7 +18,7 @@ class LogAndRegi extends React.Component {
   }
 
   showInput = e => {
-    if (e.target.textContent === 'Go to Register') {
+    if (e.target.textContent === 'Register') {
       this.setState({
         register: true,
         login: false,
@@ -107,7 +107,7 @@ class LogAndRegi extends React.Component {
          <div className="login">
           <p 
           onClick={this.showInput}
-          className="btn btn--white btn--register">Go to Register</p>
+          className="btn btn--white btn--register">Register</p>
          
               <div
                 className="inputs">

@@ -132,7 +132,7 @@ class User extends React.Component {
           className="navLink">
           <p>Home</p>
         </NavLink>
-        <div
+        {/* <div
           className={!this.state.inputForStart ? 'startScreen' : 'off'}>
           <h1
             className="startH1">
@@ -141,7 +141,7 @@ class User extends React.Component {
           <i
             onClick={this.startUserPreference}
             className="fa fa-play"></i>
-        </div>
+        </div> */}
         <div
           className={this.state.inputForStart === false ? 'off' : 'form'}>
           <div className="inputs-btn">
