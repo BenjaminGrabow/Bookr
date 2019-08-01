@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const secrets = require("../database/secrets");
 
 function generateToken(user) {
+  console.log(secrets.jwtSecret);
   const payload = {
     subject: user.id,
     username: user.username,

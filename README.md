@@ -49,6 +49,10 @@ Request spec:
 
 ```
 {
+  {
+        username:"beddtddddddddddddddddddddrzun",
+        password: "BEtdddddddddddddddrzuN"
+}
   email: 'example@email.com',
   password: 'accepts any string from 6-32 chars',
   confirm_password: 'accepts any string from 6-32 chars',
