@@ -1,7 +1,10 @@
 .user {
-background: #bdc3c7;
-background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-background: linear-gradient(to right, #eaeaea, #deecff);
+height: 100vh;
+height: 90vh;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
 
 .navLink {
 text-decoration: none;
@@ -24,12 +27,14 @@ display:none;
 }
 
 .startScreen {
+height: 90vh;
 display: flex;
 flex-direction: column;
+justify-content: space-around;
 align-items: center;
-background: #bdc3c7;
-background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
-background: linear-gradient(to right, #eaeaea, #deecff); 
+// background: #bdc3c7;
+// background: -webkit-linear-gradient(to right, #eaeaea, #deecff); 
+// background: linear-gradient(to right, #eaeaea, #deecff); 
 }
 
 .fa-play {
@@ -137,4 +142,14 @@ span {
 font-weight: bold;
 }
 }
+}
+
+
+.inputs-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .inputs {
+
+  }
 }

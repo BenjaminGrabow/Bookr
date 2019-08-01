@@ -181,7 +181,9 @@ class User extends React.Component {
 				</div>
 				<div
 					className={this.state.inputForStart === false ? 'off' : 'form'}>
-					<input
+				<div className="inputs-btn">
+        	<div className="inputs">
+          <input
 						value={this.state.firstname}
 						type="text"
 						name="firstname"
@@ -218,11 +220,13 @@ class User extends React.Component {
 						type="text"
 						name="mobilephonenumber"
 						placeholder="Mobilephone"
-						onChange={this.handleChange} /> */}
+            onChange={this.handleChange} /> */}
+            </div>
 					<button
 						onClick={this.safePreferences}>
 						<i className="fa fa-upload"></i>
 					</button>
+          </div>
 				</div>
 			</div>
 		);

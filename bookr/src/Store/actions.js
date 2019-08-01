@@ -125,7 +125,7 @@ export const checkUserPreference = () => dispatch => {
 
   return axios.get(`${adress}user/${userId}`)
     .then(res => {
-debugger
+
       if (res.data.toString()) {
         dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
       }
@@ -138,7 +138,7 @@ debugger
 export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
 
   const userId = localStorage.getItem('user_id');
-  debugger
+
   const newUserPreference = {
     first_name: firstname,
     last_name: lastname,
