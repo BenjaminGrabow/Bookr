@@ -19,6 +19,16 @@ class Navigation extends React.Component {
     });
   };
 
+  delPostPutBook = e => {
+  if(e.target.className === "fa fa-user-times btn btn--white"){
+console.log('delete')
+  } else if(e.target.className === "fa fa-wrench btn btn--white") {
+    console.log('put')
+  } else { 
+    console.log('add')
+  }
+  };
+
   render() {
     return (
       <div className="navigation">
@@ -90,13 +100,13 @@ class Navigation extends React.Component {
 
             <div className="crud-icons">
               <i
-                onClick={this.deleteBook}
+                onClick={this.delPostPutBook}
                 className="fa fa-user-times btn btn--white" />
               <i
-                onClick={this.updateBook}
+                onClick={this.delPostPutBook}
                 className="fa fa-wrench btn btn--white" />
               <i
-                onClick={this.addBook}
+                onClick={this.delPostPutBook}
                 className="fa fa-plus-circle btn btn--white" />
             </div>
 
