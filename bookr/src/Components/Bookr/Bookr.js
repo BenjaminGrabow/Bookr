@@ -271,6 +271,10 @@ class Bookr extends React.Component {
                   <i className={this.props.averageRating[4]}></i>
                 </div>) : <p>There are no reviews</p>}
                 <p>{book.price} $</p>
+                <div className="icons">
+                <i className="fa fa-user-times" />
+                <i className="fa fa-wrench" />
+              </div>
               </div>
             </div>
           })) : null}
