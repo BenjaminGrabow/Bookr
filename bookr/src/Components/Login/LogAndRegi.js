@@ -70,9 +70,9 @@ class LogAndRegi extends React.Component {
     if (this.state.register) {
       return (
         <div className="log-reg">
+
           <button onClick={this.showInput}
           className="btn btn--white">Go to Login</button>
-          <div className="row">
             <form
               onSubmit={this.register}>
               <div
@@ -99,7 +99,7 @@ class LogAndRegi extends React.Component {
                 <i className="fa fa-user-plus"></i>
               </p>
             </form>
-          </div>
+
         </div>
       )
     }
@@ -107,11 +107,11 @@ class LogAndRegi extends React.Component {
       return (
         <div
         className="log-reg">
-          <div className="login">
+         
           <p 
           onClick={this.showInput}
           className="btn btn--white">Go to register</p>
-          <div className="row">
+         
             <form
               onSubmit={this.login}>
               <div
@@ -143,8 +143,8 @@ class LogAndRegi extends React.Component {
                   (<i className="fa fa-user-plus"></i>)} */}
               </p>
             </form>
-          </div>
-          </div>
+          
+        
         </div>)
     }
     return (
