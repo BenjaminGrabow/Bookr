@@ -38,6 +38,15 @@ class Navigation extends React.Component {
         this.state.photo,
         this.state.price);
     }
+
+    this.setState({
+      title: '',
+      publisher: '',
+      author: '',
+      description: '',
+      photo: '',
+      price: ''
+    });
   };
 
   render() {
