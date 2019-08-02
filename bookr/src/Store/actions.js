@@ -14,13 +14,13 @@ export const CHECK_USER_PREFERENCE = 'CHECK_USER_PREFERENCE';
 export const SAFE_USER_PREFERENCE = 'SAFE_USER_PREFERENCE';
 export const UPDATE_USER_PREFERENCE = 'UPDATE_USER_PREFERENCE';
 export const DELETE_USER_PREFERENCE = 'DELETE_USER_PREFERENCE';
+export const CALCULATE_RATING = 'CALCULATE_RATING';
+export const SAVE_BOOK_ID = 'SAVE_BOOK_ID';
 
 const adress = 'https://bookr-build-week.herokuapp.com/';
-// ${adress}auth/register
-// ${adress}auth/login
-// ADD IT LATER !!!!
+
 export const register = creds => dispatch => {
-  return axios.post(`http://localhost:3400/auth/register`, creds)
+  return axios.post(`${adress}auth/register`, creds)
     .then(res => {
 
       dispatch({ type: REGISTER });
@@ -33,7 +33,7 @@ export const register = creds => dispatch => {
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
 
-  return axios.post(`http://localhost:3400/auth/login`, creds)
+  return axios.post(`${adress}auth/login`, creds)
     .then(res => {
 
       localStorage.setItem('token', res.data.token);
@@ -50,7 +50,7 @@ export const login = creds => dispatch => {
 
 export const fetchBooks = () => dispatch => {
 
-  axiosWithAuth().get('http://localhost:3400/')
+  axiosWithAuth().get(adress)
     .then(res => {
       dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
     })
@@ -61,7 +61,7 @@ export const fetchBooks = () => dispatch => {
 
 export const fetchBook = (id) => dispatch => {
 
-  axiosWithAuth().get(`http://localhost:3400/${id}`)
+  axiosWithAuth().get(`${adress}${id}`)
     .then(res => {
 
       dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
@@ -98,9 +98,9 @@ export const addReview = (review, stars, book_id, photo, first_name) => dispatch
     star5: mergeArrays[4]
   }
 
-  axios.post(`http://localhost:3400/review`, objectReview)
+  axios.post(`${adress}review`, objectReview)
     .then(res => {
-      return axiosWithAuth().get(`http://localhost:3400/${book_id}`)
+      return axiosWithAuth().get(`${adress}${book_id}`)
         .then(res => {
           dispatch({ type: FETCH_BOOK, fetchedBook: res.data });
         })
@@ -125,9 +125,9 @@ export const checkUserPreference = () => dispatch => {
 
   const userId = localStorage.getItem('user_id');
 
-  return axios.get(`http://localhost:3400/user/${userId}`)
+  return axios.get(`${adress}user/${userId}`)
     .then(res => {
-debugger
+
       if (res.data.toString()) {
         dispatch({ type: CHECK_USER_PREFERENCE, user_preference: res.data });
       }
@@ -140,7 +140,7 @@ debugger
 export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
 
   const userId = localStorage.getItem('user_id');
-  debugger
+
   const newUserPreference = {
     first_name: firstname,
     last_name: lastname,
@@ -149,10 +149,10 @@ export const safeUserPreferences = (firstname, lastname, photo) => dispatch => {
   };
 
 
-  axios.post(`http://localhost:3400/user`, newUserPreference)
+  axios.post(`${adress}user`, newUserPreference)
     .then(res => {
 
-      return axios.get(`http://localhost:3400/user/${userId}`)
+      return axios.get(`${adress}user/${userId}`)
         .then(res => {
           dispatch({ type: SAFE_USER_PREFERENCE, user_preference: res.data });
         });
@@ -173,10 +173,10 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
     photo: photo
   };
 
-  axios.put(`http://localhost:3400/user/${userId}`, newUserPreference)
+  axios.put(`${adress}user/${userId}`, newUserPreference)
     .then(res => {
 
-      return axios.get(`http://localhost:3400/user/${userId}`)
+      return axios.get(`${adress}user/${userId}`)
         .then(res => {
 
           dispatch({ type: UPDATE_USER_PREFERENCE, user_preference: res.data });
@@ -189,4 +189,83 @@ export const updateUserPreference = (firstname, lastname, photo) => dispatch => 
 
 export const deleteUserPreference = () => {
   return { type: DELETE_USER_PREFERENCE };
+};
+
+export const calculateRating = (id) => dispatch => {
+
+  axiosWithAuth().get(`${adress}${id}`)
+    .then(res => {
+
+      dispatch({ type: CALCULATE_RATING, fetchedBook: res.data });
+    })
+    .catch(err => {
+      debugger
+    });
+};
+
+export const saveBookId = (book_id) => {
+  return { type: SAVE_BOOK_ID, book_id: book_id };
+};
+
+export const addBook = (title, publisher, author, description, photo, price) => dispatch => {
+
+  const newBook = {
+    title,
+    publisher,
+    author,
+    description,
+    photo,
+    price
+  };
+
+  axios.post(adress, newBook)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
+};
+
+export const updateBook = (book_id, title, publisher, author, description, photo, price) => dispatch => {
+
+  const updatedBook = {
+    title,
+    publisher,
+    author,
+    description,
+    photo,
+    price
+  };
+
+  axios.put(`${adress}${book_id}`, updatedBook)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
+};
+
+export const deleteBook = (book_id) => dispatch => {
+
+  axios.delete(`${adress}${book_id}`)
+    .then(res => {
+
+      return axios.get(adress)
+      .then(res => {
+        dispatch({ type: FETCH_BOOKS, fetchedBooks: res.data });
+      })
+    })
+    .catch(err => {
+      debugger
+    });
 };

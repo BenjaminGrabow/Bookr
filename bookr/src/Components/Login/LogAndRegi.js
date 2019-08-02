@@ -70,10 +70,9 @@ class LogAndRegi extends React.Component {
     if (this.state.register) {
       return (
         <div className="log-reg">
-          <button onClick={this.showInput}>Go to Login</button>
-          <div className="row">
-            <form
-              onSubmit={this.register}>
+<div className="register">
+          <p onClick={this.showInput}
+          className="btn btn--white btn--login">Go to Login</p>
               <div
                 className="inputs">
                 <input
@@ -92,12 +91,12 @@ class LogAndRegi extends React.Component {
                 />
               </div>
 
-              <button
-                type="submit">
+              <p
+                onClick={this.register}
+                className="btn btn--white">
                 <i className="fa fa-user-plus"></i>
-              </button>
-            </form>
-          </div>
+              </p>
+            </div>
         </div>
       )
     }
@@ -105,11 +104,11 @@ class LogAndRegi extends React.Component {
       return (
         <div
         className="log-reg">
-          <button onClick={this.showInput}>Register</button>
-          <div className="row">
-            <form
-              onSubmit={this.login}>
-
+         <div className="login">
+          <p 
+          onClick={this.showInput}
+          className="btn btn--white btn--register">Register</p>
+         
               <div
                 className="inputs">
                 <input
@@ -127,24 +126,30 @@ class LogAndRegi extends React.Component {
                   placeholder="Password"
                 />
               </div>
-              <button
-                type="submit">
+              <p
+              className="btn btn--white"
+              onClick={this.login}>
+                  Login
                 {/* {this.props.isLoggingIn ? (<Loader
                   type="ThreeDots"
                   color="#1f2a38"
                   height="12"
                   width="26" />) :
                   (<i className="fa fa-user-plus"></i>)} */}
-              </button>
-            </form>
-          </div>
+              </p>
+          
+            </div>
         </div>)
     }
     return (
       <div className="log-reg">
         <div className="start">
-        <button onClick={this.showInput}>Register</button>
-        <button onClick={this.showInput}>Login</button>
+        <p
+        onClick={this.showInput}
+        className="btn btn--white">Register</p>
+        <p 
+        onClick={this.showInput}
+        className="btn btn--white">Login</p>
         </div>
       </div>
     );
