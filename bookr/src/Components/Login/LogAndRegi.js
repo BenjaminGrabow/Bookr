@@ -1,4 +1,5 @@
 import React from 'react';
+import './LogAndReg.scss';
 import { connect } from 'react-redux'
 import { login, register } from '../../Store/actions';
 
@@ -68,11 +69,10 @@ class LogAndRegi extends React.Component {
   render() {
     if (this.state.register) {
       return (
-        <div>
-          <button onClick={this.showInput}>Go to Login</button>
-          <div className="row">
-            <form
-              onSubmit={this.register}>
+        <div className="log-reg">
+<div className="register">
+          <p onClick={this.showInput}
+          className="btn btn--white btn--login">Go to Login</p>
               <div
                 className="inputs">
                 <input
@@ -91,23 +91,24 @@ class LogAndRegi extends React.Component {
                 />
               </div>
 
-              <button
-                type="submit">
+              <p
+                onClick={this.register}
+                className="btn btn--white">
                 <i className="fa fa-user-plus"></i>
-              </button>
-            </form>
-          </div>
+              </p>
+            </div>
         </div>
       )
     }
     if (this.state.login) {
       return (
-        <div>
-          <button onClick={this.showInput}>Register</button>
-          <div className="row">
-            <form
-              onSubmit={this.login}>
-
+        <div
+        className="log-reg">
+         <div className="login">
+          <p 
+          onClick={this.showInput}
+          className="btn btn--white btn--register">Register</p>
+         
               <div
                 className="inputs">
                 <input
@@ -125,23 +126,31 @@ class LogAndRegi extends React.Component {
                   placeholder="Password"
                 />
               </div>
-              <button
-                type="submit">
+              <p
+              className="btn btn--white"
+              onClick={this.login}>
+                  Login
                 {/* {this.props.isLoggingIn ? (<Loader
                   type="ThreeDots"
                   color="#1f2a38"
                   height="12"
                   width="26" />) :
                   (<i className="fa fa-user-plus"></i>)} */}
-              </button>
-            </form>
-          </div>
+              </p>
+          
+            </div>
         </div>)
     }
     return (
-      <div>
-        <button onClick={this.showInput}>Register</button>
-        <button onClick={this.showInput}>Login</button>
+      <div className="log-reg">
+        <div className="start">
+        <p
+        onClick={this.showInput}
+        className="btn btn--white">Register</p>
+        <p 
+        onClick={this.showInput}
+        className="btn btn--white">Login</p>
+        </div>
       </div>
     );
   }

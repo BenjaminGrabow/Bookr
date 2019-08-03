@@ -2,7 +2,10 @@ const router = require('express').Router();
 
 const Book = require('../helpers/bookr-model.js');
 
-const { validatePost, validateDeleteId, validatePutId } = require('../middleware/middleware');
+const { validatePostForBook,
+   validatePostForReview,
+    validateDeleteId,
+     validatePutId } = require('../middleware/middleware');
 
 router.get('/', async (req, res) => {
   
@@ -40,8 +43,12 @@ router.get("/reviews/:id", async (req, res) => {
   }
 });
 
-router.post("/",validatePost, (req, res) => {
+router.post("/",validatePostForBook, (req, res) => {
       res.status(200).json(req.book);
+});
+
+router.post("/review",validatePostForReview, (req, res) => {
+  res.status(200).json(req.review);
 });
 
 router.put("/:id",validatePutId, (req, res) => {

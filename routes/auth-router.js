@@ -3,8 +3,7 @@ const bcrypt = require('bcryptjs');
 
 const Users = require('../helpers/users-model.js');
 
-const generateToken = require("../tokenservice/tokenservice");
-
+const tokenService = require("../tokenservice/tokenservice");
 
 router.post('/register', (req, res) => {
   let user = req.body;
@@ -22,20 +21,18 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   let { username, password } = req.body;
-
   Users.findBy({ username })
     .first()
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {
-        const token = generateToken(user);
-
+        const token = tokenService.generateToken(user);
         res.status(200).json({
-          message: `Welcome ${user.username}!`,
+          message: `Welcome ${user.username}!, have a token...`,
           token,
           id: user.id
-        });
+         });
       } else {
-        res.status(401).json({ message: 'Invalid Credentials' });
+         res.status(401).json({ message: "Invalid Credentials" });
       }
     })
     .catch(error => {
