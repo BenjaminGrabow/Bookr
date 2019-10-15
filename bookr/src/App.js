@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Route exact path="/log_reg" component={LogAndReg} />
+      <Route exact path="/" component={LogAndReg} />
       <PrivateRoute exact path="/bookr" component={Bookr} />
       <Route path="/user" component={User} />
       <Route path="/slider" component={SlideModus} />

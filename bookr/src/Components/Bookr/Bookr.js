@@ -66,11 +66,6 @@ class Bookr extends React.Component {
     const product = {
       name: title, price: price
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 21352ef3d1e5d797711fe9520ff672109c0a3126
     console.log(token, product)
     const response = await axios.post(
       "https://bookr-build-week.herokuapp.com/payment",
