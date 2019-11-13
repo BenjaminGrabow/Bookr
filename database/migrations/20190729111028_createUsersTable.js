@@ -30,7 +30,7 @@ exports.up = function (knex) {
       books.text('publisher', 50).notNullable();
       books.text('photo', 50);
       books.text('description', 1000);
-      books.integer('price');
+      books.float('price');
     })
     .createTable('reviews', review => {
       review.increments();
@@ -55,8 +55,8 @@ exports.up = function (knex) {
 
 exports.down = function (knex, Promise) {
   return knex.schema
-    .dropTableIfExists('users')
-    .dropTableIfExists('user_preference')
-    .dropTableIfExists('books')
-    .dropTableIfExists('reviews');
+  .dropTableIfExists('user_preference')
+  .dropTableIfExists('reviews')
+  .dropTableIfExists('books')
+  .dropTableIfExists('users');
 };

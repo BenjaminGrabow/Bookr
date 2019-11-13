@@ -21,7 +21,7 @@ exports.seed = function (knex, Promise) {
           author: 'Ashlee Vance',
           description: `In the spirit of Steve Jobs and Moneyball, Elon Musk is both an illuminating and authorized
             look at the extraordinary life of one of Silicon Valley’s most exciting, unpredictable, and ambitious
-             entrepreneurs—a real-life Tony Stark—and a fascinating exploration of the renewal of American invention`,
+            entrepreneurs—a real-life Tony Stark—and a fascinating exploration of the renewal of American invention`,
           photo: 'https://images-na.ssl-images-amazon.com/images/I/51uWemcw0gL._SX329_BO1,204,203,200_.jpg',
           price: 55
         },
