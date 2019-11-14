@@ -12,10 +12,10 @@ async function validatePostForBook(req, res, next) {
       req.book = book;
       next();
     } else {
-      res.status(400).json({ message: 'You must provide at least title, author and publisher !' })
+      res.status(400).json({ message: 'You must provide at least a title, author and publisher !' })
     }
   } catch (error) {
-    res.status(500).json({ errorMessage: 'request dont could process' })
+    res.status(500).json({ errorMessage: `request couldn't process` })
   }
 };
 
